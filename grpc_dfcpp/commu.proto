@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package commu;
+
+service Commu{
+  rpc send_index(index) returns (reply){}
+}
+
+message index{
+  repeated int32 _index = 1;
+}
+
+message reply{
+  int32 ret = 1;
+}
+

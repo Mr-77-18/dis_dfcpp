@@ -1,0 +1,2 @@
+/usr/bin/ar qc libneed_utils.a  CMakeFiles/need_utils.dir/home/lsh/dfcpp/grpc_dfcpp/commu.pb.cc.o CMakeFiles/need_utils.dir/home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc.o
+/usr/bin/ranlib libneed_utils.a

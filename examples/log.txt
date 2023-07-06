@@ -1,0 +1,18 @@
+In file included from /home/lsh/dfcpp/dfcpp/DFV.hpp:13,
+                 from /home/lsh/dfcpp/dfcpp/Node.hpp:8,
+                 from /home/lsh/dfcpp/dfcpp/Task.hpp:8,
+                 from /home/lsh/dfcpp/dfcpp/Graph.hpp:8,
+                 from /home/lsh/dfcpp/dfcpp/DFGraph.hpp:8,
+                 from /home/lsh/dfcpp/dfcpp/Executor.hpp:8,
+                 from /home/lsh/dfcpp/dfcpp/dfcpp.hpp:8,
+                 from main9.cpp:14:
+/home/lsh/dfcpp/dfcpp/global.hpp: In member function ‘void DFCPP::Global::set_dfv_write(std::vector<int>, std::vector<T>)’:
+/home/lsh/dfcpp/dfcpp/global.hpp:31:11: error: ‘DFV’ was not declared in this scope
+   31 |          (DFV<T>*)(_dfvs.at(i)).set(_value);
+      |           ^~~
+/home/lsh/dfcpp/dfcpp/global.hpp:31:16: error: expected primary-expression before ‘>’ token
+   31 |          (DFV<T>*)(_dfvs.at(i)).set(_value);
+      |                ^
+/home/lsh/dfcpp/dfcpp/global.hpp:31:18: error: expected primary-expression before ‘)’ token
+   31 |          (DFV<T>*)(_dfvs.at(i)).set(_value);
+      |                  ^
