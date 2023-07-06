@@ -1,0 +1,11 @@
+/home/ljr/.cache/JetBrains/RemoteDev/dist/28f9dbfbcb7ad_CLion-2022.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/ljr/.cache/JetBrains/RemoteDev/dist/28f9dbfbcb7ad_CLion-2022.2/bin/ninja/linux/ninja -G Ninja -S /home/ljr/Desktop/SKT/dfcpp -B /home/ljr/Desktop/SKT/dfcpp/cmake-build-debug
+-- enable NUMA optimization
+-- enable work pushing in numa
+-- enable numa allocation
+-- enable steal local task first
+-- enable adjust the worker num in numa
+-- enable the remote thief has less priority than local thief
+-- enable to auto release the DFV when it won't be needed
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ljr/Desktop/SKT/dfcpp/cmake-build-debug

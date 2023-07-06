@@ -1,0 +1,1 @@
+/usr/bin/g++-11 -g CMakeFiles/linear.dir/linear.cpp.o -o linear  -lnuma -lpthread 

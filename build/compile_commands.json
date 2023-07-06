@@ -1,0 +1,87 @@
+[
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/fibo.dir/fibo.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/fibo.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/fibo.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/wavefront.dir/wavefront.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/wavefront.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/wavefront.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/matdot.dir/matdot.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/matdot.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/matdot.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/linear.dir/linear.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/linear.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/linear.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/matdot_random.dir/matdot_random.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/matdot_random.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/matdot_random.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/binary_tree.dir/binary_tree.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/binary_tree.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/binary_tree.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/graph.dir/graph.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/graph.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/graph.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/kmean.dir/kmean.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/kmean.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/kmean.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/stl_kmean.dir/stl_kmean.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/stl_kmean.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/stl_kmean.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark/openmp",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -fopenmp -std=gnu++17 -o CMakeFiles/omp_kmean.dir/omp_kmean.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/openmp/omp_kmean.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/openmp/omp_kmean.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark/tbb",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/tbb_linearchain.dir/linearchain.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/linearchain.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/linearchain.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark/tbb",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/tbb_wavefront.dir/wavefront.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/wavefront.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/wavefront.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark/tbb",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/tbb_matdot.dir/matdot.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/matdot.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/matdot.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark/tbb",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/tbb_binary_tree.dir/binary_tree.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/binary_tree.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/binary_tree.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark/tbb",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/tbb_matdot_random.dir/matdot_random.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/matdot_random.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/matdot_random.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark/tbb",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/tbb_graph.dir/graph.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/graph.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/graph.cpp"
+},
+{
+  "directory": "/home/ljr/Desktop/SKT/dfcpp/build/benchmark/tbb",
+  "command": "/usr/bin/g++-11 -DDFCPP_DFV_COUNT -DDFCPP_NUMA -DDFCPP_NUMA_ALLOC -DDFCPP_NUMA_STEAL -DDFCPP_STEAL_PRIORITY -DDFCPP_WORKER_ADJUSTMENT -DDFCPP_WORK_PUSHING -I/home/ljr/Desktop/SKT/dfcpp -g -march=native -std=gnu++17 -o CMakeFiles/tbb_kmean.dir/kmean.cpp.o -c /home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/kmean.cpp",
+  "file": "/home/ljr/Desktop/SKT/dfcpp/benchmark/tbb/kmean.cpp"
+}
+]

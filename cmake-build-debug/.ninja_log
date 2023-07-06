@@ -1,0 +1,21 @@
+# ninja log v5
+2505	2661	1683272003421521398	benchmark/binary_tree	a3b5c297e3680a76
+2	2505	1683272003265518410	benchmark/CMakeFiles/binary_tree.dir/binary_tree.cpp.o	cfa71ede805d651e
+2605	2766	1683352219085164819	benchmark/kmean	3f98284ea0514ef4
+1943	2095	1683359767793320191	benchmark/tbb/tbb_binary_tree	1dbbcf99ecda987a
+2683	2840	1683188209076836953	benchmark/wavefront	10d8d3a006dc1acd
+2736	2873	1683188520090792953	benchmark/graph	ae4bd8ee53ec495b
+1	2605	1683352218921161875	benchmark/CMakeFiles/kmean.dir/kmean.cpp.o	f8e223573663d685
+2545	2700	1683191050663254091	benchmark/matdot	dfa83ff8fe3abb2f
+1136	1237	1683123855492448436	dfcpp/libdfcpp.so	1c7097576188fa9a
+0	1136	1683123855392446521	dfcpp/CMakeFiles/dfcpp.dir/globalObjects.cpp.o	2716a6195f7efc60
+0	1942	1683359767637317428	benchmark/tbb/CMakeFiles/tbb_binary_tree.dir/binary_tree.cpp.o	44a3c0bb9cf86865
+1097	1175	1683360524979334967	benchmark/tbb/tbb_kmean	e07b730e318278c2
+2	2545	1683191050503251026	benchmark/CMakeFiles/matdot.dir/matdot.cpp.o	4c8104b830bbfeef
+1	464	1683453506593980918	benchmark/openmp/CMakeFiles/omp_kmean.dir/omp_kmean.cpp.o	33a335d86a7eda3d
+465	548	1683453506677981808	benchmark/openmp/omp_kmean	d943e1468fbb1598
+1	2735	1683188519950790272	benchmark/CMakeFiles/graph.dir/graph.cpp.o	3dedfc4bcdce9821
+2	1097	1683360524903333523	benchmark/tbb/CMakeFiles/tbb_kmean.dir/kmean.cpp.o	6bc418b0b492db5c
+2	2683	1683188208916833889	benchmark/CMakeFiles/wavefront.dir/wavefront.cpp.o	207ca73dfe765102
+0	615	1683460150406282267	benchmark/CMakeFiles/stl_kmean.dir/stl_kmean.cpp.o	4e66f34dbd79bc99
+615	685	1683460150478282368	benchmark/stl_kmean	7d67f07f7929a4da

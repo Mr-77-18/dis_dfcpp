@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="DFCPP" targetName="main1" />
+      <config projectName="DFCPP" targetName="main3" />
+      <config projectName="DFCPP" targetName="graph" />
+      <config projectName="DFCPP" targetName="main2" />
+      <config projectName="DFCPP" targetName="main5" />
+      <config projectName="DFCPP" targetName="main4" />
+      <config projectName="DFCPP" targetName="tbb_kmean" />
+      <config projectName="DFCPP" targetName="linear" />
+      <config projectName="DFCPP" targetName="HoardTest" />
+      <config projectName="DFCPP" targetName="kmean" />
+      <config projectName="DFCPP" targetName="matdot" />
+      <config projectName="DFCPP" targetName="fibo" />
+      <config projectName="DFCPP" targetName="matdot_random" />
+      <config projectName="DFCPP" targetName="tbb_matdot" />
+      <config projectName="DFCPP" targetName="wavefront" />
+      <config projectName="DFCPP" targetName="omp_kmean" />
+      <config projectName="DFCPP" targetName="binary_tree" />
+      <config projectName="DFCPP" targetName="stl_kmean" />
+      <config projectName="DFCPP" targetName="tbb_matdot_random" />
+      <config projectName="DFCPP" targetName="fibonacci" />
+      <config projectName="DFCPP" targetName="loopback" />
+      <config projectName="DFCPP" targetName="tbb_binary_tree" />
+      <config projectName="DFCPP" targetName="tbb_graph" />
+      <config projectName="DFCPP" targetName="tbb_wavefront" />
+      <config projectName="DFCPP" targetName="tbb_linearchain" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="00224d1a-1e31-4649-bf90-a5bef6b0103f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/benchmark/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/openmp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/openmp/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/benchmark/tbb/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/tbb/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dfcpp/DFV.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/dfcpp/DFV.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dfcpp/Executor.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/dfcpp/Executor.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dfcpp/Hoard.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/dfcpp/Hoard.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dfcpp/Worker.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/dfcpp/Worker.hpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dfcpp_numa_no_adjust" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file:///usr/include/c++/7/atomic" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/c++/7/bits/atomic_base.h" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/c++/7/bits/std_function.h" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/c++/7/bits/stl_vector.h" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/c++/7/bits/uniform_int_dist.h" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/c++/7/variant" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/tbb/flow_graph.h" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/tbb/internal/_flow_graph_impl.h" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/tbb/internal/_flow_graph_node_impl.h" root0="SKIP_INSPECTION" />
+    <setting file="file:///usr/include/tbb/task.h" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2022" />
+    <option name="minorVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="2Hi6GnIc82EMmCnOkXRW1R0pP7r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="CMake Application.binary_tree">
+    <configuration name="HoardTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="HoardTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="HoardTest">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="binary_tree" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="100" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="binary_tree" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="binary_tree">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fibo" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="20" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="fibo" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="fibo">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fibonacci" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="fibonacci" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="fibonacci">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="graph" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="512 512" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="graph" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="graph">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="kmean" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1000000 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="kmean" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="kmean">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="linear" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1000" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="linear" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="linear">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="loopback" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="loopback" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="loopback">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="main1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="main1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="main2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="main2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="main3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="main3">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main4" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="main4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="main4">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main5" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="main5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="main5">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="matdot" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="300" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="matdot" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="matdot">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="matdot_random" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="500 5" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="matdot_random" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="matdot_random">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="omp_kmean" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10000000 5 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="omp_kmean" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="omp_kmean">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="stl_kmean" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="100000000 10 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="stl_kmean" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="stl_kmean">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tbb_binary_tree" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="12" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="tbb_binary_tree" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="tbb_binary_tree">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tbb_graph" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="tbb_graph" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="tbb_graph">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tbb_kmean" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1000000 1" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="tbb_kmean" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="tbb_kmean">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tbb_linearchain" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="tbb_linearchain" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="tbb_linearchain">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tbb_matdot" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="tbb_matdot" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="tbb_matdot">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tbb_matdot_random" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="tbb_matdot_random" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="tbb_matdot_random">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tbb_wavefront" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="tbb_wavefront" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="tbb_wavefront">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="wavefront" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="400" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DFCPP" TARGET_NAME="wavefront" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DFCPP" RUN_TARGET_NAME="wavefront">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.binary_tree" />
+      <item itemvalue="CMake Application.fibo" />
+      <item itemvalue="CMake Application.graph" />
+      <item itemvalue="CMake Application.kmean" />
+      <item itemvalue="CMake Application.linear" />
+      <item itemvalue="CMake Application.matdot" />
+      <item itemvalue="CMake Application.matdot_random" />
+      <item itemvalue="CMake Application.stl_kmean" />
+      <item itemvalue="CMake Application.wavefront" />
+      <item itemvalue="CMake Application.omp_kmean" />
+      <item itemvalue="CMake Application.tbb_binary_tree" />
+      <item itemvalue="CMake Application.tbb_graph" />
+      <item itemvalue="CMake Application.tbb_kmean" />
+      <item itemvalue="CMake Application.tbb_linearchain" />
+      <item itemvalue="CMake Application.tbb_matdot" />
+      <item itemvalue="CMake Application.tbb_matdot_random" />
+      <item itemvalue="CMake Application.tbb_wavefront" />
+      <item itemvalue="CMake Application.fibonacci" />
+      <item itemvalue="CMake Application.HoardTest" />
+      <item itemvalue="CMake Application.loopback" />
+      <item itemvalue="CMake Application.main1" />
+      <item itemvalue="CMake Application.main2" />
+      <item itemvalue="CMake Application.main3" />
+      <item itemvalue="CMake Application.main4" />
+      <item itemvalue="CMake Application.main5" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00224d1a-1e31-4649-bf90-a5bef6b0103f" name="Changes" comment="" />
+      <created>1668755464927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668755464927</updated>
+      <workItem from="1668755468146" duration="1077000" />
+      <workItem from="1668756766529" duration="1206000" />
+      <workItem from="1668843058686" duration="1803000" />
+      <workItem from="1668930029211" duration="599000" />
+      <workItem from="1669016469164" duration="599000" />
+      <workItem from="1669038594521" duration="502000" />
+      <workItem from="1669039134015" duration="598000" />
+      <workItem from="1669123359536" duration="826000" />
+      <workItem from="1669128859778" duration="212000" />
+      <workItem from="1669129190611" duration="2805000" />
+      <workItem from="1669215554251" duration="1090000" />
+      <workItem from="1669389727586" duration="599000" />
+      <workItem from="1669446752183" duration="1812000" />
+      <workItem from="1669452327363" duration="2570000" />
+      <workItem from="1669599419419" duration="599000" />
+      <workItem from="1669640389925" duration="1582000" />
+      <workItem from="1669644273416" duration="1032000" />
+      <workItem from="1669649183396" duration="599000" />
+      <workItem from="1669685958486" duration="599000" />
+      <workItem from="1669775413046" duration="599000" />
+      <workItem from="1669790304536" duration="598000" />
+      <workItem from="1669797454479" duration="1397000" />
+      <workItem from="1669818692341" duration="599000" />
+      <workItem from="1669861682853" duration="599000" />
+      <workItem from="1669863639535" duration="1272000" />
+      <workItem from="1669877448839" duration="1304000" />
+      <workItem from="1669885533715" duration="598000" />
+      <workItem from="1669946815796" duration="599000" />
+      <workItem from="1670043841092" duration="599000" />
+      <workItem from="1670083455681" duration="333000" />
+      <workItem from="1670124126201" duration="599000" />
+      <workItem from="1670133828741" duration="3136000" />
+      <workItem from="1670143414764" duration="4671000" />
+      <workItem from="1670217729003" duration="599000" />
+      <workItem from="1670293463411" duration="1205000" />
+      <workItem from="1670381451058" duration="599000" />
+      <workItem from="1670432152355" duration="8117000" />
+      <workItem from="1670479078698" duration="196000" />
+      <workItem from="1670480204427" duration="597000" />
+      <workItem from="1670509698470" duration="599000" />
+      <workItem from="1670569946865" duration="2919000" />
+      <workItem from="1670652764280" duration="1470000" />
+      <workItem from="1670732549447" duration="2445000" />
+      <workItem from="1670769652603" duration="1556000" />
+      <workItem from="1670773651331" duration="3401000" />
+      <workItem from="1670815228852" duration="1704000" />
+      <workItem from="1670901044398" duration="1551000" />
+      <workItem from="1670915438843" duration="1793000" />
+      <workItem from="1670918675122" duration="6288000" />
+      <workItem from="1671110570611" duration="3202000" />
+      <workItem from="1671170528418" duration="2033000" />
+      <workItem from="1671346009058" duration="1229000" />
+      <workItem from="1671351298673" duration="2500000" />
+      <workItem from="1672214419304" duration="1963000" />
+      <workItem from="1672370934718" duration="599000" />
+      <workItem from="1672932157060" duration="670000" />
+      <workItem from="1673271723957" duration="598000" />
+      <workItem from="1673332640629" duration="599000" />
+      <workItem from="1673408090914" duration="1827000" />
+      <workItem from="1673490407332" duration="599000" />
+      <workItem from="1674106030584" duration="4464000" />
+      <workItem from="1674975257273" duration="460000" />
+      <workItem from="1674975798815" duration="1167000" />
+      <workItem from="1675007110367" duration="598000" />
+      <workItem from="1675046624465" duration="1804000" />
+      <workItem from="1675477603527" duration="598000" />
+      <workItem from="1676380457784" duration="1552000" />
+      <workItem from="1676386857372" duration="1305000" />
+      <workItem from="1676389064687" duration="654000" />
+      <workItem from="1676444988672" duration="32000" />
+      <workItem from="1678031703596" duration="687000" />
+      <workItem from="1678073691770" duration="1483000" />
+      <workItem from="1678156033639" duration="599000" />
+      <workItem from="1678281311295" duration="1702000" />
+      <workItem from="1678331565503" duration="598000" />
+      <workItem from="1678506317026" duration="599000" />
+      <workItem from="1678699548587" duration="598000" />
+      <workItem from="1678844475847" duration="599000" />
+      <workItem from="1679023067515" duration="1387000" />
+      <workItem from="1679069441352" duration="598000" />
+      <workItem from="1679144533927" duration="599000" />
+      <workItem from="1679227672821" duration="2807000" />
+      <workItem from="1679295641693" duration="599000" />
+      <workItem from="1680164263085" duration="1663000" />
+      <workItem from="1680571493330" duration="1198000" />
+      <workItem from="1680661471292" duration="2713000" />
+      <workItem from="1680833804791" duration="598000" />
+      <workItem from="1681269443325" duration="599000" />
+      <workItem from="1681372344730" duration="599000" />
+      <workItem from="1681869620883" duration="2784000" />
+      <workItem from="1681957271240" duration="1961000" />
+      <workItem from="1681960881704" duration="1691000" />
+      <workItem from="1682407989607" duration="278000" />
+      <workItem from="1682646320075" duration="4994000" />
+      <workItem from="1682760406428" duration="83000" />
+      <workItem from="1682841832978" duration="599000" />
+      <workItem from="1683083307782" duration="599000" />
+      <workItem from="1683118386567" duration="1885000" />
+      <workItem from="1683126714337" duration="499000" />
+      <workItem from="1683169686259" duration="1526000" />
+      <workItem from="1683255701417" duration="829000" />
+      <workItem from="1683271964014" duration="1802000" />
+      <workItem from="1683352007685" duration="1550000" />
+      <workItem from="1683427984001" duration="3639000" />
+    </task>
+    <task id="LOCAL-00001" summary="修复条件任务">
+      <created>1670475073451</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670475073451</updated>
+    </task>
+    <task id="LOCAL-00002" summary="解包参数位置错误，实属不该">
+      <created>1670477962790</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670477962790</updated>
+    </task>
+    <task id="LOCAL-00003" summary="参数包解包错误，浪费了大量时间。">
+      <created>1670478409327</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670478409327</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="SKT" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="SKT" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修复条件任务" />
+    <MESSAGE value="解包参数位置错误，实属不该" />
+    <MESSAGE value="参数包解包错误，浪费了大量时间。" />
+    <option name="LAST_COMMIT_MESSAGE" value="参数包解包错误，浪费了大量时间。" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

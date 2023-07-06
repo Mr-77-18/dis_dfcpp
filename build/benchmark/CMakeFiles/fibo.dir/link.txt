@@ -1,0 +1,1 @@
+/usr/bin/g++-11 -g CMakeFiles/fibo.dir/fibo.cpp.o -o fibo  -lnuma -lpthread 

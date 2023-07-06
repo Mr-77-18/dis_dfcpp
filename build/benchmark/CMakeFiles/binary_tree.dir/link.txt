@@ -1,0 +1,1 @@
+/usr/bin/g++-11 -g CMakeFiles/binary_tree.dir/binary_tree.cpp.o -o binary_tree  -lnuma -lpthread 

@@ -1,0 +1,1 @@
+/usr/bin/g++-11 -g CMakeFiles/tbb_linearchain.dir/linearchain.cpp.o -o tbb_linearchain  -ltbb 

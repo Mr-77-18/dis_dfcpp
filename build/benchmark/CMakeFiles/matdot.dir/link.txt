@@ -1,0 +1,1 @@
+/usr/bin/g++-11 -g CMakeFiles/matdot.dir/matdot.cpp.o -o matdot  -lnuma -lpthread 

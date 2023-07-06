@@ -1,0 +1,1 @@
+/usr/bin/g++-11 -g CMakeFiles/kmean.dir/kmean.cpp.o -o kmean  -lnuma -lpthread 

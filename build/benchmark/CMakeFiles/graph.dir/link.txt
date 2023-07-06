@@ -1,0 +1,1 @@
+/usr/bin/g++-11 -g CMakeFiles/graph.dir/graph.cpp.o -o graph  -lnuma -lpthread 
