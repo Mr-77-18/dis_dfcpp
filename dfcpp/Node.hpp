@@ -83,7 +83,7 @@ namespace DFCPP{
         static constexpr auto DYNAMIC = 2;
         static constexpr auto CONDITION = 3;
 
-        bool setnodeready(){//新增
+        bool setnodeready(){//新增_lsh
         return _joinCounter.fetch_sub(1) == 1; 
         }
 

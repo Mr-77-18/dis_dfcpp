@@ -10,7 +10,7 @@ namespace DFCPP {
   template<typename T>
     class DFV;
 
-  class Global {
+  class Global {//新增_lsh
     public:
       //使用单例模式创建唯一的Global实例
       static Global& get_global() {
@@ -25,19 +25,6 @@ namespace DFCPP {
       DFVComm* get_dfv(int _index);
 
       //_indexs表示需要写的DFV的下标，_value为对应的值
-     //template <class T>
-    // void set_dfv_write(std::vector<int> _indexs , std::vector<T> _value){
-    //   for (int i = 0 ; i < _indexs.size() ; i++) {
-
-    //     T* data = new T(_value.at(i));
-    //    (_dfvs.at(i))->set_data(data);
-
-    //    //对DFV所指向的node边的入度减1
-    //     for (auto n : _dfvs.at(i)->_nodes) {
-    //       n->setnodeready(); 
-    //     }
-    //   }
-    // }
      template <class T>
        void set_dfv_write(std::vector<int> _indexs , std::vector<T> _value){
          int j = 0;
@@ -51,6 +38,7 @@ namespace DFCPP {
            j++;
          }
        }
+
      //以下代码存在问题，推测是向下转型的时候出错了
      //template <class T>
      //void set_dfv_write(std::vector<int> _indexs , std::vector<T> _value){
@@ -102,7 +90,6 @@ namespace DFCPP {
     return nullptr;
 
   }
-
 
 //全局唯一的图状态信息
 Global& gl = Global::get_global();

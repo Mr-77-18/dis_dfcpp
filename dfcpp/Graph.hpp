@@ -345,23 +345,12 @@ namespace DFCPP {
          * @endcode
          */
         static void condition(const Task&, std::vector<Task>);
-//
-//        void setnodeready(){
-//            _nodes.at(1)->setnodeready();
-//        }
-//
-//        void erasenode(){
-//            _nodes.erase(_nodes.begin() + 2 , _nodes.end()) ;
-//            _nodes.erase(_nodes.begin());
-//        }
-//
-        void cre_new_graph(std::vector<int> _indexs){//新增
+
+        void cre_new_graph(std::vector<int> _indexs){//新增_lsh
             _nodes.clear();
             for (auto i : _indexs) {
                 _nodes.push_back(gl.get_node(i));
             }
-
-
         }
 
     private:
@@ -444,7 +433,7 @@ namespace DFCPP {
     Task Graph::emplace(C c, std::tuple<DFV<ArgIns>...> ins, std::tuple<DFV<ArgOuts>...> outs) {
         auto&& func = _createStaticWork(c, ins, outs, std::make_index_sequence<sizeof...(ArgIns)>{}, std::make_index_sequence<sizeof...(ArgOuts)>{});
         auto node = new Node(sizeof...(ArgIns), this, std::in_place_index_t<Node::STATIC>{}, func);
-        gl.insert_node(node);//新增
+        gl.insert_node(node);//新增_lsh
         _connectDFVAndNode(node, ins, std::make_index_sequence<sizeof...(ArgIns)>{});
         _nodes.emplace_back(node);
         return Task(node);

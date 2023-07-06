@@ -37,7 +37,7 @@ namespace DFCPP{
          explicit DFVComm(Graph* g) : _graph(g), _data(nullptr){}
          void commitAssignment();       // in Executor.hpp;
          virtual void release() = 0;                // in Executor.hpp;
-         void set_data(void* data){
+         void set_data(void* data){//新增_lsh
              _data = data;
          }
     };
@@ -79,7 +79,7 @@ namespace DFCPP{
             }
         };
         explicit DFV(Graph* g): _dataPtr(std::make_shared<DFVImpl>(g)){
-            gl.insert_dfv(_dataPtr.get());//新增
+            gl.insert_dfv(_dataPtr.get());//新增_lsh;
         }
 
         template<typename ...Args>
@@ -95,17 +95,13 @@ namespace DFCPP{
         DFV& operator = (const DFV&) = default;
         DFV& operator = (DFV&&) noexcept = default;
 
-        void set(T value) {//新增
+        void set(T value) {//新增_lsh
          if (_dataPtr->_data != nullptr) {
            delete static_cast<T*>(_dataPtr->_data);  // 释放之前的内存块
            _dataPtr->_data = nullptr;
          }
-
          _dataPtr->_data = new T(value);  // 动态分配内存并构造对象
         }
-
-
-
 
         /**
          * @brief           向一个DFV赋值。当一个任务的所有输入DFV全部被赋值时（还需满足控制依赖），该任务可以被调度执行。
