@@ -62,8 +62,8 @@ repeated int32 task_index = 3;
 1. vector<int> task_index
 2. vector<int> dfv_index
 3. vector<T> value
-就可以执行。那么主要就看掌控者怎么传这三个元素。要注意的是第三个元素vector<T> value，是泛型的，即红框内是支持value是任意类型。但传输支不支持泛型又是另外一码事。，这就要看你grpc的使用了。
-![总结](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png) 
+就可以执行。那么主要就看掌控者怎么传这三个元素。要注意的是第三个元素vector<T> value，是泛型的，即红框内是支持value是任意类型。但传输支不支持泛型又是另外一码事。这就要看你grpc的使用了。
+![总结](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png) \
 由于grpc我也是第一次使用，所有能传输说明，怎么传（代码怎么写）也是要探究的过程。这里阐述一下使用grpc和结合到dfcpp中的过程：
 1. 首先在**grpc_dfcpp/** 目录下根据grpc的规则进行代码编写
 	1. 定义.proto文件，产生源代码
