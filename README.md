@@ -56,6 +56,18 @@ repeated int32 task_index = 3;
 `````
 
 对应的send_client.cc和send_server.cc展示了客户端和服务端传输信息的案例。\
-<font color=red>由于DFV<T>是一个模板类，所以最终版本的消息传递也应该支持传递不同的数据类型，这里可以用::google:protobuf::Any这个数据类型去实现，但有一点需要注意，就是只能泛化proto中定义的类型，可以参考grpc_dfcpp/any_proto/目录下的测试</font>
+由于DFV<T>是一个模板类，所以最终版本的消息传递也应该支持传递不同的数据类型，这里可以用::google:protobuf::Any这个数据类型去实现，但有一点需要注意，就是只能泛化proto中定义的类型，可以参考grpc_dfcpp/any_proto/目录下的测试.\
 
+到此做一个总结：如图所示，红框内是执行体，它只需要三个元素**(三个元素就可以描述一个任务)** ：
+1. vector<int> task_index
+2. vector<int> dfv_index
+3. vector<T> value
+就可以执行。那么主要就看掌控者怎么传这三个元素。要注意的是第三个元素vector<T> value，是泛型的，即红框内是支持value是任意类型。但传输支不支持泛型又是另外一码事。，这就要看你grpc的使用了。
+![总结](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png) 
+由于grpc我也是第一次使用，所有能传输说明，怎么传（代码怎么写）也是要探究的过程。这里阐述一下使用grpc和结合到dfcpp中的过程：
+1. 首先在**grpc_dfcpp/** 目录下根据grpc的规则进行代码编写
+	1. 定义.proto文件，产生源代码
+	2. 编写server.cc和client.cc
+2. 测试好之后就可以结合到dfcpp当中了，且非常容易，请看以下步骤。
+	1. 在example/目录下根据main_grpc.cpp的模板重新写一个grpc的server,你只需要重写定义的rpc函数就可以了。只需要在example/CMakeLists.txt里面加上这个程序，产后cmake就行，即可产生server可执行程序。然后client可执行程序在第一步骤中已经生成了。
 

@@ -33,7 +33,7 @@ list(APPEND EXAMPLES
     fibonacci
     HoardTest
     loopback
-    main_grpc
+    main_grpc_threemess
 )
 
 include_directories(/home/lsh/dfcpp/)

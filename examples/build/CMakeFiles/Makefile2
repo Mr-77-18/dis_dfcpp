@@ -59,10 +59,10 @@ all: CMakeFiles/main7.dir/all
 all: CMakeFiles/fibonacci.dir/all
 all: CMakeFiles/main5.dir/all
 all: CMakeFiles/main4.dir/all
-all: CMakeFiles/main_grpc.dir/all
 all: CMakeFiles/main3.dir/all
 all: CMakeFiles/main2.dir/all
 all: CMakeFiles/main1.dir/all
+all: CMakeFiles/main_grpc_threemess.dir/all
 all: CMakeFiles/need_utils.dir/all
 
 .PHONY : all
@@ -79,10 +79,10 @@ clean: CMakeFiles/main7.dir/clean
 clean: CMakeFiles/fibonacci.dir/clean
 clean: CMakeFiles/main5.dir/clean
 clean: CMakeFiles/main4.dir/clean
-clean: CMakeFiles/main_grpc.dir/clean
 clean: CMakeFiles/main3.dir/clean
 clean: CMakeFiles/main2.dir/clean
 clean: CMakeFiles/main1.dir/clean
+clean: CMakeFiles/main_grpc_threemess.dir/clean
 clean: CMakeFiles/need_utils.dir/clean
 
 .PHONY : clean
@@ -250,33 +250,6 @@ CMakeFiles/main4.dir/clean:
 .PHONY : CMakeFiles/main4.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main_grpc.dir
-
-# All Build rule for target.
-CMakeFiles/main_grpc.dir/all: CMakeFiles/need_utils.dir/all
-	$(MAKE) -f CMakeFiles/main_grpc.dir/build.make CMakeFiles/main_grpc.dir/depend
-	$(MAKE) -f CMakeFiles/main_grpc.dir/build.make CMakeFiles/main_grpc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=19,20 "Built target main_grpc"
-.PHONY : CMakeFiles/main_grpc.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/main_grpc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main_grpc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
-.PHONY : CMakeFiles/main_grpc.dir/rule
-
-# Convenience name for target.
-main_grpc: CMakeFiles/main_grpc.dir/rule
-
-.PHONY : main_grpc
-
-# clean rule for target.
-CMakeFiles/main_grpc.dir/clean:
-	$(MAKE) -f CMakeFiles/main_grpc.dir/build.make CMakeFiles/main_grpc.dir/clean
-.PHONY : CMakeFiles/main_grpc.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/main3.dir
 
 # All Build rule for target.
@@ -356,6 +329,33 @@ main1: CMakeFiles/main1.dir/rule
 CMakeFiles/main1.dir/clean:
 	$(MAKE) -f CMakeFiles/main1.dir/build.make CMakeFiles/main1.dir/clean
 .PHONY : CMakeFiles/main1.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main_grpc_threemess.dir
+
+# All Build rule for target.
+CMakeFiles/main_grpc_threemess.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f CMakeFiles/main_grpc_threemess.dir/build.make CMakeFiles/main_grpc_threemess.dir/depend
+	$(MAKE) -f CMakeFiles/main_grpc_threemess.dir/build.make CMakeFiles/main_grpc_threemess.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=19,20 "Built target main_grpc_threemess"
+.PHONY : CMakeFiles/main_grpc_threemess.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main_grpc_threemess.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main_grpc_threemess.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : CMakeFiles/main_grpc_threemess.dir/rule
+
+# Convenience name for target.
+main_grpc_threemess: CMakeFiles/main_grpc_threemess.dir/rule
+
+.PHONY : main_grpc_threemess
+
+# clean rule for target.
+CMakeFiles/main_grpc_threemess.dir/clean:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess.dir/build.make CMakeFiles/main_grpc_threemess.dir/clean
+.PHONY : CMakeFiles/main_grpc_threemess.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/need_utils.dir
