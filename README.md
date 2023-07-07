@@ -58,6 +58,8 @@ repeated int32 task_index = 3;
 对应的send_client.cc和send_server.cc展示了客户端和服务端传输信息的案例。\
 由于DFV<T>是一个模板类，所以最终版本的消息传递也应该支持传递不同的数据类型，这里可以用::google:protobuf::Any这个数据类型去实现，但有一点需要注意，就是只能泛化proto中定义的类型，可以参考grpc_dfcpp/any_proto/目录下的测试.\
 
+---
+
 到此做一个总结：如图所示，红框内是执行体，它只需要三个元素**(三个元素就可以描述一个任务)** ：
 1. vector<int> task_index
 2. vector<int> dfv_index
