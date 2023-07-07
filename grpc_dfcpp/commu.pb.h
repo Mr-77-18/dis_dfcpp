@@ -57,12 +57,17 @@ extern indexDefaultTypeInternal _index_default_instance_;
 class reply;
 struct replyDefaultTypeInternal;
 extern replyDefaultTypeInternal _reply_default_instance_;
+class threemess;
+struct threemessDefaultTypeInternal;
+extern threemessDefaultTypeInternal _threemess_default_instance_;
 }  // namespace commu
 PROTOBUF_NAMESPACE_OPEN
 template <>
 ::commu::index* Arena::CreateMaybeMessage<::commu::index>(Arena*);
 template <>
 ::commu::reply* Arena::CreateMaybeMessage<::commu::reply>(Arena*);
+template <>
+::commu::threemess* Arena::CreateMaybeMessage<::commu::threemess>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 
 namespace commu {
@@ -238,6 +243,218 @@ class index final :
   friend struct ::TableStruct_commu_2eproto;
 };// -------------------------------------------------------------------
 
+class threemess final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:commu.threemess) */ {
+ public:
+  inline threemess() : threemess(nullptr) {}
+  ~threemess() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR threemess(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  threemess(const threemess& from);
+  threemess(threemess&& from) noexcept
+    : threemess() {
+    *this = ::std::move(from);
+  }
+
+  inline threemess& operator=(const threemess& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline threemess& operator=(threemess&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const threemess& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const threemess* internal_default_instance() {
+    return reinterpret_cast<const threemess*>(
+               &_threemess_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(threemess& a, threemess& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(threemess* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(threemess* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  threemess* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<threemess>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const threemess& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const threemess& from) {
+    threemess::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(threemess* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "commu.threemess";
+  }
+  protected:
+  explicit threemess(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDfvIndexFieldNumber = 1,
+    kValueFieldNumber = 2,
+    kTaskIndexFieldNumber = 3,
+  };
+  // repeated int32 dfv_index = 1;
+  int dfv_index_size() const;
+  private:
+  int _internal_dfv_index_size() const;
+
+  public:
+  void clear_dfv_index() ;
+  ::int32_t dfv_index(int index) const;
+  void set_dfv_index(int index, ::int32_t value);
+  void add_dfv_index(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& dfv_index() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* mutable_dfv_index();
+
+  private:
+  ::int32_t _internal_dfv_index(int index) const;
+  void _internal_add_dfv_index(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& _internal_dfv_index() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* _internal_mutable_dfv_index();
+
+  public:
+  // repeated int32 value = 2;
+  int value_size() const;
+  private:
+  int _internal_value_size() const;
+
+  public:
+  void clear_value() ;
+  ::int32_t value(int index) const;
+  void set_value(int index, ::int32_t value);
+  void add_value(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& value() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* mutable_value();
+
+  private:
+  ::int32_t _internal_value(int index) const;
+  void _internal_add_value(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& _internal_value() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* _internal_mutable_value();
+
+  public:
+  // repeated int32 task_index = 3;
+  int task_index_size() const;
+  private:
+  int _internal_task_index_size() const;
+
+  public:
+  void clear_task_index() ;
+  ::int32_t task_index(int index) const;
+  void set_task_index(int index, ::int32_t value);
+  void add_task_index(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& task_index() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* mutable_task_index();
+
+  private:
+  ::int32_t _internal_task_index(int index) const;
+  void _internal_add_task_index(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& _internal_task_index() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* _internal_mutable_task_index();
+
+  public:
+  // @@protoc_insertion_point(class_scope:commu.threemess)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t> dfv_index_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _dfv_index_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t> value_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _value_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t> task_index_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _task_index_cached_byte_size_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_commu_2eproto;
+};// -------------------------------------------------------------------
+
 class reply final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:commu.reply) */ {
  public:
@@ -294,7 +511,7 @@ class reply final :
                &_reply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(reply& a, reply& b) {
     a.Swap(&b);
@@ -451,6 +668,142 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& index::_internal
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* index::_internal_mutable__index() {
   return &_impl_._index_;
+}
+
+// -------------------------------------------------------------------
+
+// threemess
+
+// repeated int32 dfv_index = 1;
+inline int threemess::_internal_dfv_index_size() const {
+  return _impl_.dfv_index_.size();
+}
+inline int threemess::dfv_index_size() const {
+  return _internal_dfv_index_size();
+}
+inline void threemess::clear_dfv_index() {
+  _internal_mutable_dfv_index()->Clear();
+}
+inline ::int32_t threemess::dfv_index(int index) const {
+  // @@protoc_insertion_point(field_get:commu.threemess.dfv_index)
+  return _internal_dfv_index(index);
+}
+inline void threemess::set_dfv_index(int index, ::int32_t value) {
+  _internal_mutable_dfv_index()->Set(index, value);
+  // @@protoc_insertion_point(field_set:commu.threemess.dfv_index)
+}
+inline void threemess::add_dfv_index(::int32_t value) {
+  _internal_add_dfv_index(value);
+  // @@protoc_insertion_point(field_add:commu.threemess.dfv_index)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& threemess::dfv_index() const {
+  // @@protoc_insertion_point(field_list:commu.threemess.dfv_index)
+  return _internal_dfv_index();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::mutable_dfv_index() {
+  // @@protoc_insertion_point(field_mutable_list:commu.threemess.dfv_index)
+  return _internal_mutable_dfv_index();
+}
+
+inline ::int32_t threemess::_internal_dfv_index(int index) const {
+  return _internal_dfv_index().Get(index);
+}
+inline void threemess::_internal_add_dfv_index(::int32_t value) {
+  _internal_mutable_dfv_index()->Add(value);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& threemess::_internal_dfv_index() const {
+  return _impl_.dfv_index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::_internal_mutable_dfv_index() {
+  return &_impl_.dfv_index_;
+}
+
+// repeated int32 value = 2;
+inline int threemess::_internal_value_size() const {
+  return _impl_.value_.size();
+}
+inline int threemess::value_size() const {
+  return _internal_value_size();
+}
+inline void threemess::clear_value() {
+  _internal_mutable_value()->Clear();
+}
+inline ::int32_t threemess::value(int index) const {
+  // @@protoc_insertion_point(field_get:commu.threemess.value)
+  return _internal_value(index);
+}
+inline void threemess::set_value(int index, ::int32_t value) {
+  _internal_mutable_value()->Set(index, value);
+  // @@protoc_insertion_point(field_set:commu.threemess.value)
+}
+inline void threemess::add_value(::int32_t value) {
+  _internal_add_value(value);
+  // @@protoc_insertion_point(field_add:commu.threemess.value)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& threemess::value() const {
+  // @@protoc_insertion_point(field_list:commu.threemess.value)
+  return _internal_value();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::mutable_value() {
+  // @@protoc_insertion_point(field_mutable_list:commu.threemess.value)
+  return _internal_mutable_value();
+}
+
+inline ::int32_t threemess::_internal_value(int index) const {
+  return _internal_value().Get(index);
+}
+inline void threemess::_internal_add_value(::int32_t value) {
+  _internal_mutable_value()->Add(value);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& threemess::_internal_value() const {
+  return _impl_.value_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::_internal_mutable_value() {
+  return &_impl_.value_;
+}
+
+// repeated int32 task_index = 3;
+inline int threemess::_internal_task_index_size() const {
+  return _impl_.task_index_.size();
+}
+inline int threemess::task_index_size() const {
+  return _internal_task_index_size();
+}
+inline void threemess::clear_task_index() {
+  _internal_mutable_task_index()->Clear();
+}
+inline ::int32_t threemess::task_index(int index) const {
+  // @@protoc_insertion_point(field_get:commu.threemess.task_index)
+  return _internal_task_index(index);
+}
+inline void threemess::set_task_index(int index, ::int32_t value) {
+  _internal_mutable_task_index()->Set(index, value);
+  // @@protoc_insertion_point(field_set:commu.threemess.task_index)
+}
+inline void threemess::add_task_index(::int32_t value) {
+  _internal_add_task_index(value);
+  // @@protoc_insertion_point(field_add:commu.threemess.task_index)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& threemess::task_index() const {
+  // @@protoc_insertion_point(field_list:commu.threemess.task_index)
+  return _internal_task_index();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::mutable_task_index() {
+  // @@protoc_insertion_point(field_mutable_list:commu.threemess.task_index)
+  return _internal_mutable_task_index();
+}
+
+inline ::int32_t threemess::_internal_task_index(int index) const {
+  return _internal_task_index().Get(index);
+}
+inline void threemess::_internal_add_task_index(::int32_t value) {
+  _internal_mutable_task_index()->Add(value);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& threemess::_internal_task_index() const {
+  return _impl_.task_index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::_internal_mutable_task_index() {
+  return &_impl_.task_index_;
 }
 
 // -------------------------------------------------------------------

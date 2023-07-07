@@ -35,23 +35,23 @@ Commu::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, con
   : channel_(channel), rpcmethod_send_index_(Commu_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status Commu::Stub::send_index(::grpc::ClientContext* context, const ::commu::index& request, ::commu::reply* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::commu::index, ::commu::reply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_send_index_, context, request, response);
+::grpc::Status Commu::Stub::send_index(::grpc::ClientContext* context, const ::commu::threemess& request, ::commu::reply* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::commu::threemess, ::commu::reply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_send_index_, context, request, response);
 }
 
-void Commu::Stub::async::send_index(::grpc::ClientContext* context, const ::commu::index* request, ::commu::reply* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::commu::index, ::commu::reply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_send_index_, context, request, response, std::move(f));
+void Commu::Stub::async::send_index(::grpc::ClientContext* context, const ::commu::threemess* request, ::commu::reply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::commu::threemess, ::commu::reply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_send_index_, context, request, response, std::move(f));
 }
 
-void Commu::Stub::async::send_index(::grpc::ClientContext* context, const ::commu::index* request, ::commu::reply* response, ::grpc::ClientUnaryReactor* reactor) {
+void Commu::Stub::async::send_index(::grpc::ClientContext* context, const ::commu::threemess* request, ::commu::reply* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_send_index_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::commu::reply>* Commu::Stub::PrepareAsyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::commu::reply, ::commu::index, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_send_index_, context, request);
+::grpc::ClientAsyncResponseReader< ::commu::reply>* Commu::Stub::PrepareAsyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::commu::reply, ::commu::threemess, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_send_index_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::commu::reply>* Commu::Stub::Asyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::commu::reply>* Commu::Stub::Asyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncsend_indexRaw(context, request, cq);
   result->StartCall();
@@ -62,10 +62,10 @@ Commu::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Commu_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Commu::Service, ::commu::index, ::commu::reply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< Commu::Service, ::commu::threemess, ::commu::reply, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Commu::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::commu::index* req,
+             const ::commu::threemess* req,
              ::commu::reply* resp) {
                return service->send_index(ctx, req, resp);
              }, this)));
@@ -74,7 +74,7 @@ Commu::Service::Service() {
 Commu::Service::~Service() {
 }
 
-::grpc::Status Commu::Service::send_index(::grpc::ServerContext* context, const ::commu::index* request, ::commu::reply* response) {
+::grpc::Status Commu::Service::send_index(::grpc::ServerContext* context, const ::commu::threemess* request, ::commu::reply* response) {
   (void) context;
   (void) request;
   (void) response;

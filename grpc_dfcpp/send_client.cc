@@ -23,14 +23,31 @@ class Sendclient{
     Sendclient(std::shared_ptr<Channel> channel)
       :stub_(Commu::NewStub(channel)){}
 
-    void send_index_client(std::vector<int>& indexs){
+    void send_index_client(std::vector<int>& _dfv_index , std::vector<int>& _value , std::vector<int>& _task_index){
 
-      commu::index indexs_send;
+      //commu::index indexs_send;
 
-      for (auto i : indexs) {
-        indexs_send.add__index(i);
+      commu::threemess indexs_send;
+
+      //for (auto i : indexs) {
+      //  indexs_send.add__index(i);
+      //}
+      
+      //repeated int32 dfv_index = 1;
+      for(auto i : _dfv_index){
+        indexs_send.add_dfv_index(i);
       }
-
+      
+      //repeated int32 value = 2;
+      for(auto i : _value){
+        indexs_send.add_value(i);
+      }
+      
+      //repeated int32 task_index = 3;
+      for(auto i : _task_index){
+        indexs_send.add_task_index(i);
+      }
+      
       reply response;
       ClientContext context;
 
@@ -54,8 +71,10 @@ int main(int argc, char *argv[])
   Sendclient sendclient(grpc::CreateChannel(target_str , grpc::InsecureChannelCredentials()));
 
 
-  std::vector<int> index = {3};
-  sendclient.send_index_client(index);
+  std::vector<int> dfv_index = {3};
+  std::vector<int> value = {77};
+  std::vector<int> task_index = {3 , 4};
+  sendclient.send_index_client(dfv_index , value , task_index);
 
   std::cout << "send end" << std::endl;
 

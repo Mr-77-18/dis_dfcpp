@@ -43,3 +43,19 @@ graph.cre_new_graph(task_index);
 这个测试是把本地改造结合grpc，尝试接受发布过来的任务，然后执行任务的测试。
 **main_grpc** 作为服务端,接受任务并执行
 **grpc_dfcpp/send_client.cc** 作为客户端，发布任务
+
+## 记录2023 7-7
+今天完成了通信信息部分,可以看commu.proto文件（grpc_dfcpp/commu.proto)的第二版request部分,关键部分如下。
+```protobuf
+message threemess{
+repeated int32 dfv_index = 1;
+repeated int32 value = 2;
+repeated int32 task_index = 3;
+}
+
+`````
+
+对应的send_client.cc和send_server.cc展示了客户端和服务端传输信息的案例。\
+<font color=red>由于DFV<T>是一个模板类，所以最终版本的消息传递也应该支持传递不同的数据类型，这里可以用::google:protobuf::Any这个数据类型去实现，但有一点需要注意，就是只能泛化proto中定义的类型，可以参考grpc_dfcpp/any_proto/目录下的测试</font>
+
+

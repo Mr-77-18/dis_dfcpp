@@ -35,42 +35,41 @@ class Commu final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status send_index(::grpc::ClientContext* context, const ::commu::index& request, ::commu::reply* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>> Asyncsend_index(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status send_index(::grpc::ClientContext* context, const ::commu::threemess& request, ::commu::reply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>> Asyncsend_index(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>>(Asyncsend_indexRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>> PrepareAsyncsend_index(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>> PrepareAsyncsend_index(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>>(PrepareAsyncsend_indexRaw(context, request, cq));
     }
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void send_index(::grpc::ClientContext* context, const ::commu::index* request, ::commu::reply* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void send_index(::grpc::ClientContext* context, const ::commu::index* request, ::commu::reply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void send_index(::grpc::ClientContext* context, const ::commu::threemess* request, ::commu::reply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void send_index(::grpc::ClientContext* context, const ::commu::threemess* request, ::commu::reply* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>* Asyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>* PrepareAsyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>* Asyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::commu::reply>* PrepareAsyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) = 0;
   };
-
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status send_index(::grpc::ClientContext* context, const ::commu::index& request, ::commu::reply* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::commu::reply>> Asyncsend_index(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status send_index(::grpc::ClientContext* context, const ::commu::threemess& request, ::commu::reply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::commu::reply>> Asyncsend_index(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::commu::reply>>(Asyncsend_indexRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::commu::reply>> PrepareAsyncsend_index(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::commu::reply>> PrepareAsyncsend_index(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::commu::reply>>(PrepareAsyncsend_indexRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
      public:
-      void send_index(::grpc::ClientContext* context, const ::commu::index* request, ::commu::reply* response, std::function<void(::grpc::Status)>) override;
-      void send_index(::grpc::ClientContext* context, const ::commu::index* request, ::commu::reply* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void send_index(::grpc::ClientContext* context, const ::commu::threemess* request, ::commu::reply* response, std::function<void(::grpc::Status)>) override;
+      void send_index(::grpc::ClientContext* context, const ::commu::threemess* request, ::commu::reply* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -82,26 +81,18 @@ class Commu final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::commu::reply>* Asyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::commu::reply>* PrepareAsyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::index& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::commu::reply>* Asyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::commu::reply>* PrepareAsyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_send_index_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-
-
-
-
-
 
   class Service : public ::grpc::Service {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status send_index(::grpc::ServerContext* context, const ::commu::index* request, ::commu::reply* response);
+    virtual ::grpc::Status send_index(::grpc::ServerContext* context, const ::commu::threemess* request, ::commu::reply* response);
   };
-
-
-
   template <class BaseClass>
   class WithAsyncMethod_send_index : public BaseClass {
    private:
@@ -114,11 +105,11 @@ class Commu final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::index* /*request*/, ::commu::reply* /*response*/) override {
+    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::threemess* /*request*/, ::commu::reply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requestsend_index(::grpc::ServerContext* context, ::commu::index* request, ::grpc::ServerAsyncResponseWriter< ::commu::reply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requestsend_index(::grpc::ServerContext* context, ::commu::threemess* request, ::grpc::ServerAsyncResponseWriter< ::commu::reply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -130,25 +121,25 @@ class Commu final {
    public:
     WithCallbackMethod_send_index() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::commu::index, ::commu::reply>(
+          new ::grpc::internal::CallbackUnaryHandler< ::commu::threemess, ::commu::reply>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::commu::index* request, ::commu::reply* response) { return this->send_index(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::commu::threemess* request, ::commu::reply* response) { return this->send_index(context, request, response); }));}
     void SetMessageAllocatorFor_send_index(
-        ::grpc::MessageAllocator< ::commu::index, ::commu::reply>* allocator) {
+        ::grpc::MessageAllocator< ::commu::threemess, ::commu::reply>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::commu::index, ::commu::reply>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::commu::threemess, ::commu::reply>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_send_index() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::index* /*request*/, ::commu::reply* /*response*/) override {
+    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::threemess* /*request*/, ::commu::reply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* send_index(
-      ::grpc::CallbackServerContext* /*context*/, const ::commu::index* /*request*/, ::commu::reply* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::commu::threemess* /*request*/, ::commu::reply* /*response*/)  { return nullptr; }
   };
   typedef WithCallbackMethod_send_index<Service > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
@@ -164,7 +155,7 @@ class Commu final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::index* /*request*/, ::commu::reply* /*response*/) override {
+    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::threemess* /*request*/, ::commu::reply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -181,7 +172,7 @@ class Commu final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::index* /*request*/, ::commu::reply* /*response*/) override {
+    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::threemess* /*request*/, ::commu::reply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -204,7 +195,7 @@ class Commu final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::index* /*request*/, ::commu::reply* /*response*/) override {
+    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::threemess* /*request*/, ::commu::reply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -219,10 +210,10 @@ class Commu final {
     WithStreamedUnaryMethod_send_index() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::commu::index, ::commu::reply>(
+          ::commu::threemess, ::commu::reply>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::commu::index, ::commu::reply>* streamer) {
+                     ::commu::threemess, ::commu::reply>* streamer) {
                        return this->Streamedsend_index(context,
                          streamer);
                   }));
@@ -231,12 +222,12 @@ class Commu final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::index* /*request*/, ::commu::reply* /*response*/) override {
+    ::grpc::Status send_index(::grpc::ServerContext* /*context*/, const ::commu::threemess* /*request*/, ::commu::reply* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedsend_index(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::commu::index,::commu::reply>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedsend_index(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::commu::threemess,::commu::reply>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_send_index<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;

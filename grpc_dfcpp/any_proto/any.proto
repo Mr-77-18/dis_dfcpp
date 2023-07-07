@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import  "google/protobuf/any.proto";
+
+package any;
+
+service Any{
+  rpc send_any(request) returns (reply){}
+}
+
+message request{
+  google.protobuf.Any data = 1;
+}
+
+message reply{
+  int32 ret = 1;
+}
+
+message person{
+  string name = 1;
+}

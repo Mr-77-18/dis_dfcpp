@@ -37,6 +37,29 @@ struct indexDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 indexDefaultTypeInternal _index_default_instance_;
 template <typename>
+PROTOBUF_CONSTEXPR threemess::threemess(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.dfv_index_)*/ {}
+  ,/* _impl_._dfv_index_cached_byte_size_ = */ { 0 }
+
+  , /*decltype(_impl_.value_)*/ {}
+  ,/* _impl_._value_cached_byte_size_ = */ { 0 }
+
+  , /*decltype(_impl_.task_index_)*/ {}
+  ,/* _impl_._task_index_cached_byte_size_ = */ { 0 }
+
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct threemessDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR threemessDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~threemessDefaultTypeInternal() {}
+  union {
+    threemess _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 threemessDefaultTypeInternal _threemess_default_instance_;
+template <typename>
 PROTOBUF_CONSTEXPR reply::reply(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.ret_)*/ 0
@@ -53,7 +76,7 @@ struct replyDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 replyDefaultTypeInternal _reply_default_instance_;
 }  // namespace commu
-static ::_pb::Metadata file_level_metadata_commu_2eproto[2];
+static ::_pb::Metadata file_level_metadata_commu_2eproto[3];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_commu_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor**
@@ -70,6 +93,17 @@ const ::uint32_t TableStruct_commu_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::commu::index, _impl_._index_),
     ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::commu::threemess, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.dfv_index_),
+    PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.value_),
+    PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.task_index_),
+    ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::commu::reply, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
@@ -83,30 +117,33 @@ const ::uint32_t TableStruct_commu_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
         { 0, -1, -1, sizeof(::commu::index)},
-        { 9, -1, -1, sizeof(::commu::reply)},
+        { 9, -1, -1, sizeof(::commu::threemess)},
+        { 20, -1, -1, sizeof(::commu::reply)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
     &::commu::_index_default_instance_._instance,
+    &::commu::_threemess_default_instance_._instance,
     &::commu::_reply_default_instance_._instance,
 };
 const char descriptor_table_protodef_commu_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\013commu.proto\022\005commu\"\027\n\005index\022\016\n\006_index\030"
-    "\001 \003(\005\"\024\n\005reply\022\013\n\003ret\030\001 \001(\00523\n\005Commu\022*\n\n"
-    "send_index\022\014.commu.index\032\014.commu.reply\"\000"
-    "b\006proto3"
+    "\001 \003(\005\"A\n\tthreemess\022\021\n\tdfv_index\030\001 \003(\005\022\r\n"
+    "\005value\030\002 \003(\005\022\022\n\ntask_index\030\003 \003(\005\"\024\n\005repl"
+    "y\022\013\n\003ret\030\001 \001(\00527\n\005Commu\022.\n\nsend_index\022\020."
+    "commu.threemess\032\014.commu.reply\"\000b\006proto3"
 };
 static ::absl::once_flag descriptor_table_commu_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_commu_2eproto = {
     false,
     false,
-    128,
+    199,
     descriptor_table_protodef_commu_2eproto,
     "commu.proto",
     &descriptor_table_commu_2eproto_once,
     nullptr,
     0,
-    2,
+    3,
     schemas,
     file_default_instances,
     TableStruct_commu_2eproto::offsets,
@@ -327,6 +364,288 @@ void index::InternalSwap(index* other) {
 }
 // ===================================================================
 
+class threemess::_Internal {
+ public:
+};
+
+threemess::threemess(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:commu.threemess)
+}
+threemess::threemess(const threemess& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  threemess* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.dfv_index_) { from._impl_.dfv_index_ }
+    ,/* _impl_._dfv_index_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.value_) { from._impl_.value_ }
+    ,/* _impl_._value_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.task_index_) { from._impl_.task_index_ }
+    ,/* _impl_._task_index_cached_byte_size_ = */ { 0 }
+
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:commu.threemess)
+}
+
+inline void threemess::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.dfv_index_) { arena }
+    ,/* _impl_._dfv_index_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.value_) { arena }
+    ,/* _impl_._value_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.task_index_) { arena }
+    ,/* _impl_._task_index_cached_byte_size_ = */ { 0 }
+
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+threemess::~threemess() {
+  // @@protoc_insertion_point(destructor:commu.threemess)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void threemess::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.dfv_index_.~RepeatedField();
+  _impl_.value_.~RepeatedField();
+  _impl_.task_index_.~RepeatedField();
+}
+
+void threemess::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void threemess::Clear() {
+// @@protoc_insertion_point(message_clear_start:commu.threemess)
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_mutable_dfv_index()->Clear();
+  _internal_mutable_value()->Clear();
+  _internal_mutable_task_index()->Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* threemess::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 dfv_index = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_dfv_index(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::uint8_t>(tag) == 8) {
+          _internal_add_dfv_index(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // repeated int32 value = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_value(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::uint8_t>(tag) == 16) {
+          _internal_add_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // repeated int32 task_index = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 26)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_task_index(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::uint8_t>(tag) == 24) {
+          _internal_add_task_index(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+::uint8_t* threemess::_InternalSerialize(
+    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:commu.threemess)
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated int32 dfv_index = 1;
+  {
+    int byte_size = _impl_._dfv_index_cached_byte_size_.Get();
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(1, _internal_dfv_index(),
+                                                 byte_size, target);
+    }
+  }
+
+  // repeated int32 value = 2;
+  {
+    int byte_size = _impl_._value_cached_byte_size_.Get();
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(2, _internal_value(),
+                                                 byte_size, target);
+    }
+  }
+
+  // repeated int32 task_index = 3;
+  {
+    int byte_size = _impl_._task_index_cached_byte_size_.Get();
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(3, _internal_task_index(),
+                                                 byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:commu.threemess)
+  return target;
+}
+
+::size_t threemess::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:commu.threemess)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 dfv_index = 1;
+  {
+    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_dfv_index())
+    ;
+    _impl_._dfv_index_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+
+  // repeated int32 value = 2;
+  {
+    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_value())
+    ;
+    _impl_._value_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+
+  // repeated int32 task_index = 3;
+  {
+    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_task_index())
+    ;
+    _impl_._task_index_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData threemess::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    threemess::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*threemess::GetClassData() const { return &_class_data_; }
+
+
+void threemess::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<threemess*>(&to_msg);
+  auto& from = static_cast<const threemess&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:commu.threemess)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.dfv_index_.MergeFrom(from._impl_.dfv_index_);
+  _this->_impl_.value_.MergeFrom(from._impl_.value_);
+  _this->_impl_.task_index_.MergeFrom(from._impl_.task_index_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void threemess::CopyFrom(const threemess& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:commu.threemess)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool threemess::IsInitialized() const {
+  return true;
+}
+
+void threemess::InternalSwap(threemess* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.dfv_index_.InternalSwap(&other->_impl_.dfv_index_);
+  _impl_.value_.InternalSwap(&other->_impl_.value_);
+  _impl_.task_index_.InternalSwap(&other->_impl_.task_index_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata threemess::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_commu_2eproto_getter, &descriptor_table_commu_2eproto_once,
+      file_level_metadata_commu_2eproto[1]);
+}
+// ===================================================================
+
 class reply::_Internal {
  public:
 };
@@ -497,7 +816,7 @@ void reply::InternalSwap(reply* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata reply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_commu_2eproto_getter, &descriptor_table_commu_2eproto_once,
-      file_level_metadata_commu_2eproto[1]);
+      file_level_metadata_commu_2eproto[2]);
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace commu
@@ -505,6 +824,10 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::commu::index*
 Arena::CreateMaybeMessage< ::commu::index >(Arena* arena) {
   return Arena::CreateMessageInternal< ::commu::index >(arena);
+}
+template<> PROTOBUF_NOINLINE ::commu::threemess*
+Arena::CreateMaybeMessage< ::commu::threemess >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::commu::threemess >(arena);
 }
 template<> PROTOBUF_NOINLINE ::commu::reply*
 Arena::CreateMaybeMessage< ::commu::reply >(Arena* arena) {

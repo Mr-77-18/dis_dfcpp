@@ -24,10 +24,29 @@ using commu::reply;
 ABSL_FLAG(uint16_t , port , 50051 , "Server port for the service");
 
 class SendserviceImpl final : public Commu::Service{
-  Status send_index(ServerContext* context , const commu::index* request , reply* reply)override{
-    commu::index get_index = *request;
-    std::cout << "in the send_index" << std::endl;
-    std::cout << "get value :" << get_index._index(1) << std::endl;
+  Status send_index(ServerContext* context , const commu::threemess* request , reply* reply)override{
+    //commu::index get_index = *request;
+    //    std::cout << "in the send_index" << std::endl;
+    //    std::cout << "get value :" << get_index._index(1) << std::endl;
+    //
+
+    //repeated int32 dfv_index = 1;
+    for (int i = 0; i < request->dfv_index_size(); i++) {
+      std::cout << request->dfv_index(i) << " ";
+    }
+    std::cout << std::endl;
+    
+    //repeated int32 value = 2;
+    for (int i = 0; i < request->value_size(); i++) {
+      std::cout << request->value(i) << " ";
+    }
+    std::cout << std::endl;
+    
+    //repeated int32 task_index = 3;
+    for (int i = 0; i < request->task_index_size(); i++) {
+      std::cout << request->task_index(i) << " ";
+    }
+    std::cout << std::endl;
 
     return Status::OK;
   }
