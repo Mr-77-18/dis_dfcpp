@@ -82,9 +82,9 @@ repeated int32 task_index = 3;
 1. 任务1 [task2 , task3]
 2. 任务2 [task4 , task5]
 会出现问题如下图所示，即task6节点也执行了，这是不符合设定的（设定是掌控者给你什么，你才能执行什么）
-![问题](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/5.png) 
+![问题](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/5.png) \
 **问题产生的原因** :在每一个执行线程当中，都会对readyDFV所指向的node进行操作，即使不在任务范围内的node也有可能会被executor执行。\
 **解决问题的方法** :限制操作范围，只允许线程操作任务范围内的node。解决完问题之后的结果如下：
-![解决](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/6.png) 
+![解决](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/6.png) \
 今天的新增内容通过"新增_7-8"索引
 
