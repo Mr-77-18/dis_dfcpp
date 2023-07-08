@@ -348,6 +348,15 @@ namespace DFCPP {
 
         void cre_new_graph(std::vector<int> _indexs){//新增_lsh
             _nodes.clear();
+            //map清空
+            g_intask_node.clear();//新增_7-8
+
+            //重新赋值g_intask_node
+            for (auto i : _indexs) {//新增_7-8
+               g_intask_node[gl.get_node(i)->name()] = 1; 
+            }
+
+
             for (auto i : _indexs) {
                 _nodes.push_back(gl.get_node(i));
             }

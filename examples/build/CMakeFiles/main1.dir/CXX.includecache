@@ -105,6 +105,8 @@ EventCount.hpp
 /home/lsh/dfcpp/dfcpp/EventCount.hpp
 ConcurrentQueue.hpp
 /home/lsh/dfcpp/dfcpp/ConcurrentQueue.hpp
+global.hpp
+/home/lsh/dfcpp/dfcpp/global.hpp
 Hoard.hpp
 /home/lsh/dfcpp/dfcpp/Hoard.hpp
 queue
@@ -206,6 +208,10 @@ Executor.hpp
 vector
 -
 memory
+-
+vector
+-
+map
 -
 
 /home/lsh/dfcpp/dfcpp/types.hpp

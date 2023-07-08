@@ -65,7 +65,7 @@ repeated int32 task_index = 3;
 2. vector<int> dfv_index
 3. vector<T> value
 就可以执行。那么主要就看掌控者怎么传这三个元素。要注意的是第三个元素vector<T> value，是泛型的，即红框内是支持value是任意类型。但传输支不支持泛型又是另外一码事。这就要看你grpc的使用了。
-![总结](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png) \
+![总结](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png) 
 ---
 
 
@@ -75,4 +75,16 @@ repeated int32 task_index = 3;
 	2. 编写server.cc和client.cc
 2. 测试好之后就可以结合到dfcpp当中了，且非常容易，请看以下步骤。
 	1. 在example/目录下根据main_grpc.cpp的模板重新写一个grpc的server,你只需要重写定义的rpc函数就可以了。只需要在example/CMakeLists.txt里面加上这个程序，产后cmake就行，即可产生server可执行程序。然后client可执行程序在第一步骤中已经生成了。
+
+## 记录2023 7-8
+今天解决残留问题：
+**问题描述** 以上面main10.cpp图为例子，当我发布两个任务
+1. 任务1 [task2 , task3]
+2. 任务2 [task4 , task5]
+会出现问题如下图所示，即task6节点也执行了，这是不符合设定的（设定是掌控者给你什么，你才能执行什么）
+![问题](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/5.png) 
+**问题产生的原因** :在每一个执行线程当中，都会对readyDFV所指向的node进行操作，即使不在任务范围内的node也有可能会被executor执行。\
+**解决问题的方法** :限制操作范围，只允许线程操作任务范围内的node。解决完问题之后的结果如下：
+![解决](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/6.png) 
+今天的新增内容通过"新增_7-8"索引
 

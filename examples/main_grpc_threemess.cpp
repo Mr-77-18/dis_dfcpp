@@ -33,14 +33,19 @@ DFGraph graph;
 Executor executor;
 
 //从客户端获取的任务
-vector<int> dfv_index;
-vector<int> task_index;
-vector<int> value;
+//vector<int> dfv_index;
+//vector<int> task_index;
+//vector<int> value;
 
 ABSL_FLAG(uint16_t , port , 50051 , "Server port for the service");
 
 class SendserviceImpl final : public Commu::Service{
     Status send_index(ServerContext* context , const commu::threemess* request , reply* reply)override{
+        std::cout << "in send_index()" << std::endl;
+
+        dfv_index.clear();
+        task_index.clear();
+        value.clear();
 
         //获取任务
         //repeated int32 dfv_index = 1;

@@ -12,6 +12,8 @@
 #include "EventCount.hpp"
 #include "ConcurrentQueue.hpp"
 
+#include "global.hpp"
+
 #ifdef DFCPP_NUMA_ALLOC
 #include "Hoard.hpp"
 #endif
@@ -380,8 +382,11 @@ namespace DFCPP{
         for(auto dfv : _threadWorker->_readyDFVS) {
             for(auto n : dfv->_nodes) {
                 // for work pushing
-                if(n->decreaseJoinCounter()) {
-                    _scheduleTask(n);
+                //先判断node是不是在g_intask_node里面
+                if (g_intask_node[n->name()] == 1) {//新增_7-8
+                    if(n->decreaseJoinCounter()) {
+                        _scheduleTask(n);
+                    }   
                 }
             }
         }

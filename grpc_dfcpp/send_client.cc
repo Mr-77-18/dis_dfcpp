@@ -71,12 +71,21 @@ int main(int argc, char *argv[])
   Sendclient sendclient(grpc::CreateChannel(target_str , grpc::InsecureChannelCredentials()));
 
 
-  std::vector<int> dfv_index = {3};
+  std::vector<int> dfv_index = {0};
   std::vector<int> value = {77};
-  std::vector<int> task_index = {3 , 4};
+  std::vector<int> task_index = {1 ,2};
+
+  sendclient.send_index_client(dfv_index , value , task_index);
+  
+  std::cout << "end of the first task\n";
+
+  dfv_index = {3};
+  value = {77};
+  task_index = {3 , 4};
+
   sendclient.send_index_client(dfv_index , value , task_index);
 
-  std::cout << "send end" << std::endl;
+  std::cout << "end of the second task" << std::endl;
 
 
   return 0;

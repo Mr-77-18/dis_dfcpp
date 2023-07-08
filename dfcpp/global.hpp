@@ -3,8 +3,15 @@
 #define DFCPP_GLOBAL_HPP
 #include <vector>
 #include <memory>
+#include <vector>
+#include <map>
 
 namespace DFCPP {
+  //新增_7-8
+  std::vector<int> dfv_index;
+  std::vector<int> task_index;
+  std::vector<int> value;
+
   class Node;
   class DFVComm;
   template<typename T>
@@ -93,6 +100,7 @@ namespace DFCPP {
 
 //全局唯一的图状态信息
 Global& gl = Global::get_global();
+std::map<std::string , int> g_intask_node;//新增_7-8
 }  // namespace DFCPP
 
 
