@@ -87,6 +87,14 @@ int main(int argc, char *argv[])
 
   std::cout << "end of the second task" << std::endl;
 
+  dfv_index = {2 , 5};
+  value = {77 , 88};
+  task_index = {5};
+
+  sendclient.send_index_client(dfv_index , value , task_index);
+
+  std::cout << "end of third task" << std::endl;
+
 
   return 0;
 

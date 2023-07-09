@@ -88,3 +88,30 @@ repeated int32 task_index = 3;
 ![解决](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/6.png) \
 今天的新增内容通过"新增_7-8"索引
 
+---
+
+# 以下进入到掌控者改造，即第三步
+## 记录2023 7-9 新增代码通过”新增_7-9索引"
+首先构思以下掌控者要怎么做，前面也提到过掌控者的任务有以下：
+1. 掌握全局图的信息
+2. 图的划分
+3. 发布任务给Executor
+先初步设计掌控者逻辑如下：首先中间**红色** 部分表示掌控者的资源，即掌握全局图的信息；任务产生器用来图的划分，并将更新反馈给图更新器用来更新状态，然后发布任务给Executor;然后就是图更新器，用来接收Executor和任务生产器的反馈，以此来更新图的状态.
+![掌控者](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/7.png) \
+在图的管理上我采用了一个矩阵和两个一维数组，如下图所示。请听我慢慢道来。
+![掌控者](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/8.png) \
+如图上半部分是图其中一种状态：
+1. task1已经完成了
+2. task2,task3发步出去了，但是还没有完成
+图的下半部分用来描述整个图的信息：
+1. node_status数组用来表示node(task)的状态
+	1. 0表示task还没有发布
+	2. 1表示任务发布了但还没有执行
+	3. 2表示任务执行完了。即从executor得到反馈了
+2. dfv_value数组用来存储value值
+3. matrix是图的存储，其中存储的元素意义如下：
+	1. =0表示没有边
+	2. !=0表示右边
+		1. >0表示依赖存在，在计算入度的时候算在内,且数值-1是dfv_value的索引
+		2. <0 表示依赖不存在，在计算入度的收不算在内，且-value-1是dfv_value的索引
+
