@@ -387,6 +387,8 @@ namespace DFCPP{
                     if(n->decreaseJoinCounter()) {
                         _scheduleTask(n);
                     }   
+                }else{//如果没有在g_intask_node里面，说明这条边是后向边了，可以作为记录
+
                 }
             }
         }

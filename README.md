@@ -118,3 +118,9 @@ repeated int32 task_index = 3;
 		1. 大于0表示依赖存在，在计算入度的时候算在内,且数值-1是dfv_value的索引
 		2. 小于0表示依赖不存在，在计算入度的收不算在内，且-value-1是dfv_value的索引
 
+---
+
+## 记录：7-14
+这些天一直忙着其它事情，以及现在主要还是在图划分算法这一块（代码写的七七八八，还没有debug。）现在只要图划分算法debug好，能加任务划分出来就好了。下图作为展示，我启用了两个Executor,一个Master。由于Master图划分算法还没有合并进去，所以进行手动划分并发送任务的测试。可以看到都能成功且无误执行。期待算法能跑起来那一刻。\
+![多机展示](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/9.png) \
+
