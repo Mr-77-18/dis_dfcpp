@@ -124,3 +124,9 @@ repeated int32 task_index = 3;
 这些天一直忙着其它事情，以及现在主要还是在图划分算法这一块（代码写的七七八八，还没有debug。）现在只要图划分算法debug好，能加任务划分出来就好了。下图作为展示，我启用了两个Executor,一个Master。由于Master图划分算法还没有合并进去，所以进行手动划分并发送任务的测试。可以看到都能成功且无误执行。期待算法能跑起来那一刻。\
 ![多机展示](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/9.png) \
 
+## 记录： 8-25
+之前的图的数据结构的设计不够合理，导致代码编写的过于繁杂（也许是因为自己编码能力有限），所以这次重新设计了一种数据结构来表示图，如下图所示：(代码见dfcpp/master1.hpp)
+![多机展示](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/11.png)
+图中使用3个数据结构points , m_edge , m_graph来表示一张图。
+至此以及可以初步划分出dfv_index , value , node_index.(例子见dfcpp/test.cpp)
+
