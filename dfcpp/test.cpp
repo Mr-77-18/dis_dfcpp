@@ -1,13 +1,26 @@
-#include"dfcpp/dfcpp.hpp"
-#include <iostream>
-#include "global.hpp"
+#include <iostream> 
+
+#include "master1.hpp"
 
 using namespace DFCPP;
 
 int main(int argc, char *argv[])
 {
-  Global& gl = Global::get_global();
+  Master master;
+  master.pub_tasks();
 
-  std::cout << "end of the get_global()" << std::endl;
+  std::cout << "node_index is :" << std::endl;
+  for(auto node : node_index){
+    std::cout << node << " ";
+  }
+
+  std::cout << std::endl;
+
+  std::cout << "dfv_idnex is :" << std::endl;
+  for (auto dfv : dfv_index) {
+    std::cout << dfv << " " ;
+  }
+
+  std::cout << std::endl;
   return 0;
 }
