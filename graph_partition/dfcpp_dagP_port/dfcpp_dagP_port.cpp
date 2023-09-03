@@ -81,8 +81,8 @@ std::vector<DfcppPartitionResult*> dfcpp_graph_partition_by_dagP(char* graphFile
     // opt.co_match = 1;
     // opt.conpar = 1;
     // opt.inipart = 6; // opt.inipart = IP_UNDIR;
-//    opt.conpar = 0;
-//    opt.inipart = IP_GGG_TWO;
+    opt.conpar = 0;
+    opt.inipart = IP_GGG_TWO;
     opt.use_binary_input = 0;
     opt.runs = 5; // number of runs before selecting best edge cut
 

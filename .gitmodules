@@ -1,0 +1,4 @@
+[submodule "graph_partition/dagP"]
+	path = graph_partition/dagP
+	url = https://github.com/zark721/dagP
+	branch = dev
