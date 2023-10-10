@@ -1,8 +1,8 @@
-headerFile = -I ../../graph_partition/dagP/src/common -I ../../graph_partition/dagP/src/recBisection -I ../../graph_partition/dfcpp_dagP_port
-dagPLibrary = ../../graph_partition/dagP/lib/libdagp.a -lm
-dagPToDfcpp = ../../graph_partition/dfcpp_dagP_port/dfcpp_dagP_port.cpp
-useapi: useapi.cpp
-	g++ -Wall -o useapi useapi.cpp $(dagPToDfcpp) $(headerFile) $(dagPLibrary)
+headerFile = ../../graph_partition/dagP/src/dfcpp_dagP_port
+dagPLibrary = ../../graph_partition/dagP/lib/libdagp.a
+useapi: useapi.cpp $(headerFile) $(dagPLibrary)
+	g++ -Wall -o useapi useapi.cpp -I $(headerFile) $(dagPLibrary) -lm
+.PHONY: clean run
 run:
 	./useapi
 clean:
