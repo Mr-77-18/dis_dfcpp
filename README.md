@@ -130,3 +130,29 @@ repeated int32 task_index = 3;
 图中使用3个数据结构points , m_edge , m_graph来表示一张图。
 至此以及可以初步划分出dfv_index , value , node_index.(例子见dfcpp/test.cpp)
 
+## 10/11
+今天在grpc_dfcpp下面更新了schedule.cc,大部分master的工作都在这里面完成
+思路：
+```c++
+//使用的最简单的方法：
+//获取图信息
+//filename
+//
+//Executor地址：std::string ABSL_FLAG(std::string , target , "localhost:50057" , "Server address");
+//
+//Schedule schedule(filename , Sendclient , std::vector<str::string&>& Executor_address)
+//
+//schedule.run()
+//
+//while(1){
+//直到任务发布完成
+//
+//
+//发布任务
+//
+//end
+//
+//结束
+`````
+
+
