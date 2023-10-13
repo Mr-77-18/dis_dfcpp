@@ -1,6 +1,6 @@
 # 改造框架
 如图为大体框架
-![框架](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png) 
+![框架](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png =300x300) 
 流程大致分为如下：
 ```mermaid
 timeline
@@ -101,9 +101,7 @@ repeated int32 task_index = 3;
 2. 图的划分
 3. 发布任务给Executor
 先初步设计掌控者逻辑如下：首先中间**红色** 部分表示掌控者的资源，即掌握全局图的信息；任务产生器用来图的划分，并将更新反馈给图更新器用来更新状态，然后发布任务给Executor;然后就是图更新器，用来接收Executor和任务生产器的反馈，以此来更新图的状态.
-<div style="text-align:center">
-    ![掌控者](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/7.png)
-</div>
+![掌控者](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/7.png)
 
 ---
 
