@@ -1,6 +1,6 @@
 # 改造框架
 如图为大体框架
-![框架](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png#pic_center =300x300) 
+![框架](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png#pic_center =400x400) 
 流程大致分为如下：
 ```mermaid
 timeline
@@ -66,7 +66,7 @@ repeated int32 task_index = 3;
 2. vector<int> dfv_index
 3. vector<T> value
 就可以执行。那么主要就看掌控者怎么传这三个元素。要注意的是第三个元素vector<T> value，是泛型的，即红框内是支持value是任意类型。但传输支不支持泛型又是另外一码事。这就要看你grpc的使用了。
-![总结](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png =300x300) 
+![总结](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png#pic_center =400xx400) 
 ---
 
 
