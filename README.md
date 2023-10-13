@@ -1,7 +1,7 @@
 # 改造框架
 如图为大体框架
 
-<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png" width="400">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png" width="400" align = "center">
 
 流程大致分为如下：
 ```mermaid
