@@ -1,6 +1,6 @@
 # 改造框架
 如图为大体框架
-![框架](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png =300x300) 
+![框架](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png#pic_center =300x300) 
 流程大致分为如下：
 ```mermaid
 timeline
