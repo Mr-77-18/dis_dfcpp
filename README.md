@@ -155,4 +155,11 @@ repeated int32 task_index = 3;
 //结束
 `````
 
+## 10-13 合并图算法完成
+图算法在dagP目录下面
 
+master的大部分code在grpc_dfcpp/schedule.cc里面
+
+消息类型在grpc_dfcpp/commu.proto里面
+
+对应的Executor模板在example/main_grpc_threemess2.cpp里面
