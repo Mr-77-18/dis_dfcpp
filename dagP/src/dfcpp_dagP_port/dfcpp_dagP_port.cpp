@@ -12,8 +12,9 @@ void free_dfcpp_partition_result(std::vector<DfcppPartitionResult*>& result) {
 /*
     把dagP算法的输出结果 移植到 DFCPP需要的格式。
 */
-std::vector<DfcppPartitionResult*> dfcpp_port(dgraph* G, idxType* parts, int nParts) {
+static std::vector<DfcppPartitionResult*> dfcpp_port(dgraph* G, idxType* parts, int nParts, int* totEdges) {
     std::vector<DfcppPartitionResult*> result;
+    *totEdges = G->nEdge;
     int* topoOrder = new int[nParts];
     int* mapToNewIndex = new int[nParts];
     int isAcyclic = getTopoOrder(G, parts, nParts, topoOrder);
@@ -23,9 +24,9 @@ std::vector<DfcppPartitionResult*> dfcpp_port(dgraph* G, idxType* parts, int nPa
     }
     for (int i=0; i<nParts; i++) {
         mapToNewIndex[topoOrder[i]] = i;
-        printf("old : %d, new = %d\n", topoOrder[i], i);
+        //printf("old : %d, new = %d\n", topoOrder[i], i);
     }
-
+    
 
     for (int i=0; i<nParts; i++) {
         result.push_back(new DfcppPartitionResult(nParts));
@@ -47,12 +48,14 @@ std::vector<DfcppPartitionResult*> dfcpp_port(dgraph* G, idxType* parts, int nPa
                 result[partToNew]->inDfvs.push_back(inEdgeToDfv[j]);
                 result[partFromNew]->outDfvs.push_back(inEdgeToDfv[j]);
                 result[partFromNew]->outEdges[partToNew]++;
+                result[partFromNew]->totOutEdges++;
                 result[partToNew]->inDegree++;
             }
         }
     }
     #if 1
     printf("----------------Partion Result for DFCPP----------------------\n");
+    printf("Graph Info: total edges: %d\n", *totEdges);
     for (int i=0; i<nParts; i++) {
         printf("#Partition %2d: inDegree = %d\n", i, result[i]->inDegree);
         printf("\tNodes: ");
@@ -85,6 +88,7 @@ std::vector<DfcppPartitionResult*> dfcpp_port(dgraph* G, idxType* parts, int nPa
         if (nParts % 10 != 0) {
             printf("\n");
         }
+        printf("\tTotal out edges = %d\n", result[i]->totOutEdges);
     }
     printf("--------------------------------------------------------------\n");
     #endif
@@ -97,7 +101,7 @@ std::vector<DfcppPartitionResult*> dfcpp_port(dgraph* G, idxType* parts, int nPa
 /*
     Use dagP algorithm to partition the input directed graph to n parts for DFCPP
 */
-std::vector<DfcppPartitionResult*> dfcpp_graph_partition_by_dagP(char* graphFileName, int nParts)
+std::vector<DfcppPartitionResult*> dfcpp_graph_partition_by_dagP(char* graphFileName, int nParts, int* totEdges)
 {
     if (nParts < 0) {
         printf("Param invalid, nParts should be greater than 0, now we automatically assign nParts as 2.\n");
@@ -144,7 +148,7 @@ std::vector<DfcppPartitionResult*> dfcpp_graph_partition_by_dagP(char* graphFile
 
     printf ("edge cut: %d\n", (int) x);
 
-    std::vector<DfcppPartitionResult*> result = dfcpp_port(&G, parts, nParts);
+    std::vector<DfcppPartitionResult*> result = dfcpp_port(&G, parts, nParts, totEdges);
     free(parts);
     dagP_free_option(&opt); // frees the arrays in opt
     dagP_free_graph(&G); // frees the arrays in the graph and resets the variables

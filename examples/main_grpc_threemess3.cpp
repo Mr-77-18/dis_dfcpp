@@ -37,7 +37,7 @@ Executor executor;
 //vector<int> task_index;
 //vector<int> value;
 
-ABSL_FLAG(uint16_t , port , 50058 , "Server port for the service");
+ABSL_FLAG(uint16_t , port , 50057 , "Server port for the service");
 
 
 class SendserviceImpl final : public Commu::Service{

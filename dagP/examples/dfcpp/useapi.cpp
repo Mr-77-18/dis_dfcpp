@@ -4,8 +4,9 @@
 int main(int argc, char* argv[]) {
         char graphFileName[] = "data/dfcpp_e6_v6_4.dot";
         const int nParts = 3;
+        int totEdges;
         // 1. call api to get partition result
-        std::vector<DfcppPartitionResult*> result  = dfcpp_graph_partition_by_dagP(graphFileName, nParts);
+        std::vector<DfcppPartitionResult*> result  = dfcpp_graph_partition_by_dagP(graphFileName, nParts, &totEdges);
         // your code...
         // ..... 
         // 2. call api to release partition result resource
