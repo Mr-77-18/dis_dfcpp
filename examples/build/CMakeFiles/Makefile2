@@ -121,6 +121,7 @@ dis_example/executor/clean: dis_example/executor/CMakeFiles/main_grpc_threemess2
 # Directory level rules for directory dis_example/master
 
 # Recursive "all" directory target.
+dis_example/master/all: dis_example/master/CMakeFiles/master_test_empty_parti.dir/all
 dis_example/master/all: dis_example/master/CMakeFiles/master.dir/all
 
 .PHONY : dis_example/master/all
@@ -131,6 +132,7 @@ dis_example/master/preinstall:
 .PHONY : dis_example/master/preinstall
 
 # Recursive "clean" directory target.
+dis_example/master/clean: dis_example/master/CMakeFiles/master_test_empty_parti.dir/clean
 dis_example/master/clean: dis_example/master/CMakeFiles/master.dir/clean
 
 .PHONY : dis_example/master/clean
@@ -160,7 +162,7 @@ origin_example/clean:
 CMakeFiles/need_utils.dir/all:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/depend
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=11,12,13 "Built target need_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=13,14,15 "Built target need_utils"
 .PHONY : CMakeFiles/need_utils.dir/all
 
 # Build rule for subdir invocation for target.
@@ -179,6 +181,33 @@ need_utils: CMakeFiles/need_utils.dir/rule
 CMakeFiles/need_utils.dir/clean:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/clean
 .PHONY : CMakeFiles/need_utils.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/master/CMakeFiles/master_test_empty_parti.dir
+
+# All Build rule for target.
+dis_example/master/CMakeFiles/master_test_empty_parti.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/depend
+	$(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=11,12 "Built target master_test_empty_parti"
+.PHONY : dis_example/master/CMakeFiles/master_test_empty_parti.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/master_test_empty_parti.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule
+
+# Convenience name for target.
+master_test_empty_parti: dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule
+
+.PHONY : master_test_empty_parti
+
+# clean rule for target.
+dis_example/master/CMakeFiles/master_test_empty_parti.dir/clean:
+	$(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/clean
+.PHONY : dis_example/master/CMakeFiles/master_test_empty_parti.dir/clean
 
 #=============================================================================
 # Target rules for target dis_example/master/CMakeFiles/master.dir

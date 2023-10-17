@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule
+.PHONY : dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule
+
+# Convenience name for target.
+master_test_empty_parti: dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule
+
+.PHONY : master_test_empty_parti
+
+# fast build rule for target.
+master_test_empty_parti/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/build
+.PHONY : master_test_empty_parti/fast
+
+# Convenience name for target.
 dis_example/master/CMakeFiles/master.dir/rule:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/master.dir/rule
 .PHONY : dis_example/master/CMakeFiles/master.dir/rule
@@ -152,6 +167,33 @@ master.cpp.s:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/master.cpp.s
 .PHONY : master.cpp.s
 
+master_test_empty_parti.o: master_test_empty_parti.cpp.o
+
+.PHONY : master_test_empty_parti.o
+
+# target to build an object file
+master_test_empty_parti.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/master_test_empty_parti.cpp.o
+.PHONY : master_test_empty_parti.cpp.o
+
+master_test_empty_parti.i: master_test_empty_parti.cpp.i
+
+.PHONY : master_test_empty_parti.i
+
+# target to preprocess a source file
+master_test_empty_parti.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/master_test_empty_parti.cpp.i
+.PHONY : master_test_empty_parti.cpp.i
+
+master_test_empty_parti.s: master_test_empty_parti.cpp.s
+
+.PHONY : master_test_empty_parti.s
+
+# target to generate assembly for a file
+master_test_empty_parti.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/master_test_empty_parti.cpp.s
+.PHONY : master_test_empty_parti.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -160,10 +202,14 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... master_test_empty_parti"
 	@echo "... master"
 	@echo "... master.o"
 	@echo "... master.i"
 	@echo "... master.s"
+	@echo "... master_test_empty_parti.o"
+	@echo "... master_test_empty_parti.i"
+	@echo "... master_test_empty_parti.s"
 .PHONY : help
 
 

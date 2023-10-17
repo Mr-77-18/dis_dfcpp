@@ -1,5 +1,6 @@
 list(APPEND EXAMPLES
     master
+    master_test_empty_parti
 )
 
 find_package(Threads REQUIRED)

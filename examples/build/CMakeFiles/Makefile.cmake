@@ -79,6 +79,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/need_utils.dir/DependInfo.cmake"
+  "dis_example/master/CMakeFiles/master_test_empty_parti.dir/DependInfo.cmake"
   "dis_example/master/CMakeFiles/master.dir/DependInfo.cmake"
   "dis_example/executor/CMakeFiles/exe2.dir/DependInfo.cmake"
   "dis_example/executor/CMakeFiles/exe1.dir/DependInfo.cmake"

@@ -124,6 +124,19 @@ need_utils/fast:
 .PHONY : need_utils/fast
 
 #=============================================================================
+# Target rules for targets named master_test_empty_parti
+
+# Build rule for target.
+master_test_empty_parti: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 master_test_empty_parti
+.PHONY : master_test_empty_parti
+
+# fast build rule for target.
+master_test_empty_parti/fast:
+	$(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/build
+.PHONY : master_test_empty_parti/fast
+
+#=============================================================================
 # Target rules for targets named master
 
 # Build rule for target.
@@ -251,6 +264,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... need_utils"
+	@echo "... master_test_empty_parti"
 	@echo "... master"
 	@echo "... exe2"
 	@echo "... exe1"

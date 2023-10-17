@@ -331,7 +331,6 @@ dis_example/executor/CMakeFiles/exe2.dir/exe2.cpp.o
  /home/lsh/dfcpp/dfcpp/Worker.hpp
  /home/lsh/dfcpp/dfcpp/dfcpp.hpp
  /home/lsh/dfcpp/dfcpp/executor.hpp
- /home/lsh/dfcpp/dfcpp/global.hpp
  /home/lsh/dfcpp/dfcpp/types.hpp
  /home/lsh/dfcpp/examples/dis_example/executor/exe2.cpp
  /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.h
