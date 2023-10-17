@@ -85,6 +85,28 @@ class SendserviceImpl final : public Commu::Service{
         auto fut = executor.run(graph , 1 , [](){cout << "end of the work" << endl;});
 
         //填写reply中的字段，返回信息给master;
+//        //repeated int32 dfv_index = 2;
+//        for (int i = 0; i < backward_index.size(); i++) {
+//            reply->add_dfv_index(backward_index.at(i));
+//        }
+//        
+//        //repeated int32 value = 3;
+//        std::vector<int> backward_dfv_value;
+//        gl.get_dfv_value(backward_index , backward_dfv_value);
+//        for (int i = 0 ; i < backward_index.size() ; i++) {
+//            reply->add_value(backward_dfv_value.at(i));
+//        }
+//        
+//        //int32 partition = 4;
+//        reply->set_partition(partition);
+//        
+//        //int32 executor_number = 5;
+//        reply->set_executor_number(executor_number);
+//
+
+        fut.wait();
+
+         //填写reply中的字段，返回信息给master;
         //repeated int32 dfv_index = 2;
         for (int i = 0; i < backward_index.size(); i++) {
             reply->add_dfv_index(backward_index.at(i));
@@ -104,7 +126,6 @@ class SendserviceImpl final : public Commu::Service{
         reply->set_executor_number(executor_number);
 
 
-        fut.wait();
 
         //调试：
         //输出partition查看：

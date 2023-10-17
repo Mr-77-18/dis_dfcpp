@@ -25,23 +25,23 @@ target_link_libraries(need_utils
     ${_PROTOBUF_LIBPROTOBUF})
 
 list(APPEND EXAMPLES
-    main1
-    main2
-    main3
-    main4
-    main5
-    main7
-    main8
-    fibonacci
-    HoardTest
-    loopback
-    main_grpc_threemess
-    main_grpc_threemess1
+    #main1
+    #main2
+    #main3
+    #main4
+    #main5
+    #main7
+    #main8
+    #fibonacci
+    #HoardTest
+    #loopback
+    #main_grpc_threemess
+    #main_grpc_threemess1
     main_grpc_threemess2
     main_grpc_threemess3
-    main10
-    executor_w_master
-    executor_w_master1
+    #main10
+    #executor_w_master
+    #executor_w_master1
 )
 
 include_directories(/home/lsh/dfcpp/)
