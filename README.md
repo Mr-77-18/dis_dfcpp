@@ -1,7 +1,9 @@
 # 改造框架
 如图为大体框架
 
-<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png" width="400" align = "middle">
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/1.png">
+</p>
 
 流程大致分为如下：
 ```mermaid
@@ -16,8 +18,9 @@ title 改造流程
 ## 记录2023 7-6
 ### 新增部分通过"新增_lsh"索引
 <p align="center">
-<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/3.png" alt="新增" width="200"="200">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/3.png">
 </p>
+
 到目前为止，初步完成如框架图所示中的单机中的改造。既可以完成服务启动之后监听任务，当拿到任务之后能执行对应任务的效果。
 
 接下来说明到目前位置的改造过程:
@@ -42,7 +45,10 @@ gl.set_dfv_write(dfv_index , value);
 graph.cre_new_graph(task_index);
 
 `````
-![本地改造测试](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/2.png) 
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/2.png">
+</p>
+
 #### 测试：example/main_grpc
 这个测试是把本地改造结合grpc，尝试接受发布过来的任务，然后执行任务的测试。
 **main_grpc** 作为服务端,接受任务并执行
@@ -70,7 +76,11 @@ repeated int32 task_index = 3;
 2. vector<int> dfv_index
 3. vector<T> value
 就可以执行。那么主要就看掌控者怎么传这三个元素。要注意的是第三个元素vector<T> value，是泛型的，即红框内是支持value是任意类型。但传输支不支持泛型又是另外一码事。这就要看你grpc的使用了。
-![总结](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png#pic_center =400xx400) 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/4.png" weight="500" height="500">
+</p>
+
 ---
 
 
@@ -88,12 +98,19 @@ repeated int32 task_index = 3;
 2. 任务2 [task4 , task5]
 会出现问题如下图所示，即task6节点也执行了，这是不符合设定的（设定是掌控者给你什么，你才能执行什么）
 
-![问题](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/5.png) \
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/5.png">
+</p>
 
 **问题产生的原因** :在每一个执行线程当中，都会对readyDFV所指向的node进行操作，即使不在任务范围内的node也有可能会被executor执行。
 
 **解决问题的方法** :限制操作范围，只允许线程操作任务范围内的node。解决完问题之后的结果如下：
-![解决](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/6.png) \
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/6.png">
+</p>
+
 今天的新增内容通过"新增_7-8"索引
 
 ---
@@ -105,12 +122,19 @@ repeated int32 task_index = 3;
 2. 图的划分
 3. 发布任务给Executor
 先初步设计掌控者逻辑如下：首先中间**红色** 部分表示掌控者的资源，即掌握全局图的信息；任务产生器用来图的划分，并将更新反馈给图更新器用来更新状态，然后发布任务给Executor;然后就是图更新器，用来接收Executor和任务生产器的反馈，以此来更新图的状态.
-![掌控者](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/7.png)
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/7.png" weight="500" height="500">
+</p>
 
 ---
 
 在图的管理上我采用了一个矩阵和两个一维数组，如下图所示。请听我慢慢道来。
-![掌控者](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/8.png) \
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/8.png" weight="500" height="500">
+</p>
+
 如图上半部分是图其中一种状态：
 1. task1已经完成了
 2. task2,task3发步出去了，但是还没有完成
@@ -129,12 +153,19 @@ repeated int32 task_index = 3;
 ---
 
 ## 记录：7-14
-这些天一直忙着其它事情，以及现在主要还是在图划分算法这一块（代码写的七七八八，还没有debug。）现在只要图划分算法debug好，能加任务划分出来就好了。下图作为展示，我启用了两个Executor,一个Master。由于Master图划分算法还没有合并进去，所以进行手动划分并发送任务的测试。可以看到都能成功且无误执行。期待算法能跑起来那一刻。\
-![多机展示](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/9.png) \
+这些天一直忙着其它事情，以及现在主要还是在图划分算法这一块（代码写的七七八八，还没有debug。）现在只要图划分算法debug好，能加任务划分出来就好了。下图作为展示，我启用了两个Executor,一个Master。由于Master图划分算法还没有合并进去，所以进行手动划分并发送任务的测试。可以看到都能成功且无误执行。期待算法能跑起来那一刻。
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/9.png" weight="500" height="500">
+</p>
 
 ## 记录： 8-25
 之前的图的数据结构的设计不够合理，导致代码编写的过于繁杂（也许是因为自己编码能力有限），所以这次重新设计了一种数据结构来表示图，如下图所示：(代码见dfcpp/master1.hpp)
-![多机展示](https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/11.png)
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/11.png" weight="500" height="500">
+</p>
+
 图中使用3个数据结构points , m_edge , m_graph来表示一张图。
 至此以及可以初步划分出dfv_index , value , node_index.(例子见dfcpp/test.cpp)
 
