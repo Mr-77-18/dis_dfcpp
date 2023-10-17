@@ -129,7 +129,7 @@ namespace DFCPP{
         {
             int numNuma = NUMANUM;
             for(int i = 0; i < numNuma; i++) {
-                auto executorNuma = new ExecutorNuma(this, i, n);
+                auto executorNuma = new ExecutorNuma(this, i, n);//i作为Numa节点的标识,n代表目前物理机最多并行的线程数，即核数
                 _executorNumas.emplace_back(executorNuma);
             }
             for(auto item : _executorNumas) {
@@ -224,13 +224,14 @@ namespace DFCPP{
     }
 
     void ExecutorNuma::_spawn() {
-        size_t n = _workers.size();
+        size_t n = _workers.size();//这个数其实就是物理机支持的最大并行度
         for(size_t i = 0; i < n; i++) {
             _workers[i]._id = i;
             _workers[i]._numaNode = _numaNode;
             _workers[i]._waiter = &_eventCount._waiters[i];
+            //创建线程
             _threads[i] = std::thread([this, id = i](){
-                _threadWorker = &_workers[id];
+                _threadWorker = &_workers[id];//让线程知道自己属于哪一个worker,但是worker似乎没有关联到thread,不过以这种方式创建的话就是一个worker分配了一个线程
 #ifdef DFCPP_NUMA
                 numa_run_on_node(_numaNode);
 #endif
@@ -285,16 +286,17 @@ namespace DFCPP{
         }
     }
 
+    //线程获取任务的方式,可以先不看条件编译选项，从简单的看起.注意：这些都是在工作线程中执行的，所以要站在一个线程的角度去思考哦!
     Node *ExecutorNuma::_waitForTask(Worker* worker) {
         ++_numThieves;
         Node* res = nullptr;
         while(true) {
-#ifdef DFCPP_NUMA_STEAL
+#ifdef DFCPP_NUMA_STEAL//如果允许numa之间窃取任务
             res = _stealFromLocal();
             if(!res) {
                 res = _stealFromRemote();
             }
-#else
+#else//不允许numa之间窃取任务，由于在本机上只有一个Numa,所以直接看这里
             res = _stealRandomly();
 #endif
             if(res) {
@@ -345,7 +347,7 @@ namespace DFCPP{
         Node* node = nullptr;
         while(!_done) {
             _runOutLocalQueue(node);
-            node = _waitForTask(_threadWorker);
+            node = _waitForTask(_threadWorker);//这个_threadWorker是谁,_threadWorker是线程私有变量
         }
     }
 
@@ -424,7 +426,7 @@ namespace DFCPP{
             _threadWorker->push(node);
         else
             _executor->pushToNuma(node, numaNode);
-#else
+#else//node加入到_threadWorker当中,即加入到Worker当中
       _threadWorker->push(node);
 #endif
     }
@@ -454,7 +456,7 @@ namespace DFCPP{
             if(res) break;
             size_t index = uid(_threadWorker->_engine);
             if(index != _threadWorker->_id) {
-                res = _workers[index]._queue.steal();
+                res = _workers[index]._queue.steal();//从别的worker当中拿,注意：要站在一个线程的角度去看这个执行哦
             }
             if(res) break;
             if(numSteals++ > _maxSteals) {
@@ -503,14 +505,14 @@ namespace DFCPP{
         {
 
             size_t index = uid(_threadWorker->_engine);
-            if(index != _numaNode) {
+            if(index != _numaNode) {//从别的Numa中偷取任务
                 res = _executor->stealFromNuma(index);
             } else {
-                res = _stealFromLocal();
+                res = _stealFromLocal();//从本Numa中偷取任务
             }
 
             if(res) break;
-            if(numSteals++ > _maxSteals) {
+            if(numSteals++ > _maxSteals) {//做一个限制，不要偷那么多？
                 std::this_thread::yield();
                 if(numYields++ > _maxYields) {
                     res = nullptr;
@@ -535,6 +537,7 @@ namespace DFCPP{
         return topology->get_future();
     }
 
+//看这里哦,感觉可以执行多个图啊
     std::future<void> Executor::run(DFGraph &graph, size_t n, std::function<void(void)> epilogue) {
         auto topology = std::make_shared<Topology>(&graph, n);
         topology->_epilogue = std::move(epilogue);

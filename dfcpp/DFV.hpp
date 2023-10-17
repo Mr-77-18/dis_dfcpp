@@ -40,6 +40,12 @@ namespace DFCPP{
          void set_data(void* data){//新增_lsh
              _data = data;
          }
+         void* get_data(){//新增_lsh
+             if(_data)
+                 return _data;
+             else
+                return nullptr; 
+         }
     };
 
     /**

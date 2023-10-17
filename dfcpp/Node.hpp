@@ -48,7 +48,7 @@ namespace DFCPP{
 
         template<typename ...Args>
         Node(size_t n, Graph* g, Args&&... args):
-                _handle(std::forward<Args>(args)...),
+                _handle(std::forward<Args>(args)...),//保存传递过来的参数：func
                 _dataDependence(n),//表示多少个入度？
                 _controlDependence(0),
                 _joinCounter(n),//表示有几个入度?

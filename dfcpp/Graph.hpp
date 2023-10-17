@@ -436,14 +436,25 @@ namespace DFCPP {
         return Task(node);
     }
 
+    //这个函数就是创建一些关键对象，然后构建这些对象之间的关系。而且都是相互关联的，比如
+    //graph -- node(1.new Node()是node关联graph;2._nodes.emplace_back()是graph关联node)
+    //dfv -- node(_connectDFVAndNode()里面做了相互关联)
     template<typename C,
             typename... ArgIns,
             typename... ArgOuts, std::enable_if_t<is_normal_static<C>(MetaArg<ArgIns...>{}, MetaArg<ArgOuts...>{}), void>*>
     Task Graph::emplace(C c, std::tuple<DFV<ArgIns>...> ins, std::tuple<DFV<ArgOuts>...> outs) {
+        //创建函数实例
         auto&& func = _createStaticWork(c, ins, outs, std::make_index_sequence<sizeof...(ArgIns)>{}, std::make_index_sequence<sizeof...(ArgOuts)>{});
+        //创建node，node会关联到graph(通过node的graph的指针)
         auto node = new Node(sizeof...(ArgIns), this, std::in_place_index_t<Node::STATIC>{}, func);
+        
+        //新增的用于收集所有node,注意这里的收集顺序是有用的，后面会用来寻找对应的node
         gl.insert_node(node);//新增_lsh
+
+        //根据传递过来的参数ins(其实就是入度),创建node和dfv之间的关联,（关联的方式就是dfv收集指向的边，node也收集入度边DFVComm*来关联）
         _connectDFVAndNode(node, ins, std::make_index_sequence<sizeof...(ArgIns)>{});
+
+        //将node关联到graph
         _nodes.emplace_back(node);
         return Task(node);
     }
@@ -570,7 +581,9 @@ namespace DFCPP {
 
     template<typename... ArgIns, size_t... InsIndex>
     void Graph::_connectDFVAndNode(Node * node, std::tuple<DFV<ArgIns>...> ins, std::index_sequence<InsIndex...>) {
+        //让dfv指向该node
         (std::get<InsIndex>(ins).emplaceTarget(node),...);
+        //node也收集它的入度，即前向边
         (node->emplaceInputDFV(static_cast<DFVComm *>(std::get<InsIndex>(ins)._dataPtr.get()), InsIndex), ...);
     }
 
