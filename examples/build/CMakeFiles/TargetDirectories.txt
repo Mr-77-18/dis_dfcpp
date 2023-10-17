@@ -1,5 +1,13 @@
-/home/lsh/dfcpp/examples/build/CMakeFiles/edit_cache.dir
 /home/lsh/dfcpp/examples/build/CMakeFiles/rebuild_cache.dir
-/home/lsh/dfcpp/examples/build/CMakeFiles/main_grpc_threemess3.dir
-/home/lsh/dfcpp/examples/build/CMakeFiles/main_grpc_threemess2.dir
+/home/lsh/dfcpp/examples/build/CMakeFiles/edit_cache.dir
 /home/lsh/dfcpp/examples/build/CMakeFiles/need_utils.dir
+/home/lsh/dfcpp/examples/build/dis_example/CMakeFiles/rebuild_cache.dir
+/home/lsh/dfcpp/examples/build/dis_example/CMakeFiles/edit_cache.dir
+/home/lsh/dfcpp/examples/build/dis_example/master/CMakeFiles/rebuild_cache.dir
+/home/lsh/dfcpp/examples/build/dis_example/master/CMakeFiles/edit_cache.dir
+/home/lsh/dfcpp/examples/build/dis_example/master/CMakeFiles/master.dir
+/home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/rebuild_cache.dir
+/home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/edit_cache.dir
+/home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/main_grpc_threemess2.dir
+/home/lsh/dfcpp/examples/build/origin_example/CMakeFiles/rebuild_cache.dir
+/home/lsh/dfcpp/examples/build/origin_example/CMakeFiles/edit_cache.dir

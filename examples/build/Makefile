@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/lsh/dfcpp/examples/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,32 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main_grpc_threemess3
-
-# Build rule for target.
-main_grpc_threemess3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main_grpc_threemess3
-.PHONY : main_grpc_threemess3
-
-# fast build rule for target.
-main_grpc_threemess3/fast:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/build
-.PHONY : main_grpc_threemess3/fast
-
-#=============================================================================
-# Target rules for targets named main_grpc_threemess2
-
-# Build rule for target.
-main_grpc_threemess2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main_grpc_threemess2
-.PHONY : main_grpc_threemess2
-
-# fast build rule for target.
-main_grpc_threemess2/fast:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/build
-.PHONY : main_grpc_threemess2/fast
-
-#=============================================================================
 # Target rules for targets named need_utils
 
 # Build rule for target.
@@ -148,6 +122,32 @@ need_utils: cmake_check_build_system
 need_utils/fast:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/build
 .PHONY : need_utils/fast
+
+#=============================================================================
+# Target rules for targets named master
+
+# Build rule for target.
+master: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 master
+.PHONY : master
+
+# fast build rule for target.
+master/fast:
+	$(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/build
+.PHONY : master/fast
+
+#=============================================================================
+# Target rules for targets named main_grpc_threemess2
+
+# Build rule for target.
+main_grpc_threemess2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main_grpc_threemess2
+.PHONY : main_grpc_threemess2
+
+# fast build rule for target.
+main_grpc_threemess2/fast:
+	$(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build
+.PHONY : main_grpc_threemess2/fast
 
 home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.o: home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc.o
 
@@ -203,83 +203,23 @@ home/lsh/dfcpp/grpc_dfcpp/commu.pb.cc.s:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/home/lsh/dfcpp/grpc_dfcpp/commu.pb.cc.s
 .PHONY : home/lsh/dfcpp/grpc_dfcpp/commu.pb.cc.s
 
-main_grpc_threemess2.o: main_grpc_threemess2.cpp.o
-
-.PHONY : main_grpc_threemess2.o
-
-# target to build an object file
-main_grpc_threemess2.cpp.o:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/main_grpc_threemess2.cpp.o
-.PHONY : main_grpc_threemess2.cpp.o
-
-main_grpc_threemess2.i: main_grpc_threemess2.cpp.i
-
-.PHONY : main_grpc_threemess2.i
-
-# target to preprocess a source file
-main_grpc_threemess2.cpp.i:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/main_grpc_threemess2.cpp.i
-.PHONY : main_grpc_threemess2.cpp.i
-
-main_grpc_threemess2.s: main_grpc_threemess2.cpp.s
-
-.PHONY : main_grpc_threemess2.s
-
-# target to generate assembly for a file
-main_grpc_threemess2.cpp.s:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/main_grpc_threemess2.cpp.s
-.PHONY : main_grpc_threemess2.cpp.s
-
-main_grpc_threemess3.o: main_grpc_threemess3.cpp.o
-
-.PHONY : main_grpc_threemess3.o
-
-# target to build an object file
-main_grpc_threemess3.cpp.o:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/main_grpc_threemess3.cpp.o
-.PHONY : main_grpc_threemess3.cpp.o
-
-main_grpc_threemess3.i: main_grpc_threemess3.cpp.i
-
-.PHONY : main_grpc_threemess3.i
-
-# target to preprocess a source file
-main_grpc_threemess3.cpp.i:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/main_grpc_threemess3.cpp.i
-.PHONY : main_grpc_threemess3.cpp.i
-
-main_grpc_threemess3.s: main_grpc_threemess3.cpp.s
-
-.PHONY : main_grpc_threemess3.s
-
-# target to generate assembly for a file
-main_grpc_threemess3.cpp.s:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/main_grpc_threemess3.cpp.s
-.PHONY : main_grpc_threemess3.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main_grpc_threemess3"
-	@echo "... main_grpc_threemess2"
+	@echo "... edit_cache"
 	@echo "... need_utils"
+	@echo "... master"
+	@echo "... main_grpc_threemess2"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.o"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.i"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.s"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.pb.o"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.pb.i"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.pb.s"
-	@echo "... main_grpc_threemess2.o"
-	@echo "... main_grpc_threemess2.i"
-	@echo "... main_grpc_threemess2.s"
-	@echo "... main_grpc_threemess3.o"
-	@echo "... main_grpc_threemess3.i"
-	@echo "... main_grpc_threemess3.s"
 .PHONY : help
 
 

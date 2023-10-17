@@ -31,6 +31,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "../common.cmake"
+  "../dis_example/CMakeLists.txt"
+  "../dis_example/executor/CMakeLists.txt"
+  "../dis_example/master/CMakeLists.txt"
+  "../origin_example/CMakeLists.txt"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake"
@@ -66,11 +70,15 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dis_example/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dis_example/master/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dis_example/executor/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "origin_example/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/main_grpc_threemess3.dir/DependInfo.cmake"
-  "CMakeFiles/main_grpc_threemess2.dir/DependInfo.cmake"
   "CMakeFiles/need_utils.dir/DependInfo.cmake"
+  "dis_example/master/CMakeFiles/master.dir/DependInfo.cmake"
+  "dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/DependInfo.cmake"
   )

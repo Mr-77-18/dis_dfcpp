@@ -17,6 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/lsh/dfcpp"
+  "/home/lsh/dfcpp/grpc_dfcpp"
+  "/home/lsh/dfcpp/dagP/src/dfcpp_dagP_port"
   "/home/lsh/.local/include"
   )
 

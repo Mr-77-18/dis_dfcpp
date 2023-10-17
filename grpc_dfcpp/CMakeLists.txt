@@ -24,7 +24,7 @@ target_link_libraries(need_utils
   ${_PROTOBUF_LIBPROTOBUF})
 
 foreach(_target
-    send_client send_server send_server1 send_client1 master_try1 schedule)
+    schedule)
   add_executable(${_target} "${_target}.cc")
   include_directories(
     ../dfcpp/

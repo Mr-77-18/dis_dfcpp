@@ -53,77 +53,99 @@ CMAKE_BINARY_DIR = /home/lsh/dfcpp/examples/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/main_grpc_threemess3.dir/all
-all: CMakeFiles/main_grpc_threemess2.dir/all
 all: CMakeFiles/need_utils.dir/all
+all: dis_example/all
+all: origin_example/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: dis_example/preinstall
+preinstall: origin_example/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/main_grpc_threemess3.dir/clean
-clean: CMakeFiles/main_grpc_threemess2.dir/clean
 clean: CMakeFiles/need_utils.dir/clean
+clean: dis_example/clean
+clean: origin_example/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main_grpc_threemess3.dir
+# Directory level rules for directory dis_example
 
-# All Build rule for target.
-CMakeFiles/main_grpc_threemess3.dir/all: CMakeFiles/need_utils.dir/all
-	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/depend
-	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=3,4 "Built target main_grpc_threemess3"
-.PHONY : CMakeFiles/main_grpc_threemess3.dir/all
+# Recursive "all" directory target.
+dis_example/all: dis_example/master/all
+dis_example/all: dis_example/executor/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/main_grpc_threemess3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main_grpc_threemess3.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
-.PHONY : CMakeFiles/main_grpc_threemess3.dir/rule
+.PHONY : dis_example/all
 
-# Convenience name for target.
-main_grpc_threemess3: CMakeFiles/main_grpc_threemess3.dir/rule
+# Recursive "preinstall" directory target.
+dis_example/preinstall: dis_example/master/preinstall
+dis_example/preinstall: dis_example/executor/preinstall
 
-.PHONY : main_grpc_threemess3
+.PHONY : dis_example/preinstall
 
-# clean rule for target.
-CMakeFiles/main_grpc_threemess3.dir/clean:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/clean
-.PHONY : CMakeFiles/main_grpc_threemess3.dir/clean
+# Recursive "clean" directory target.
+dis_example/clean: dis_example/master/clean
+dis_example/clean: dis_example/executor/clean
+
+.PHONY : dis_example/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main_grpc_threemess2.dir
+# Directory level rules for directory dis_example/executor
 
-# All Build rule for target.
-CMakeFiles/main_grpc_threemess2.dir/all: CMakeFiles/need_utils.dir/all
-	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/depend
-	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=1,2 "Built target main_grpc_threemess2"
-.PHONY : CMakeFiles/main_grpc_threemess2.dir/all
+# Recursive "all" directory target.
+dis_example/executor/all: dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/main_grpc_threemess2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main_grpc_threemess2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
-.PHONY : CMakeFiles/main_grpc_threemess2.dir/rule
+.PHONY : dis_example/executor/all
 
-# Convenience name for target.
-main_grpc_threemess2: CMakeFiles/main_grpc_threemess2.dir/rule
+# Recursive "preinstall" directory target.
+dis_example/executor/preinstall:
 
-.PHONY : main_grpc_threemess2
+.PHONY : dis_example/executor/preinstall
 
-# clean rule for target.
-CMakeFiles/main_grpc_threemess2.dir/clean:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/clean
-.PHONY : CMakeFiles/main_grpc_threemess2.dir/clean
+# Recursive "clean" directory target.
+dis_example/executor/clean: dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/clean
+
+.PHONY : dis_example/executor/clean
+
+#=============================================================================
+# Directory level rules for directory dis_example/master
+
+# Recursive "all" directory target.
+dis_example/master/all: dis_example/master/CMakeFiles/master.dir/all
+
+.PHONY : dis_example/master/all
+
+# Recursive "preinstall" directory target.
+dis_example/master/preinstall:
+
+.PHONY : dis_example/master/preinstall
+
+# Recursive "clean" directory target.
+dis_example/master/clean: dis_example/master/CMakeFiles/master.dir/clean
+
+.PHONY : dis_example/master/clean
+
+#=============================================================================
+# Directory level rules for directory origin_example
+
+# Recursive "all" directory target.
+origin_example/all:
+
+.PHONY : origin_example/all
+
+# Recursive "preinstall" directory target.
+origin_example/preinstall:
+
+.PHONY : origin_example/preinstall
+
+# Recursive "clean" directory target.
+origin_example/clean:
+
+.PHONY : origin_example/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/need_utils.dir
@@ -151,6 +173,60 @@ need_utils: CMakeFiles/need_utils.dir/rule
 CMakeFiles/need_utils.dir/clean:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/clean
 .PHONY : CMakeFiles/need_utils.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/master/CMakeFiles/master.dir
+
+# All Build rule for target.
+dis_example/master/CMakeFiles/master.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/depend
+	$(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=3,4 "Built target master"
+.PHONY : dis_example/master/CMakeFiles/master.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/master/CMakeFiles/master.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/master.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/master/CMakeFiles/master.dir/rule
+
+# Convenience name for target.
+master: dis_example/master/CMakeFiles/master.dir/rule
+
+.PHONY : master
+
+# clean rule for target.
+dis_example/master/CMakeFiles/master.dir/clean:
+	$(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/clean
+.PHONY : dis_example/master/CMakeFiles/master.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/CMakeFiles/main_grpc_threemess2.dir
+
+# All Build rule for target.
+dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/depend
+	$(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=1,2 "Built target main_grpc_threemess2"
+.PHONY : dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/rule
+
+# Convenience name for target.
+main_grpc_threemess2: dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/rule
+
+.PHONY : main_grpc_threemess2
+
+# clean rule for target.
+dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/clean:
+	$(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/clean
+.PHONY : dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
