@@ -70,6 +70,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/schedule.dir/DependInfo.cmake"
+  "CMakeFiles/master_try1.dir/DependInfo.cmake"
+  "CMakeFiles/send_client1.dir/DependInfo.cmake"
+  "CMakeFiles/send_server1.dir/DependInfo.cmake"
   "CMakeFiles/send_server.dir/DependInfo.cmake"
   "CMakeFiles/send_client.dir/DependInfo.cmake"
   "CMakeFiles/need_utils.dir/DependInfo.cmake"

@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/wavefront.dir/wavefront.cpp.o  -o wavefront  -lnuma -lpthread 

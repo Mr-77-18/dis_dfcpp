@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/tbb_binary_tree.dir/binary_tree.cpp.o  -o tbb_binary_tree  -ltbb 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/matdot_random.dir/matdot_random.cpp.o  -o matdot_random  -lnuma -lpthread 

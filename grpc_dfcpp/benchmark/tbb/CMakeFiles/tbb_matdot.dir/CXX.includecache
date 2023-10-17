@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lsh/dfcpp/benchmark/tbb/matdot.cpp
+tbb/flow_graph.h
+-
+tbb/task_scheduler_init.h
+-
+chrono
+-
+vector
+-
+memory
+-
+random
+-
+tuple
+-
+iostream
+-
+unistd.h
+-
+

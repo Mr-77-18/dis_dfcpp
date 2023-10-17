@@ -374,6 +374,9 @@ class threemess final :
     kDfvIndexFieldNumber = 1,
     kValueFieldNumber = 2,
     kTaskIndexFieldNumber = 3,
+    kDfvIndexBackwardFieldNumber = 4,
+    kPartitionFieldNumber = 5,
+    kExecutorNumberFieldNumber = 6,
   };
   // repeated int32 dfv_index = 1;
   int dfv_index_size() const;
@@ -435,6 +438,46 @@ class threemess final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* _internal_mutable_task_index();
 
   public:
+  // repeated int32 dfv_index_backward = 4;
+  int dfv_index_backward_size() const;
+  private:
+  int _internal_dfv_index_backward_size() const;
+
+  public:
+  void clear_dfv_index_backward() ;
+  ::int32_t dfv_index_backward(int index) const;
+  void set_dfv_index_backward(int index, ::int32_t value);
+  void add_dfv_index_backward(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& dfv_index_backward() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* mutable_dfv_index_backward();
+
+  private:
+  ::int32_t _internal_dfv_index_backward(int index) const;
+  void _internal_add_dfv_index_backward(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& _internal_dfv_index_backward() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* _internal_mutable_dfv_index_backward();
+
+  public:
+  // int32 partition = 5;
+  void clear_partition() ;
+  ::int32_t partition() const;
+  void set_partition(::int32_t value);
+
+  private:
+  ::int32_t _internal_partition() const;
+  void _internal_set_partition(::int32_t value);
+
+  public:
+  // int32 executor_number = 6;
+  void clear_executor_number() ;
+  ::int32_t executor_number() const;
+  void set_executor_number(::int32_t value);
+
+  private:
+  ::int32_t _internal_executor_number() const;
+  void _internal_set_executor_number(::int32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:commu.threemess)
  private:
   class _Internal;
@@ -449,6 +492,10 @@ class threemess final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _value_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t> task_index_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _task_index_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t> dfv_index_backward_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _dfv_index_backward_cached_byte_size_;
+    ::int32_t partition_;
+    ::int32_t executor_number_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -583,8 +630,52 @@ class reply final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kDfvIndexFieldNumber = 2,
+    kValueFieldNumber = 3,
     kRetFieldNumber = 1,
+    kPartitionFieldNumber = 4,
+    kExecutorNumberFieldNumber = 5,
   };
+  // repeated int32 dfv_index = 2;
+  int dfv_index_size() const;
+  private:
+  int _internal_dfv_index_size() const;
+
+  public:
+  void clear_dfv_index() ;
+  ::int32_t dfv_index(int index) const;
+  void set_dfv_index(int index, ::int32_t value);
+  void add_dfv_index(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& dfv_index() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* mutable_dfv_index();
+
+  private:
+  ::int32_t _internal_dfv_index(int index) const;
+  void _internal_add_dfv_index(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& _internal_dfv_index() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* _internal_mutable_dfv_index();
+
+  public:
+  // repeated int32 value = 3;
+  int value_size() const;
+  private:
+  int _internal_value_size() const;
+
+  public:
+  void clear_value() ;
+  ::int32_t value(int index) const;
+  void set_value(int index, ::int32_t value);
+  void add_value(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& value() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* mutable_value();
+
+  private:
+  ::int32_t _internal_value(int index) const;
+  void _internal_add_value(::int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& _internal_value() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* _internal_mutable_value();
+
+  public:
   // int32 ret = 1;
   void clear_ret() ;
   ::int32_t ret() const;
@@ -595,6 +686,26 @@ class reply final :
   void _internal_set_ret(::int32_t value);
 
   public:
+  // int32 partition = 4;
+  void clear_partition() ;
+  ::int32_t partition() const;
+  void set_partition(::int32_t value);
+
+  private:
+  ::int32_t _internal_partition() const;
+  void _internal_set_partition(::int32_t value);
+
+  public:
+  // int32 executor_number = 5;
+  void clear_executor_number() ;
+  ::int32_t executor_number() const;
+  void set_executor_number(::int32_t value);
+
+  private:
+  ::int32_t _internal_executor_number() const;
+  void _internal_set_executor_number(::int32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:commu.reply)
  private:
   class _Internal;
@@ -603,7 +714,13 @@ class reply final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t> dfv_index_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _dfv_index_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t> value_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _value_cached_byte_size_;
     ::int32_t ret_;
+    ::int32_t partition_;
+    ::int32_t executor_number_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -806,6 +923,90 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::_internal_m
   return &_impl_.task_index_;
 }
 
+// repeated int32 dfv_index_backward = 4;
+inline int threemess::_internal_dfv_index_backward_size() const {
+  return _impl_.dfv_index_backward_.size();
+}
+inline int threemess::dfv_index_backward_size() const {
+  return _internal_dfv_index_backward_size();
+}
+inline void threemess::clear_dfv_index_backward() {
+  _internal_mutable_dfv_index_backward()->Clear();
+}
+inline ::int32_t threemess::dfv_index_backward(int index) const {
+  // @@protoc_insertion_point(field_get:commu.threemess.dfv_index_backward)
+  return _internal_dfv_index_backward(index);
+}
+inline void threemess::set_dfv_index_backward(int index, ::int32_t value) {
+  _internal_mutable_dfv_index_backward()->Set(index, value);
+  // @@protoc_insertion_point(field_set:commu.threemess.dfv_index_backward)
+}
+inline void threemess::add_dfv_index_backward(::int32_t value) {
+  _internal_add_dfv_index_backward(value);
+  // @@protoc_insertion_point(field_add:commu.threemess.dfv_index_backward)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& threemess::dfv_index_backward() const {
+  // @@protoc_insertion_point(field_list:commu.threemess.dfv_index_backward)
+  return _internal_dfv_index_backward();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::mutable_dfv_index_backward() {
+  // @@protoc_insertion_point(field_mutable_list:commu.threemess.dfv_index_backward)
+  return _internal_mutable_dfv_index_backward();
+}
+
+inline ::int32_t threemess::_internal_dfv_index_backward(int index) const {
+  return _internal_dfv_index_backward().Get(index);
+}
+inline void threemess::_internal_add_dfv_index_backward(::int32_t value) {
+  _internal_mutable_dfv_index_backward()->Add(value);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& threemess::_internal_dfv_index_backward() const {
+  return _impl_.dfv_index_backward_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* threemess::_internal_mutable_dfv_index_backward() {
+  return &_impl_.dfv_index_backward_;
+}
+
+// int32 partition = 5;
+inline void threemess::clear_partition() {
+  _impl_.partition_ = 0;
+}
+inline ::int32_t threemess::partition() const {
+  // @@protoc_insertion_point(field_get:commu.threemess.partition)
+  return _internal_partition();
+}
+inline void threemess::set_partition(::int32_t value) {
+  _internal_set_partition(value);
+  // @@protoc_insertion_point(field_set:commu.threemess.partition)
+}
+inline ::int32_t threemess::_internal_partition() const {
+  return _impl_.partition_;
+}
+inline void threemess::_internal_set_partition(::int32_t value) {
+  ;
+  _impl_.partition_ = value;
+}
+
+// int32 executor_number = 6;
+inline void threemess::clear_executor_number() {
+  _impl_.executor_number_ = 0;
+}
+inline ::int32_t threemess::executor_number() const {
+  // @@protoc_insertion_point(field_get:commu.threemess.executor_number)
+  return _internal_executor_number();
+}
+inline void threemess::set_executor_number(::int32_t value) {
+  _internal_set_executor_number(value);
+  // @@protoc_insertion_point(field_set:commu.threemess.executor_number)
+}
+inline ::int32_t threemess::_internal_executor_number() const {
+  return _impl_.executor_number_;
+}
+inline void threemess::_internal_set_executor_number(::int32_t value) {
+  ;
+  _impl_.executor_number_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // reply
@@ -828,6 +1029,134 @@ inline ::int32_t reply::_internal_ret() const {
 inline void reply::_internal_set_ret(::int32_t value) {
   ;
   _impl_.ret_ = value;
+}
+
+// repeated int32 dfv_index = 2;
+inline int reply::_internal_dfv_index_size() const {
+  return _impl_.dfv_index_.size();
+}
+inline int reply::dfv_index_size() const {
+  return _internal_dfv_index_size();
+}
+inline void reply::clear_dfv_index() {
+  _internal_mutable_dfv_index()->Clear();
+}
+inline ::int32_t reply::dfv_index(int index) const {
+  // @@protoc_insertion_point(field_get:commu.reply.dfv_index)
+  return _internal_dfv_index(index);
+}
+inline void reply::set_dfv_index(int index, ::int32_t value) {
+  _internal_mutable_dfv_index()->Set(index, value);
+  // @@protoc_insertion_point(field_set:commu.reply.dfv_index)
+}
+inline void reply::add_dfv_index(::int32_t value) {
+  _internal_add_dfv_index(value);
+  // @@protoc_insertion_point(field_add:commu.reply.dfv_index)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& reply::dfv_index() const {
+  // @@protoc_insertion_point(field_list:commu.reply.dfv_index)
+  return _internal_dfv_index();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* reply::mutable_dfv_index() {
+  // @@protoc_insertion_point(field_mutable_list:commu.reply.dfv_index)
+  return _internal_mutable_dfv_index();
+}
+
+inline ::int32_t reply::_internal_dfv_index(int index) const {
+  return _internal_dfv_index().Get(index);
+}
+inline void reply::_internal_add_dfv_index(::int32_t value) {
+  _internal_mutable_dfv_index()->Add(value);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& reply::_internal_dfv_index() const {
+  return _impl_.dfv_index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* reply::_internal_mutable_dfv_index() {
+  return &_impl_.dfv_index_;
+}
+
+// repeated int32 value = 3;
+inline int reply::_internal_value_size() const {
+  return _impl_.value_.size();
+}
+inline int reply::value_size() const {
+  return _internal_value_size();
+}
+inline void reply::clear_value() {
+  _internal_mutable_value()->Clear();
+}
+inline ::int32_t reply::value(int index) const {
+  // @@protoc_insertion_point(field_get:commu.reply.value)
+  return _internal_value(index);
+}
+inline void reply::set_value(int index, ::int32_t value) {
+  _internal_mutable_value()->Set(index, value);
+  // @@protoc_insertion_point(field_set:commu.reply.value)
+}
+inline void reply::add_value(::int32_t value) {
+  _internal_add_value(value);
+  // @@protoc_insertion_point(field_add:commu.reply.value)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& reply::value() const {
+  // @@protoc_insertion_point(field_list:commu.reply.value)
+  return _internal_value();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* reply::mutable_value() {
+  // @@protoc_insertion_point(field_mutable_list:commu.reply.value)
+  return _internal_mutable_value();
+}
+
+inline ::int32_t reply::_internal_value(int index) const {
+  return _internal_value().Get(index);
+}
+inline void reply::_internal_add_value(::int32_t value) {
+  _internal_mutable_value()->Add(value);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>& reply::_internal_value() const {
+  return _impl_.value_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<::int32_t>* reply::_internal_mutable_value() {
+  return &_impl_.value_;
+}
+
+// int32 partition = 4;
+inline void reply::clear_partition() {
+  _impl_.partition_ = 0;
+}
+inline ::int32_t reply::partition() const {
+  // @@protoc_insertion_point(field_get:commu.reply.partition)
+  return _internal_partition();
+}
+inline void reply::set_partition(::int32_t value) {
+  _internal_set_partition(value);
+  // @@protoc_insertion_point(field_set:commu.reply.partition)
+}
+inline ::int32_t reply::_internal_partition() const {
+  return _impl_.partition_;
+}
+inline void reply::_internal_set_partition(::int32_t value) {
+  ;
+  _impl_.partition_ = value;
+}
+
+// int32 executor_number = 5;
+inline void reply::clear_executor_number() {
+  _impl_.executor_number_ = 0;
+}
+inline ::int32_t reply::executor_number() const {
+  // @@protoc_insertion_point(field_get:commu.reply.executor_number)
+  return _internal_executor_number();
+}
+inline void reply::set_executor_number(::int32_t value) {
+  _internal_set_executor_number(value);
+  // @@protoc_insertion_point(field_set:commu.reply.executor_number)
+}
+inline ::int32_t reply::_internal_executor_number() const {
+  return _impl_.executor_number_;
+}
+inline void reply::_internal_set_executor_number(::int32_t value) {
+  ;
+  _impl_.executor_number_ = value;
 }
 
 #ifdef __GNUC__

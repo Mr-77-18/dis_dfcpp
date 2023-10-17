@@ -48,6 +48,13 @@ PROTOBUF_CONSTEXPR threemess::threemess(
   , /*decltype(_impl_.task_index_)*/ {}
   ,/* _impl_._task_index_cached_byte_size_ = */ { 0 }
 
+  , /*decltype(_impl_.dfv_index_backward_)*/ {}
+  ,/* _impl_._dfv_index_backward_cached_byte_size_ = */ { 0 }
+
+  , /*decltype(_impl_.partition_)*/ 0
+
+  , /*decltype(_impl_.executor_number_)*/ 0
+
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct threemessDefaultTypeInternal {
   PROTOBUF_CONSTEXPR threemessDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
@@ -62,7 +69,17 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 template <typename>
 PROTOBUF_CONSTEXPR reply::reply(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.ret_)*/ 0
+    /*decltype(_impl_.dfv_index_)*/ {}
+  ,/* _impl_._dfv_index_cached_byte_size_ = */ { 0 }
+
+  , /*decltype(_impl_.value_)*/ {}
+  ,/* _impl_._value_cached_byte_size_ = */ { 0 }
+
+  , /*decltype(_impl_.ret_)*/ 0
+
+  , /*decltype(_impl_.partition_)*/ 0
+
+  , /*decltype(_impl_.executor_number_)*/ 0
 
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct replyDefaultTypeInternal {
@@ -103,6 +120,9 @@ const ::uint32_t TableStruct_commu_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.dfv_index_),
     PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.value_),
     PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.task_index_),
+    PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.dfv_index_backward_),
+    PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.partition_),
+    PROTOBUF_FIELD_OFFSET(::commu::threemess, _impl_.executor_number_),
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::commu::reply, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -112,13 +132,17 @@ const ::uint32_t TableStruct_commu_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::commu::reply, _impl_.ret_),
+    PROTOBUF_FIELD_OFFSET(::commu::reply, _impl_.dfv_index_),
+    PROTOBUF_FIELD_OFFSET(::commu::reply, _impl_.value_),
+    PROTOBUF_FIELD_OFFSET(::commu::reply, _impl_.partition_),
+    PROTOBUF_FIELD_OFFSET(::commu::reply, _impl_.executor_number_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
         { 0, -1, -1, sizeof(::commu::index)},
         { 9, -1, -1, sizeof(::commu::threemess)},
-        { 20, -1, -1, sizeof(::commu::reply)},
+        { 23, -1, -1, sizeof(::commu::reply)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -128,16 +152,20 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 const char descriptor_table_protodef_commu_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\013commu.proto\022\005commu\"\027\n\005index\022\016\n\006_index\030"
-    "\001 \003(\005\"A\n\tthreemess\022\021\n\tdfv_index\030\001 \003(\005\022\r\n"
-    "\005value\030\002 \003(\005\022\022\n\ntask_index\030\003 \003(\005\"\024\n\005repl"
-    "y\022\013\n\003ret\030\001 \001(\00527\n\005Commu\022.\n\nsend_index\022\020."
-    "commu.threemess\032\014.commu.reply\"\000b\006proto3"
+    "\001 \003(\005\"\211\001\n\tthreemess\022\021\n\tdfv_index\030\001 \003(\005\022\r"
+    "\n\005value\030\002 \003(\005\022\022\n\ntask_index\030\003 \003(\005\022\032\n\022dfv"
+    "_index_backward\030\004 \003(\005\022\021\n\tpartition\030\005 \001(\005"
+    "\022\027\n\017executor_number\030\006 \001(\005\"b\n\005reply\022\013\n\003re"
+    "t\030\001 \001(\005\022\021\n\tdfv_index\030\002 \003(\005\022\r\n\005value\030\003 \003("
+    "\005\022\021\n\tpartition\030\004 \001(\005\022\027\n\017executor_number\030"
+    "\005 \001(\00527\n\005Commu\022.\n\nsend_index\022\020.commu.thr"
+    "eemess\032\014.commu.reply\"\000b\006proto3"
 };
 static ::absl::once_flag descriptor_table_commu_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_commu_2eproto = {
     false,
     false,
-    199,
+    350,
     descriptor_table_protodef_commu_2eproto,
     "commu.proto",
     &descriptor_table_commu_2eproto_once,
@@ -386,9 +414,19 @@ threemess::threemess(const threemess& from)
     , decltype(_impl_.task_index_) { from._impl_.task_index_ }
     ,/* _impl_._task_index_cached_byte_size_ = */ { 0 }
 
+    , decltype(_impl_.dfv_index_backward_) { from._impl_.dfv_index_backward_ }
+    ,/* _impl_._dfv_index_backward_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.partition_) {}
+
+    , decltype(_impl_.executor_number_) {}
+
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.partition_, &from._impl_.partition_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.executor_number_) -
+    reinterpret_cast<char*>(&_impl_.partition_)) + sizeof(_impl_.executor_number_));
   // @@protoc_insertion_point(copy_constructor:commu.threemess)
 }
 
@@ -403,6 +441,13 @@ inline void threemess::SharedCtor(::_pb::Arena* arena) {
 
     , decltype(_impl_.task_index_) { arena }
     ,/* _impl_._task_index_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.dfv_index_backward_) { arena }
+    ,/* _impl_._dfv_index_backward_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.partition_) { 0 }
+
+    , decltype(_impl_.executor_number_) { 0 }
 
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -422,6 +467,7 @@ inline void threemess::SharedDtor() {
   _impl_.dfv_index_.~RepeatedField();
   _impl_.value_.~RepeatedField();
   _impl_.task_index_.~RepeatedField();
+  _impl_.dfv_index_backward_.~RepeatedField();
 }
 
 void threemess::SetCachedSize(int size) const {
@@ -437,6 +483,10 @@ void threemess::Clear() {
   _internal_mutable_dfv_index()->Clear();
   _internal_mutable_value()->Clear();
   _internal_mutable_task_index()->Clear();
+  _internal_mutable_dfv_index_backward()->Clear();
+  ::memset(&_impl_.partition_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.executor_number_) -
+      reinterpret_cast<char*>(&_impl_.partition_)) + sizeof(_impl_.executor_number_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -477,6 +527,36 @@ const char* threemess::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
           CHK_(ptr);
         } else if (static_cast<::uint8_t>(tag) == 24) {
           _internal_add_task_index(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // repeated int32 dfv_index_backward = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 34)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_dfv_index_backward(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::uint8_t>(tag) == 32) {
+          _internal_add_dfv_index_backward(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 partition = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 40)) {
+          _impl_.partition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 executor_number = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 48)) {
+          _impl_.executor_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else {
           goto handle_unusual;
@@ -538,6 +618,29 @@ failure:
     }
   }
 
+  // repeated int32 dfv_index_backward = 4;
+  {
+    int byte_size = _impl_._dfv_index_backward_cached_byte_size_.Get();
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(4, _internal_dfv_index_backward(),
+                                                 byte_size, target);
+    }
+  }
+
+  // int32 partition = 5;
+  if (this->_internal_partition() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        5, this->_internal_partition(), target);
+  }
+
+  // int32 executor_number = 6;
+  if (this->_internal_executor_number() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        6, this->_internal_executor_number(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -596,6 +699,32 @@ failure:
     total_size += tag_size + data_size;
   }
 
+  // repeated int32 dfv_index_backward = 4;
+  {
+    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_dfv_index_backward())
+    ;
+    _impl_._dfv_index_backward_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+
+  // int32 partition = 5;
+  if (this->_internal_partition() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_partition());
+  }
+
+  // int32 executor_number = 6;
+  if (this->_internal_executor_number() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_executor_number());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -617,6 +746,13 @@ void threemess::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROT
   _this->_impl_.dfv_index_.MergeFrom(from._impl_.dfv_index_);
   _this->_impl_.value_.MergeFrom(from._impl_.value_);
   _this->_impl_.task_index_.MergeFrom(from._impl_.task_index_);
+  _this->_impl_.dfv_index_backward_.MergeFrom(from._impl_.dfv_index_backward_);
+  if (from._internal_partition() != 0) {
+    _this->_internal_set_partition(from._internal_partition());
+  }
+  if (from._internal_executor_number() != 0) {
+    _this->_internal_set_executor_number(from._internal_executor_number());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -637,6 +773,13 @@ void threemess::InternalSwap(threemess* other) {
   _impl_.dfv_index_.InternalSwap(&other->_impl_.dfv_index_);
   _impl_.value_.InternalSwap(&other->_impl_.value_);
   _impl_.task_index_.InternalSwap(&other->_impl_.task_index_);
+  _impl_.dfv_index_backward_.InternalSwap(&other->_impl_.dfv_index_backward_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(threemess, _impl_.executor_number_)
+      + sizeof(threemess::_impl_.executor_number_)
+      - PROTOBUF_FIELD_OFFSET(threemess, _impl_.partition_)>(
+          reinterpret_cast<char*>(&_impl_.partition_),
+          reinterpret_cast<char*>(&other->_impl_.partition_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata threemess::GetMetadata() const {
@@ -656,16 +799,44 @@ reply::reply(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   // @@protoc_insertion_point(arena_constructor:commu.reply)
 }
 reply::reply(const reply& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  reply* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.dfv_index_) { from._impl_.dfv_index_ }
+    ,/* _impl_._dfv_index_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.value_) { from._impl_.value_ }
+    ,/* _impl_._value_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.ret_) {}
+
+    , decltype(_impl_.partition_) {}
+
+    , decltype(_impl_.executor_number_) {}
+
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.ret_, &from._impl_.ret_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.executor_number_) -
+    reinterpret_cast<char*>(&_impl_.ret_)) + sizeof(_impl_.executor_number_));
   // @@protoc_insertion_point(copy_constructor:commu.reply)
 }
 
 inline void reply::SharedCtor(::_pb::Arena* arena) {
   (void)arena;
   new (&_impl_) Impl_{
-      decltype(_impl_.ret_) { 0 }
+      decltype(_impl_.dfv_index_) { arena }
+    ,/* _impl_._dfv_index_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.value_) { arena }
+    ,/* _impl_._value_cached_byte_size_ = */ { 0 }
+
+    , decltype(_impl_.ret_) { 0 }
+
+    , decltype(_impl_.partition_) { 0 }
+
+    , decltype(_impl_.executor_number_) { 0 }
 
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -682,6 +853,8 @@ reply::~reply() {
 
 inline void reply::SharedDtor() {
   ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.dfv_index_.~RepeatedField();
+  _impl_.value_.~RepeatedField();
 }
 
 void reply::SetCachedSize(int size) const {
@@ -694,7 +867,11 @@ void reply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.ret_ = 0;
+  _internal_mutable_dfv_index()->Clear();
+  _internal_mutable_value()->Clear();
+  ::memset(&_impl_.ret_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.executor_number_) -
+      reinterpret_cast<char*>(&_impl_.ret_)) + sizeof(_impl_.executor_number_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -708,6 +885,48 @@ const char* reply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
           _impl_.ret_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // repeated int32 dfv_index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_dfv_index(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::uint8_t>(tag) == 16) {
+          _internal_add_dfv_index(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // repeated int32 value = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 26)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_value(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::uint8_t>(tag) == 24) {
+          _internal_add_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 partition = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 32)) {
+          _impl_.partition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 executor_number = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 40)) {
+          _impl_.executor_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else {
           goto handle_unusual;
@@ -749,6 +968,38 @@ failure:
         1, this->_internal_ret(), target);
   }
 
+  // repeated int32 dfv_index = 2;
+  {
+    int byte_size = _impl_._dfv_index_cached_byte_size_.Get();
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(2, _internal_dfv_index(),
+                                                 byte_size, target);
+    }
+  }
+
+  // repeated int32 value = 3;
+  {
+    int byte_size = _impl_._value_cached_byte_size_.Get();
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(3, _internal_value(),
+                                                 byte_size, target);
+    }
+  }
+
+  // int32 partition = 4;
+  if (this->_internal_partition() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        4, this->_internal_partition(), target);
+  }
+
+  // int32 executor_number = 5;
+  if (this->_internal_executor_number() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        5, this->_internal_executor_number(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -765,10 +1016,50 @@ failure:
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated int32 dfv_index = 2;
+  {
+    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_dfv_index())
+    ;
+    _impl_._dfv_index_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+
+  // repeated int32 value = 3;
+  {
+    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_value())
+    ;
+    _impl_._value_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    std::size_t tag_size = data_size == 0
+        ? 0
+        : 1 + ::_pbi::WireFormatLite::Int32Size(
+                            static_cast<int32_t>(data_size))
+    ;
+    total_size += tag_size + data_size;
+  }
+
   // int32 ret = 1;
   if (this->_internal_ret() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
         this->_internal_ret());
+  }
+
+  // int32 partition = 4;
+  if (this->_internal_partition() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_partition());
+  }
+
+  // int32 executor_number = 5;
+  if (this->_internal_executor_number() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_executor_number());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -789,8 +1080,16 @@ void reply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.dfv_index_.MergeFrom(from._impl_.dfv_index_);
+  _this->_impl_.value_.MergeFrom(from._impl_.value_);
   if (from._internal_ret() != 0) {
     _this->_internal_set_ret(from._internal_ret());
+  }
+  if (from._internal_partition() != 0) {
+    _this->_internal_set_partition(from._internal_partition());
+  }
+  if (from._internal_executor_number() != 0) {
+    _this->_internal_set_executor_number(from._internal_executor_number());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -809,8 +1108,14 @@ bool reply::IsInitialized() const {
 void reply::InternalSwap(reply* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-
-  swap(_impl_.ret_, other->_impl_.ret_);
+  _impl_.dfv_index_.InternalSwap(&other->_impl_.dfv_index_);
+  _impl_.value_.InternalSwap(&other->_impl_.value_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(reply, _impl_.executor_number_)
+      + sizeof(reply::_impl_.executor_number_)
+      - PROTOBUF_FIELD_OFFSET(reply, _impl_.ret_)>(
+          reinterpret_cast<char*>(&_impl_.ret_),
+          reinterpret_cast<char*>(&other->_impl_.ret_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata reply::GetMetadata() const {

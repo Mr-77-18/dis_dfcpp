@@ -85,7 +85,6 @@ class Commu final {
     ::grpc::ClientAsyncResponseReader< ::commu::reply>* PrepareAsyncsend_indexRaw(::grpc::ClientContext* context, const ::commu::threemess& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_send_index_;
   };
-
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
   class Service : public ::grpc::Service {

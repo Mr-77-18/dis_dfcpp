@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lsh/dfcpp/benchmark/openmp/omp_kmean.cpp
+iostream
+-
+vector
+-
+chrono
+-
+omp.h
+-
+

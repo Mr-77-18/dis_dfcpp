@@ -85,6 +85,7 @@ send_server: /home/lsh/.local/lib/libabsl_flags_parse.a
 send_server: /home/lsh/.local/lib/libgrpc++_reflection.a
 send_server: /home/lsh/.local/lib/libgrpc++.a
 send_server: /home/lsh/.local/lib/libprotobuf.a
+send_server: /home/lsh/dfcpp/dagP/lib/libdagp.a
 send_server: /home/lsh/.local/lib/libgrpc.a
 send_server: /home/lsh/.local/lib/libcares.a
 send_server: /home/lsh/.local/lib/libaddress_sorting.a

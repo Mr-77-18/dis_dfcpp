@@ -10,6 +10,8 @@ set(hw_grpc_srcs "${CMAKE_CURRENT_BINARY_DIR}/../commu.grpc.pb.cc")
 set(hw_grpc_hdrs "${CMAKE_CURRENT_BINARY_DIR}/../commu.grpc.pb.h")
 
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+
 add_library(need_utils
   ${hw_proto_srcs}
   ${hw_grpc_srcs}
@@ -22,14 +24,22 @@ target_link_libraries(need_utils
   ${_PROTOBUF_LIBPROTOBUF})
 
 foreach(_target
-    send_client send_server)
+    send_client send_server send_server1 send_client1 master_try1 schedule)
   add_executable(${_target} "${_target}.cc")
+  include_directories(
+    ../dfcpp/
+    ../dagP/src/dfcpp_dagP_port
+    )
   target_link_libraries(${_target}
     need_utils
     absl::flags
     absl::flags_parse
     ${_REFLECTION}
     ${_GRPC_GRPCPP}
-    ${_PROTOBUF_LIBPROTOBUF})
+    ${_PROTOBUF_LIBPROTOBUF}
+    -lm
+    /home/lsh/dfcpp/dagP/lib/libdagp.a
+    )
+
 endforeach()
 

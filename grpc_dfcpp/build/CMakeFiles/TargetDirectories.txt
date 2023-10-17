@@ -1,5 +1,9 @@
 /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/rebuild_cache.dir
 /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/edit_cache.dir
+/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/schedule.dir
+/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/master_try1.dir
+/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/send_client1.dir
+/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/send_server1.dir
 /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/send_server.dir
 /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/send_client.dir
 /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles/need_utils.dir

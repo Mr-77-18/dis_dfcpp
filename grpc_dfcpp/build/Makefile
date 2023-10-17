@@ -111,6 +111,58 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named schedule
+
+# Build rule for target.
+schedule: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 schedule
+.PHONY : schedule
+
+# fast build rule for target.
+schedule/fast:
+	$(MAKE) -f CMakeFiles/schedule.dir/build.make CMakeFiles/schedule.dir/build
+.PHONY : schedule/fast
+
+#=============================================================================
+# Target rules for targets named master_try1
+
+# Build rule for target.
+master_try1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 master_try1
+.PHONY : master_try1
+
+# fast build rule for target.
+master_try1/fast:
+	$(MAKE) -f CMakeFiles/master_try1.dir/build.make CMakeFiles/master_try1.dir/build
+.PHONY : master_try1/fast
+
+#=============================================================================
+# Target rules for targets named send_client1
+
+# Build rule for target.
+send_client1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 send_client1
+.PHONY : send_client1
+
+# fast build rule for target.
+send_client1/fast:
+	$(MAKE) -f CMakeFiles/send_client1.dir/build.make CMakeFiles/send_client1.dir/build
+.PHONY : send_client1/fast
+
+#=============================================================================
+# Target rules for targets named send_server1
+
+# Build rule for target.
+send_server1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 send_server1
+.PHONY : send_server1
+
+# fast build rule for target.
+send_server1/fast:
+	$(MAKE) -f CMakeFiles/send_server1.dir/build.make CMakeFiles/send_server1.dir/build
+.PHONY : send_server1/fast
+
+#=============================================================================
 # Target rules for targets named send_server
 
 # Build rule for target.
@@ -203,6 +255,60 @@ commu.pb.cc.s:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/commu.pb.cc.s
 .PHONY : commu.pb.cc.s
 
+master_try1.o: master_try1.cc.o
+
+.PHONY : master_try1.o
+
+# target to build an object file
+master_try1.cc.o:
+	$(MAKE) -f CMakeFiles/master_try1.dir/build.make CMakeFiles/master_try1.dir/master_try1.cc.o
+.PHONY : master_try1.cc.o
+
+master_try1.i: master_try1.cc.i
+
+.PHONY : master_try1.i
+
+# target to preprocess a source file
+master_try1.cc.i:
+	$(MAKE) -f CMakeFiles/master_try1.dir/build.make CMakeFiles/master_try1.dir/master_try1.cc.i
+.PHONY : master_try1.cc.i
+
+master_try1.s: master_try1.cc.s
+
+.PHONY : master_try1.s
+
+# target to generate assembly for a file
+master_try1.cc.s:
+	$(MAKE) -f CMakeFiles/master_try1.dir/build.make CMakeFiles/master_try1.dir/master_try1.cc.s
+.PHONY : master_try1.cc.s
+
+schedule.o: schedule.cc.o
+
+.PHONY : schedule.o
+
+# target to build an object file
+schedule.cc.o:
+	$(MAKE) -f CMakeFiles/schedule.dir/build.make CMakeFiles/schedule.dir/schedule.cc.o
+.PHONY : schedule.cc.o
+
+schedule.i: schedule.cc.i
+
+.PHONY : schedule.i
+
+# target to preprocess a source file
+schedule.cc.i:
+	$(MAKE) -f CMakeFiles/schedule.dir/build.make CMakeFiles/schedule.dir/schedule.cc.i
+.PHONY : schedule.cc.i
+
+schedule.s: schedule.cc.s
+
+.PHONY : schedule.s
+
+# target to generate assembly for a file
+schedule.cc.s:
+	$(MAKE) -f CMakeFiles/schedule.dir/build.make CMakeFiles/schedule.dir/schedule.cc.s
+.PHONY : schedule.cc.s
+
 send_client.o: send_client.cc.o
 
 .PHONY : send_client.o
@@ -229,6 +335,33 @@ send_client.s: send_client.cc.s
 send_client.cc.s:
 	$(MAKE) -f CMakeFiles/send_client.dir/build.make CMakeFiles/send_client.dir/send_client.cc.s
 .PHONY : send_client.cc.s
+
+send_client1.o: send_client1.cc.o
+
+.PHONY : send_client1.o
+
+# target to build an object file
+send_client1.cc.o:
+	$(MAKE) -f CMakeFiles/send_client1.dir/build.make CMakeFiles/send_client1.dir/send_client1.cc.o
+.PHONY : send_client1.cc.o
+
+send_client1.i: send_client1.cc.i
+
+.PHONY : send_client1.i
+
+# target to preprocess a source file
+send_client1.cc.i:
+	$(MAKE) -f CMakeFiles/send_client1.dir/build.make CMakeFiles/send_client1.dir/send_client1.cc.i
+.PHONY : send_client1.cc.i
+
+send_client1.s: send_client1.cc.s
+
+.PHONY : send_client1.s
+
+# target to generate assembly for a file
+send_client1.cc.s:
+	$(MAKE) -f CMakeFiles/send_client1.dir/build.make CMakeFiles/send_client1.dir/send_client1.cc.s
+.PHONY : send_client1.cc.s
 
 send_server.o: send_server.cc.o
 
@@ -257,6 +390,33 @@ send_server.cc.s:
 	$(MAKE) -f CMakeFiles/send_server.dir/build.make CMakeFiles/send_server.dir/send_server.cc.s
 .PHONY : send_server.cc.s
 
+send_server1.o: send_server1.cc.o
+
+.PHONY : send_server1.o
+
+# target to build an object file
+send_server1.cc.o:
+	$(MAKE) -f CMakeFiles/send_server1.dir/build.make CMakeFiles/send_server1.dir/send_server1.cc.o
+.PHONY : send_server1.cc.o
+
+send_server1.i: send_server1.cc.i
+
+.PHONY : send_server1.i
+
+# target to preprocess a source file
+send_server1.cc.i:
+	$(MAKE) -f CMakeFiles/send_server1.dir/build.make CMakeFiles/send_server1.dir/send_server1.cc.i
+.PHONY : send_server1.cc.i
+
+send_server1.s: send_server1.cc.s
+
+.PHONY : send_server1.s
+
+# target to generate assembly for a file
+send_server1.cc.s:
+	$(MAKE) -f CMakeFiles/send_server1.dir/build.make CMakeFiles/send_server1.dir/send_server1.cc.s
+.PHONY : send_server1.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -265,6 +425,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... schedule"
+	@echo "... master_try1"
+	@echo "... send_client1"
+	@echo "... send_server1"
 	@echo "... send_server"
 	@echo "... send_client"
 	@echo "... need_utils"
@@ -274,12 +438,24 @@ help:
 	@echo "... commu.pb.o"
 	@echo "... commu.pb.i"
 	@echo "... commu.pb.s"
+	@echo "... master_try1.o"
+	@echo "... master_try1.i"
+	@echo "... master_try1.s"
+	@echo "... schedule.o"
+	@echo "... schedule.i"
+	@echo "... schedule.s"
 	@echo "... send_client.o"
 	@echo "... send_client.i"
 	@echo "... send_client.s"
+	@echo "... send_client1.o"
+	@echo "... send_client1.i"
+	@echo "... send_client1.s"
 	@echo "... send_server.o"
 	@echo "... send_server.i"
 	@echo "... send_server.s"
+	@echo "... send_server1.o"
+	@echo "... send_server1.i"
+	@echo "... send_server1.s"
 .PHONY : help
 
 

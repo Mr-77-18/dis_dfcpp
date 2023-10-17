@@ -53,6 +53,10 @@ CMAKE_BINARY_DIR = /home/lsh/dfcpp/grpc_dfcpp/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/schedule.dir/all
+all: CMakeFiles/master_try1.dir/all
+all: CMakeFiles/send_client1.dir/all
+all: CMakeFiles/send_server1.dir/all
 all: CMakeFiles/send_server.dir/all
 all: CMakeFiles/send_client.dir/all
 all: CMakeFiles/need_utils.dir/all
@@ -65,11 +69,123 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/schedule.dir/clean
+clean: CMakeFiles/master_try1.dir/clean
+clean: CMakeFiles/send_client1.dir/clean
+clean: CMakeFiles/send_server1.dir/clean
 clean: CMakeFiles/send_server.dir/clean
 clean: CMakeFiles/send_client.dir/clean
 clean: CMakeFiles/need_utils.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/schedule.dir
+
+# All Build rule for target.
+CMakeFiles/schedule.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f CMakeFiles/schedule.dir/build.make CMakeFiles/schedule.dir/depend
+	$(MAKE) -f CMakeFiles/schedule.dir/build.make CMakeFiles/schedule.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=6,7 "Built target schedule"
+.PHONY : CMakeFiles/schedule.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/schedule.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/schedule.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/schedule.dir/rule
+
+# Convenience name for target.
+schedule: CMakeFiles/schedule.dir/rule
+
+.PHONY : schedule
+
+# clean rule for target.
+CMakeFiles/schedule.dir/clean:
+	$(MAKE) -f CMakeFiles/schedule.dir/build.make CMakeFiles/schedule.dir/clean
+.PHONY : CMakeFiles/schedule.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/master_try1.dir
+
+# All Build rule for target.
+CMakeFiles/master_try1.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f CMakeFiles/master_try1.dir/build.make CMakeFiles/master_try1.dir/depend
+	$(MAKE) -f CMakeFiles/master_try1.dir/build.make CMakeFiles/master_try1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=1,2 "Built target master_try1"
+.PHONY : CMakeFiles/master_try1.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/master_try1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/master_try1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/master_try1.dir/rule
+
+# Convenience name for target.
+master_try1: CMakeFiles/master_try1.dir/rule
+
+.PHONY : master_try1
+
+# clean rule for target.
+CMakeFiles/master_try1.dir/clean:
+	$(MAKE) -f CMakeFiles/master_try1.dir/build.make CMakeFiles/master_try1.dir/clean
+.PHONY : CMakeFiles/master_try1.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/send_client1.dir
+
+# All Build rule for target.
+CMakeFiles/send_client1.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f CMakeFiles/send_client1.dir/build.make CMakeFiles/send_client1.dir/depend
+	$(MAKE) -f CMakeFiles/send_client1.dir/build.make CMakeFiles/send_client1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=10,11 "Built target send_client1"
+.PHONY : CMakeFiles/send_client1.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/send_client1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/send_client1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/send_client1.dir/rule
+
+# Convenience name for target.
+send_client1: CMakeFiles/send_client1.dir/rule
+
+.PHONY : send_client1
+
+# clean rule for target.
+CMakeFiles/send_client1.dir/clean:
+	$(MAKE) -f CMakeFiles/send_client1.dir/build.make CMakeFiles/send_client1.dir/clean
+.PHONY : CMakeFiles/send_client1.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/send_server1.dir
+
+# All Build rule for target.
+CMakeFiles/send_server1.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f CMakeFiles/send_server1.dir/build.make CMakeFiles/send_server1.dir/depend
+	$(MAKE) -f CMakeFiles/send_server1.dir/build.make CMakeFiles/send_server1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=14,15 "Built target send_server1"
+.PHONY : CMakeFiles/send_server1.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/send_server1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/send_server1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/send_server1.dir/rule
+
+# Convenience name for target.
+send_server1: CMakeFiles/send_server1.dir/rule
+
+.PHONY : send_server1
+
+# clean rule for target.
+CMakeFiles/send_server1.dir/clean:
+	$(MAKE) -f CMakeFiles/send_server1.dir/build.make CMakeFiles/send_server1.dir/clean
+.PHONY : CMakeFiles/send_server1.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/send_server.dir
@@ -78,7 +194,7 @@ clean: CMakeFiles/need_utils.dir/clean
 CMakeFiles/send_server.dir/all: CMakeFiles/need_utils.dir/all
 	$(MAKE) -f CMakeFiles/send_server.dir/build.make CMakeFiles/send_server.dir/depend
 	$(MAKE) -f CMakeFiles/send_server.dir/build.make CMakeFiles/send_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=6,7 "Built target send_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=12,13 "Built target send_server"
 .PHONY : CMakeFiles/send_server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -105,7 +221,7 @@ CMakeFiles/send_server.dir/clean:
 CMakeFiles/send_client.dir/all: CMakeFiles/need_utils.dir/all
 	$(MAKE) -f CMakeFiles/send_client.dir/build.make CMakeFiles/send_client.dir/depend
 	$(MAKE) -f CMakeFiles/send_client.dir/build.make CMakeFiles/send_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=4,5 "Built target send_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=8,9 "Built target send_client"
 .PHONY : CMakeFiles/send_client.dir/all
 
 # Build rule for subdir invocation for target.
@@ -132,7 +248,7 @@ CMakeFiles/send_client.dir/clean:
 CMakeFiles/need_utils.dir/all:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/depend
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=1,2,3 "Built target need_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/grpc_dfcpp/build/CMakeFiles --progress-num=3,4,5 "Built target need_utils"
 .PHONY : CMakeFiles/need_utils.dir/all
 
 # Build rule for subdir invocation for target.

@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/stl_kmean.dir/stl_kmean.cpp.o  -o stl_kmean  -lpthread 
