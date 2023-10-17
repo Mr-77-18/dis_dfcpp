@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/matdot.dir/matdot.cpp.o  -o matdot  -lnuma -lpthread 

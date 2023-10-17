@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/tbb_linearchain.dir/linearchain.cpp.o  -o tbb_linearchain  -ltbb 

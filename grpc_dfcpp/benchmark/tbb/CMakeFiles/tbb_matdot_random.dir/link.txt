@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/tbb_matdot_random.dir/matdot_random.cpp.o  -o tbb_matdot_random  -ltbb 

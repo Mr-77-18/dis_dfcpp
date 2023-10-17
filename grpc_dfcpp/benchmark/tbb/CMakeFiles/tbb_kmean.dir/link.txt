@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/tbb_kmean.dir/kmean.cpp.o  -o tbb_kmean  -ltbb 

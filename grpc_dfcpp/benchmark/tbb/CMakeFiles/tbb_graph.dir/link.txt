@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/tbb_graph.dir/graph.cpp.o  -o tbb_graph  -ltbb 
