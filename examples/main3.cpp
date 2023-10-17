@@ -8,30 +8,34 @@ using namespace std;
 using namespace DFCPP;
 
 
-//   task1 --> task2
+//   task1 -->(A) task2
 //     |         |
-//     v         v
-//   task3 --> task4
+//     v(C)      v(B)
+//   task3 -->(D) task4
 
 int main() {
     DFGraph graph;
     auto [A,B,C] = graph.createDFV<int, int, int>();
-    auto task1 = graph.emplace([](DFV<int> A){
+    auto D = graph.createDFV<int>();
+
+    auto task1 = graph.emplace([](DFV<int> A , DFV<int> C){
             A = 1;
+            C = 1;
             cout << "task1\n";
-        }, make_tuple(), make_tuple(A));
+        }, make_tuple(), make_tuple(A , C));
     auto task2 = graph.emplace([](int a, DFV<int> B) {
             B = a + 1;
             cout << "task2" << endl;
         }, make_tuple(A), make_tuple(B));
-    auto task3 = graph.emplace([](int a, DFV<int> C){
-            C = a + 2;
+    auto task3 = graph.emplace([](int c, DFV<int> D){
+            D = c + 2;
             cout << "task3\n";
-        }, make_tuple(A), make_tuple(C));
-    auto task4 = graph.emplace([](int b, int c){
-            cout << b + c <<  endl;
+        }, make_tuple(C), make_tuple(D));
+    auto task4 = graph.emplace([](int b, int d){
+            cout << b + d <<  endl;
             cout << "task4\n" << endl;
-        }, make_tuple(B,C));
+        }, make_tuple(B , D));
+
 
     task1.name("task1");
     task2.name("task2");

@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/lsh/dfcpp/examples/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,134 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named loopback
+# Target rules for targets named main_grpc_threemess3
 
 # Build rule for target.
-loopback: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 loopback
-.PHONY : loopback
+main_grpc_threemess3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main_grpc_threemess3
+.PHONY : main_grpc_threemess3
 
 # fast build rule for target.
-loopback/fast:
-	$(MAKE) -f CMakeFiles/loopback.dir/build.make CMakeFiles/loopback.dir/build
-.PHONY : loopback/fast
+main_grpc_threemess3/fast:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/build
+.PHONY : main_grpc_threemess3/fast
 
 #=============================================================================
-# Target rules for targets named HoardTest
+# Target rules for targets named main_grpc_threemess2
 
 # Build rule for target.
-HoardTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 HoardTest
-.PHONY : HoardTest
+main_grpc_threemess2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main_grpc_threemess2
+.PHONY : main_grpc_threemess2
 
 # fast build rule for target.
-HoardTest/fast:
-	$(MAKE) -f CMakeFiles/HoardTest.dir/build.make CMakeFiles/HoardTest.dir/build
-.PHONY : HoardTest/fast
-
-#=============================================================================
-# Target rules for targets named main7
-
-# Build rule for target.
-main7: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main7
-.PHONY : main7
-
-# fast build rule for target.
-main7/fast:
-	$(MAKE) -f CMakeFiles/main7.dir/build.make CMakeFiles/main7.dir/build
-.PHONY : main7/fast
-
-#=============================================================================
-# Target rules for targets named fibonacci
-
-# Build rule for target.
-fibonacci: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fibonacci
-.PHONY : fibonacci
-
-# fast build rule for target.
-fibonacci/fast:
-	$(MAKE) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/build
-.PHONY : fibonacci/fast
-
-#=============================================================================
-# Target rules for targets named main5
-
-# Build rule for target.
-main5: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main5
-.PHONY : main5
-
-# fast build rule for target.
-main5/fast:
-	$(MAKE) -f CMakeFiles/main5.dir/build.make CMakeFiles/main5.dir/build
-.PHONY : main5/fast
-
-#=============================================================================
-# Target rules for targets named main4
-
-# Build rule for target.
-main4: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main4
-.PHONY : main4
-
-# fast build rule for target.
-main4/fast:
-	$(MAKE) -f CMakeFiles/main4.dir/build.make CMakeFiles/main4.dir/build
-.PHONY : main4/fast
-
-#=============================================================================
-# Target rules for targets named main3
-
-# Build rule for target.
-main3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main3
-.PHONY : main3
-
-# fast build rule for target.
-main3/fast:
-	$(MAKE) -f CMakeFiles/main3.dir/build.make CMakeFiles/main3.dir/build
-.PHONY : main3/fast
-
-#=============================================================================
-# Target rules for targets named main2
-
-# Build rule for target.
-main2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main2
-.PHONY : main2
-
-# fast build rule for target.
-main2/fast:
-	$(MAKE) -f CMakeFiles/main2.dir/build.make CMakeFiles/main2.dir/build
-.PHONY : main2/fast
-
-#=============================================================================
-# Target rules for targets named main1
-
-# Build rule for target.
-main1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main1
-.PHONY : main1
-
-# fast build rule for target.
-main1/fast:
-	$(MAKE) -f CMakeFiles/main1.dir/build.make CMakeFiles/main1.dir/build
-.PHONY : main1/fast
-
-#=============================================================================
-# Target rules for targets named main_grpc_threemess
-
-# Build rule for target.
-main_grpc_threemess: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main_grpc_threemess
-.PHONY : main_grpc_threemess
-
-# fast build rule for target.
-main_grpc_threemess/fast:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess.dir/build.make CMakeFiles/main_grpc_threemess.dir/build
-.PHONY : main_grpc_threemess/fast
+main_grpc_threemess2/fast:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/build
+.PHONY : main_grpc_threemess2/fast
 
 #=============================================================================
 # Target rules for targets named need_utils
@@ -252,60 +148,6 @@ need_utils: cmake_check_build_system
 need_utils/fast:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/build
 .PHONY : need_utils/fast
-
-HoardTest.o: HoardTest.cpp.o
-
-.PHONY : HoardTest.o
-
-# target to build an object file
-HoardTest.cpp.o:
-	$(MAKE) -f CMakeFiles/HoardTest.dir/build.make CMakeFiles/HoardTest.dir/HoardTest.cpp.o
-.PHONY : HoardTest.cpp.o
-
-HoardTest.i: HoardTest.cpp.i
-
-.PHONY : HoardTest.i
-
-# target to preprocess a source file
-HoardTest.cpp.i:
-	$(MAKE) -f CMakeFiles/HoardTest.dir/build.make CMakeFiles/HoardTest.dir/HoardTest.cpp.i
-.PHONY : HoardTest.cpp.i
-
-HoardTest.s: HoardTest.cpp.s
-
-.PHONY : HoardTest.s
-
-# target to generate assembly for a file
-HoardTest.cpp.s:
-	$(MAKE) -f CMakeFiles/HoardTest.dir/build.make CMakeFiles/HoardTest.dir/HoardTest.cpp.s
-.PHONY : HoardTest.cpp.s
-
-fibonacci.o: fibonacci.cpp.o
-
-.PHONY : fibonacci.o
-
-# target to build an object file
-fibonacci.cpp.o:
-	$(MAKE) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.o
-.PHONY : fibonacci.cpp.o
-
-fibonacci.i: fibonacci.cpp.i
-
-.PHONY : fibonacci.i
-
-# target to preprocess a source file
-fibonacci.cpp.i:
-	$(MAKE) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.i
-.PHONY : fibonacci.cpp.i
-
-fibonacci.s: fibonacci.cpp.s
-
-.PHONY : fibonacci.s
-
-# target to generate assembly for a file
-fibonacci.cpp.s:
-	$(MAKE) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.s
-.PHONY : fibonacci.cpp.s
 
 home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.o: home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc.o
 
@@ -361,221 +203,59 @@ home/lsh/dfcpp/grpc_dfcpp/commu.pb.cc.s:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/home/lsh/dfcpp/grpc_dfcpp/commu.pb.cc.s
 .PHONY : home/lsh/dfcpp/grpc_dfcpp/commu.pb.cc.s
 
-loopback.o: loopback.cpp.o
+main_grpc_threemess2.o: main_grpc_threemess2.cpp.o
 
-.PHONY : loopback.o
-
-# target to build an object file
-loopback.cpp.o:
-	$(MAKE) -f CMakeFiles/loopback.dir/build.make CMakeFiles/loopback.dir/loopback.cpp.o
-.PHONY : loopback.cpp.o
-
-loopback.i: loopback.cpp.i
-
-.PHONY : loopback.i
-
-# target to preprocess a source file
-loopback.cpp.i:
-	$(MAKE) -f CMakeFiles/loopback.dir/build.make CMakeFiles/loopback.dir/loopback.cpp.i
-.PHONY : loopback.cpp.i
-
-loopback.s: loopback.cpp.s
-
-.PHONY : loopback.s
-
-# target to generate assembly for a file
-loopback.cpp.s:
-	$(MAKE) -f CMakeFiles/loopback.dir/build.make CMakeFiles/loopback.dir/loopback.cpp.s
-.PHONY : loopback.cpp.s
-
-main1.o: main1.cpp.o
-
-.PHONY : main1.o
+.PHONY : main_grpc_threemess2.o
 
 # target to build an object file
-main1.cpp.o:
-	$(MAKE) -f CMakeFiles/main1.dir/build.make CMakeFiles/main1.dir/main1.cpp.o
-.PHONY : main1.cpp.o
+main_grpc_threemess2.cpp.o:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/main_grpc_threemess2.cpp.o
+.PHONY : main_grpc_threemess2.cpp.o
 
-main1.i: main1.cpp.i
+main_grpc_threemess2.i: main_grpc_threemess2.cpp.i
 
-.PHONY : main1.i
+.PHONY : main_grpc_threemess2.i
 
 # target to preprocess a source file
-main1.cpp.i:
-	$(MAKE) -f CMakeFiles/main1.dir/build.make CMakeFiles/main1.dir/main1.cpp.i
-.PHONY : main1.cpp.i
+main_grpc_threemess2.cpp.i:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/main_grpc_threemess2.cpp.i
+.PHONY : main_grpc_threemess2.cpp.i
 
-main1.s: main1.cpp.s
+main_grpc_threemess2.s: main_grpc_threemess2.cpp.s
 
-.PHONY : main1.s
+.PHONY : main_grpc_threemess2.s
 
 # target to generate assembly for a file
-main1.cpp.s:
-	$(MAKE) -f CMakeFiles/main1.dir/build.make CMakeFiles/main1.dir/main1.cpp.s
-.PHONY : main1.cpp.s
+main_grpc_threemess2.cpp.s:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess2.dir/build.make CMakeFiles/main_grpc_threemess2.dir/main_grpc_threemess2.cpp.s
+.PHONY : main_grpc_threemess2.cpp.s
 
-main2.o: main2.cpp.o
+main_grpc_threemess3.o: main_grpc_threemess3.cpp.o
 
-.PHONY : main2.o
+.PHONY : main_grpc_threemess3.o
 
 # target to build an object file
-main2.cpp.o:
-	$(MAKE) -f CMakeFiles/main2.dir/build.make CMakeFiles/main2.dir/main2.cpp.o
-.PHONY : main2.cpp.o
+main_grpc_threemess3.cpp.o:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/main_grpc_threemess3.cpp.o
+.PHONY : main_grpc_threemess3.cpp.o
 
-main2.i: main2.cpp.i
+main_grpc_threemess3.i: main_grpc_threemess3.cpp.i
 
-.PHONY : main2.i
-
-# target to preprocess a source file
-main2.cpp.i:
-	$(MAKE) -f CMakeFiles/main2.dir/build.make CMakeFiles/main2.dir/main2.cpp.i
-.PHONY : main2.cpp.i
-
-main2.s: main2.cpp.s
-
-.PHONY : main2.s
-
-# target to generate assembly for a file
-main2.cpp.s:
-	$(MAKE) -f CMakeFiles/main2.dir/build.make CMakeFiles/main2.dir/main2.cpp.s
-.PHONY : main2.cpp.s
-
-main3.o: main3.cpp.o
-
-.PHONY : main3.o
-
-# target to build an object file
-main3.cpp.o:
-	$(MAKE) -f CMakeFiles/main3.dir/build.make CMakeFiles/main3.dir/main3.cpp.o
-.PHONY : main3.cpp.o
-
-main3.i: main3.cpp.i
-
-.PHONY : main3.i
+.PHONY : main_grpc_threemess3.i
 
 # target to preprocess a source file
-main3.cpp.i:
-	$(MAKE) -f CMakeFiles/main3.dir/build.make CMakeFiles/main3.dir/main3.cpp.i
-.PHONY : main3.cpp.i
+main_grpc_threemess3.cpp.i:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/main_grpc_threemess3.cpp.i
+.PHONY : main_grpc_threemess3.cpp.i
 
-main3.s: main3.cpp.s
+main_grpc_threemess3.s: main_grpc_threemess3.cpp.s
 
-.PHONY : main3.s
-
-# target to generate assembly for a file
-main3.cpp.s:
-	$(MAKE) -f CMakeFiles/main3.dir/build.make CMakeFiles/main3.dir/main3.cpp.s
-.PHONY : main3.cpp.s
-
-main4.o: main4.cpp.o
-
-.PHONY : main4.o
-
-# target to build an object file
-main4.cpp.o:
-	$(MAKE) -f CMakeFiles/main4.dir/build.make CMakeFiles/main4.dir/main4.cpp.o
-.PHONY : main4.cpp.o
-
-main4.i: main4.cpp.i
-
-.PHONY : main4.i
-
-# target to preprocess a source file
-main4.cpp.i:
-	$(MAKE) -f CMakeFiles/main4.dir/build.make CMakeFiles/main4.dir/main4.cpp.i
-.PHONY : main4.cpp.i
-
-main4.s: main4.cpp.s
-
-.PHONY : main4.s
+.PHONY : main_grpc_threemess3.s
 
 # target to generate assembly for a file
-main4.cpp.s:
-	$(MAKE) -f CMakeFiles/main4.dir/build.make CMakeFiles/main4.dir/main4.cpp.s
-.PHONY : main4.cpp.s
-
-main5.o: main5.cpp.o
-
-.PHONY : main5.o
-
-# target to build an object file
-main5.cpp.o:
-	$(MAKE) -f CMakeFiles/main5.dir/build.make CMakeFiles/main5.dir/main5.cpp.o
-.PHONY : main5.cpp.o
-
-main5.i: main5.cpp.i
-
-.PHONY : main5.i
-
-# target to preprocess a source file
-main5.cpp.i:
-	$(MAKE) -f CMakeFiles/main5.dir/build.make CMakeFiles/main5.dir/main5.cpp.i
-.PHONY : main5.cpp.i
-
-main5.s: main5.cpp.s
-
-.PHONY : main5.s
-
-# target to generate assembly for a file
-main5.cpp.s:
-	$(MAKE) -f CMakeFiles/main5.dir/build.make CMakeFiles/main5.dir/main5.cpp.s
-.PHONY : main5.cpp.s
-
-main7.o: main7.cpp.o
-
-.PHONY : main7.o
-
-# target to build an object file
-main7.cpp.o:
-	$(MAKE) -f CMakeFiles/main7.dir/build.make CMakeFiles/main7.dir/main7.cpp.o
-.PHONY : main7.cpp.o
-
-main7.i: main7.cpp.i
-
-.PHONY : main7.i
-
-# target to preprocess a source file
-main7.cpp.i:
-	$(MAKE) -f CMakeFiles/main7.dir/build.make CMakeFiles/main7.dir/main7.cpp.i
-.PHONY : main7.cpp.i
-
-main7.s: main7.cpp.s
-
-.PHONY : main7.s
-
-# target to generate assembly for a file
-main7.cpp.s:
-	$(MAKE) -f CMakeFiles/main7.dir/build.make CMakeFiles/main7.dir/main7.cpp.s
-.PHONY : main7.cpp.s
-
-main_grpc_threemess.o: main_grpc_threemess.cpp.o
-
-.PHONY : main_grpc_threemess.o
-
-# target to build an object file
-main_grpc_threemess.cpp.o:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess.dir/build.make CMakeFiles/main_grpc_threemess.dir/main_grpc_threemess.cpp.o
-.PHONY : main_grpc_threemess.cpp.o
-
-main_grpc_threemess.i: main_grpc_threemess.cpp.i
-
-.PHONY : main_grpc_threemess.i
-
-# target to preprocess a source file
-main_grpc_threemess.cpp.i:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess.dir/build.make CMakeFiles/main_grpc_threemess.dir/main_grpc_threemess.cpp.i
-.PHONY : main_grpc_threemess.cpp.i
-
-main_grpc_threemess.s: main_grpc_threemess.cpp.s
-
-.PHONY : main_grpc_threemess.s
-
-# target to generate assembly for a file
-main_grpc_threemess.cpp.s:
-	$(MAKE) -f CMakeFiles/main_grpc_threemess.dir/build.make CMakeFiles/main_grpc_threemess.dir/main_grpc_threemess.cpp.s
-.PHONY : main_grpc_threemess.cpp.s
+main_grpc_threemess3.cpp.s:
+	$(MAKE) -f CMakeFiles/main_grpc_threemess3.dir/build.make CMakeFiles/main_grpc_threemess3.dir/main_grpc_threemess3.cpp.s
+.PHONY : main_grpc_threemess3.cpp.s
 
 # Help Target
 help:
@@ -583,55 +263,23 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... loopback"
-	@echo "... HoardTest"
-	@echo "... main7"
-	@echo "... rebuild_cache"
-	@echo "... fibonacci"
-	@echo "... main5"
 	@echo "... edit_cache"
-	@echo "... main4"
-	@echo "... main3"
-	@echo "... main2"
-	@echo "... main1"
-	@echo "... main_grpc_threemess"
+	@echo "... rebuild_cache"
+	@echo "... main_grpc_threemess3"
+	@echo "... main_grpc_threemess2"
 	@echo "... need_utils"
-	@echo "... HoardTest.o"
-	@echo "... HoardTest.i"
-	@echo "... HoardTest.s"
-	@echo "... fibonacci.o"
-	@echo "... fibonacci.i"
-	@echo "... fibonacci.s"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.o"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.i"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.s"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.pb.o"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.pb.i"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.pb.s"
-	@echo "... loopback.o"
-	@echo "... loopback.i"
-	@echo "... loopback.s"
-	@echo "... main1.o"
-	@echo "... main1.i"
-	@echo "... main1.s"
-	@echo "... main2.o"
-	@echo "... main2.i"
-	@echo "... main2.s"
-	@echo "... main3.o"
-	@echo "... main3.i"
-	@echo "... main3.s"
-	@echo "... main4.o"
-	@echo "... main4.i"
-	@echo "... main4.s"
-	@echo "... main5.o"
-	@echo "... main5.i"
-	@echo "... main5.s"
-	@echo "... main7.o"
-	@echo "... main7.i"
-	@echo "... main7.s"
-	@echo "... main_grpc_threemess.o"
-	@echo "... main_grpc_threemess.i"
-	@echo "... main_grpc_threemess.s"
+	@echo "... main_grpc_threemess2.o"
+	@echo "... main_grpc_threemess2.i"
+	@echo "... main_grpc_threemess2.s"
+	@echo "... main_grpc_threemess3.o"
+	@echo "... main_grpc_threemess3.i"
+	@echo "... main_grpc_threemess3.s"
 .PHONY : help
 
 

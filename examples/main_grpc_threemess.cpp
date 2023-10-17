@@ -37,7 +37,7 @@ Executor executor;
 //vector<int> task_index;
 //vector<int> value;
 
-ABSL_FLAG(uint16_t , port , 50051 , "Server port for the service");
+ABSL_FLAG(uint16_t , port , 50057 , "Server port for the service");
 
 class SendserviceImpl final : public Commu::Service{
     Status send_index(ServerContext* context , const commu::threemess* request , reply* reply)override{
@@ -182,6 +182,7 @@ int main(int argc, char *argv[])
     //服务启动
     absl::ParseCommandLine(argc , argv);
     RunServer(absl::GetFlag(FLAGS_port));
+
     return 0;
 
 }

@@ -29,8 +29,6 @@ int main(int argc, char *argv[])
     auto E = graph.createDFV<int>();
     
 
-    A.set(1);
-
     auto task1 = graph.emplace(
             [](DFV<int> a , DFV<int> b){
             cout << "task1" << endl;
@@ -87,7 +85,7 @@ int main(int argc, char *argv[])
     ////2. 初始化graph,并执行
     //graph.erasenode();
 
-    vector<int> index = {1};
+    //vector<int> index = {1};
      
 
     Executor executor;
@@ -96,8 +94,6 @@ int main(int argc, char *argv[])
 
     fut.wait();
 
-    //3. 模拟信息的返回
-   cout << "the out is " << C.get() << endl;
 
     return 0;
 }
