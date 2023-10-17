@@ -28,6 +28,7 @@ include_directories(
     /home/lsh/dfcpp/
     /home/lsh/dfcpp/grpc_dfcpp/
     /home/lsh/dfcpp/dagP/src/dfcpp_dagP_port
+    /home/lsh/dfcpp/dfcpp
     )
 
 set(CMAKE_CXX_STANDARD 17)

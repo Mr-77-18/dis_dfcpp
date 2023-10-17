@@ -137,6 +137,45 @@ master/fast:
 .PHONY : master/fast
 
 #=============================================================================
+# Target rules for targets named exe2
+
+# Build rule for target.
+exe2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 exe2
+.PHONY : exe2
+
+# fast build rule for target.
+exe2/fast:
+	$(MAKE) -f dis_example/executor/CMakeFiles/exe2.dir/build.make dis_example/executor/CMakeFiles/exe2.dir/build
+.PHONY : exe2/fast
+
+#=============================================================================
+# Target rules for targets named exe1
+
+# Build rule for target.
+exe1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 exe1
+.PHONY : exe1
+
+# fast build rule for target.
+exe1/fast:
+	$(MAKE) -f dis_example/executor/CMakeFiles/exe1.dir/build.make dis_example/executor/CMakeFiles/exe1.dir/build
+.PHONY : exe1/fast
+
+#=============================================================================
+# Target rules for targets named exe
+
+# Build rule for target.
+exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 exe
+.PHONY : exe
+
+# fast build rule for target.
+exe/fast:
+	$(MAKE) -f dis_example/executor/CMakeFiles/exe.dir/build.make dis_example/executor/CMakeFiles/exe.dir/build
+.PHONY : exe/fast
+
+#=============================================================================
 # Target rules for targets named main_grpc_threemess2
 
 # Build rule for target.
@@ -213,6 +252,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... need_utils"
 	@echo "... master"
+	@echo "... exe2"
+	@echo "... exe1"
+	@echo "... exe"
 	@echo "... main_grpc_threemess2"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.o"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.i"

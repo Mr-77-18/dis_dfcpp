@@ -111,6 +111,51 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+dis_example/executor/CMakeFiles/exe2.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/exe2.dir/rule
+.PHONY : dis_example/executor/CMakeFiles/exe2.dir/rule
+
+# Convenience name for target.
+exe2: dis_example/executor/CMakeFiles/exe2.dir/rule
+
+.PHONY : exe2
+
+# fast build rule for target.
+exe2/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe2.dir/build.make dis_example/executor/CMakeFiles/exe2.dir/build
+.PHONY : exe2/fast
+
+# Convenience name for target.
+dis_example/executor/CMakeFiles/exe1.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/exe1.dir/rule
+.PHONY : dis_example/executor/CMakeFiles/exe1.dir/rule
+
+# Convenience name for target.
+exe1: dis_example/executor/CMakeFiles/exe1.dir/rule
+
+.PHONY : exe1
+
+# fast build rule for target.
+exe1/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe1.dir/build.make dis_example/executor/CMakeFiles/exe1.dir/build
+.PHONY : exe1/fast
+
+# Convenience name for target.
+dis_example/executor/CMakeFiles/exe.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/exe.dir/rule
+.PHONY : dis_example/executor/CMakeFiles/exe.dir/rule
+
+# Convenience name for target.
+exe: dis_example/executor/CMakeFiles/exe.dir/rule
+
+.PHONY : exe
+
+# fast build rule for target.
+exe/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe.dir/build.make dis_example/executor/CMakeFiles/exe.dir/build
+.PHONY : exe/fast
+
+# Convenience name for target.
 dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/rule:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/rule
 .PHONY : dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/rule
@@ -124,6 +169,87 @@ main_grpc_threemess2: dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/r
 main_grpc_threemess2/fast:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build
 .PHONY : main_grpc_threemess2/fast
+
+exe.o: exe.cpp.o
+
+.PHONY : exe.o
+
+# target to build an object file
+exe.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe.dir/build.make dis_example/executor/CMakeFiles/exe.dir/exe.cpp.o
+.PHONY : exe.cpp.o
+
+exe.i: exe.cpp.i
+
+.PHONY : exe.i
+
+# target to preprocess a source file
+exe.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe.dir/build.make dis_example/executor/CMakeFiles/exe.dir/exe.cpp.i
+.PHONY : exe.cpp.i
+
+exe.s: exe.cpp.s
+
+.PHONY : exe.s
+
+# target to generate assembly for a file
+exe.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe.dir/build.make dis_example/executor/CMakeFiles/exe.dir/exe.cpp.s
+.PHONY : exe.cpp.s
+
+exe1.o: exe1.cpp.o
+
+.PHONY : exe1.o
+
+# target to build an object file
+exe1.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe1.dir/build.make dis_example/executor/CMakeFiles/exe1.dir/exe1.cpp.o
+.PHONY : exe1.cpp.o
+
+exe1.i: exe1.cpp.i
+
+.PHONY : exe1.i
+
+# target to preprocess a source file
+exe1.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe1.dir/build.make dis_example/executor/CMakeFiles/exe1.dir/exe1.cpp.i
+.PHONY : exe1.cpp.i
+
+exe1.s: exe1.cpp.s
+
+.PHONY : exe1.s
+
+# target to generate assembly for a file
+exe1.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe1.dir/build.make dis_example/executor/CMakeFiles/exe1.dir/exe1.cpp.s
+.PHONY : exe1.cpp.s
+
+exe2.o: exe2.cpp.o
+
+.PHONY : exe2.o
+
+# target to build an object file
+exe2.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe2.dir/build.make dis_example/executor/CMakeFiles/exe2.dir/exe2.cpp.o
+.PHONY : exe2.cpp.o
+
+exe2.i: exe2.cpp.i
+
+.PHONY : exe2.i
+
+# target to preprocess a source file
+exe2.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe2.dir/build.make dis_example/executor/CMakeFiles/exe2.dir/exe2.cpp.i
+.PHONY : exe2.cpp.i
+
+exe2.s: exe2.cpp.s
+
+.PHONY : exe2.s
+
+# target to generate assembly for a file
+exe2.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/exe2.dir/build.make dis_example/executor/CMakeFiles/exe2.dir/exe2.cpp.s
+.PHONY : exe2.cpp.s
 
 main_grpc_threemess2.o: main_grpc_threemess2.cpp.o
 
@@ -160,7 +286,19 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... exe2"
+	@echo "... exe1"
+	@echo "... exe"
 	@echo "... main_grpc_threemess2"
+	@echo "... exe.o"
+	@echo "... exe.i"
+	@echo "... exe.s"
+	@echo "... exe1.o"
+	@echo "... exe1.i"
+	@echo "... exe1.s"
+	@echo "... exe2.o"
+	@echo "... exe2.i"
+	@echo "... exe2.s"
 	@echo "... main_grpc_threemess2.o"
 	@echo "... main_grpc_threemess2.i"
 	@echo "... main_grpc_threemess2.s"

@@ -6,5 +6,5 @@ CXX_FLAGS =  -g -g   -std=gnu++17
 
 CXX_DEFINES = -DCARES_STATICLIB
 
-CXX_INCLUDES = -I/home/lsh/dfcpp -I/home/lsh/dfcpp/grpc_dfcpp -I/home/lsh/dfcpp/dagP/src/dfcpp_dagP_port -isystem /home/lsh/.local/include 
+CXX_INCLUDES = -I/home/lsh/dfcpp -I/home/lsh/dfcpp/grpc_dfcpp -I/home/lsh/dfcpp/dagP/src/dfcpp_dagP_port -I/home/lsh/dfcpp/dfcpp -isystem /home/lsh/.local/include 
 

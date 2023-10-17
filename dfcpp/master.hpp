@@ -1,3 +1,4 @@
+//此代码是一个临时的图算法，现在已经丢弃了
 #ifndef DFCPP_MASTER_HPP
 #define DFCPP_MASTER_HPP
 

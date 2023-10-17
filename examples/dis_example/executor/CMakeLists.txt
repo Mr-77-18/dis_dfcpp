@@ -1,5 +1,8 @@
 list(APPEND EXAMPLES
     main_grpc_threemess2
+    exe
+    exe1
+    exe2
 )
 
 find_package(Threads REQUIRED)

@@ -8,6 +8,9 @@
 /home/lsh/dfcpp/examples/build/dis_example/master/CMakeFiles/master.dir
 /home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/rebuild_cache.dir
 /home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/edit_cache.dir
+/home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/exe2.dir
+/home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/exe1.dir
+/home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/exe.dir
 /home/lsh/dfcpp/examples/build/dis_example/executor/CMakeFiles/main_grpc_threemess2.dir
 /home/lsh/dfcpp/examples/build/origin_example/CMakeFiles/rebuild_cache.dir
 /home/lsh/dfcpp/examples/build/origin_example/CMakeFiles/edit_cache.dir
