@@ -15,7 +15,9 @@ title 改造流程
 `````
 ## 记录2023 7-6
 ### 新增部分通过"新增_lsh"索引
-<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/3.png" alt="新增" width="200" height="200" style="position: absolute; top: 100px; left: 100px;">
+<p align="center">
+<img src="https://raw.githubusercontent.com/Mr-77-18/dis_dfcpp/main/image/3.png" alt="新增" width="200"="200">
+</p>
 到目前为止，初步完成如框架图所示中的单机中的改造。既可以完成服务启动之后监听任务，当拿到任务之后能执行对应任务的效果。
 
 接下来说明到目前位置的改造过程:
