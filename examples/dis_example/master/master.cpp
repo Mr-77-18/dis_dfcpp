@@ -29,9 +29,9 @@
 //结束
 int main(int argc, char *argv[])
 {
-  std::string filename = "./dfcpp_e6_v6_5.dot";
+  std::string filename = "./dfcpp_test_empty.dot";
 
-  int nParts = 2;
+  int nParts = 3;
 
   std::vector<std::string> executor_address = {
     "localhost:50057",

@@ -3,6 +3,7 @@ list(APPEND EXAMPLES
     exe
     exe1
     exe2
+    test_empty
 )
 
 find_package(Threads REQUIRED)

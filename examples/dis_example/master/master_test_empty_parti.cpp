@@ -30,17 +30,24 @@
 int main(int argc, char *argv[])
 {
   if (argc < 3) {
-    std::cout << "argc error" << std::endl;
+    std::cout << "argc error , the argc should be like that: [exe] [filename] [nParts] [executor_address]" << std::endl;
   }
 
   std::string filename = argv[1];
 
   int nParts = std::stoi(argv[2]);
 
-  std::vector<std::string> executor_address = {
-    "localhost:50057",
-    "localhost:50058",
-  };
+//  std::vector<std::string> executor_address = {
+//    "localhost:50057",
+//    "localhost:50058",
+//  };
+//
+
+  std::vector<std::string> executor_address;
+
+  for (int i = 3; i < argc; i) {
+    executor_address.push_back(std::string(argv[i]));
+  }
 
   DFCPP::Schedule sc(filename , executor_address , nParts);
 
