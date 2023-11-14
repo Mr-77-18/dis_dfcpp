@@ -202,3 +202,44 @@ master的大部分code在grpc_dfcpp/schedule.cc里面
 消息类型在grpc_dfcpp/commu.proto里面
 
 对应的Executor模板在example/main_grpc_threemess2.cpp里面
+
+## 继续完善
+1. 现有的数据传输能力比较弱，继续增强
+	json数据传输
+2. 测试迁移
+3. 自动生成graph
+4. 容错能力尚弱，扩展性没有
+
+1.新增JsonTran.hpp在dfcpp/目录当中
+
+最终目标是实现用户任意定义的结构体都可以传输，提升数据传输的泛化能力:
+
+方案是：先把用户自定义的结构体中的字段转化成json（nlohmann::json)，然后使用grpc当中的google/protobuf/any.proto中的google.protobuf.Any data数据类型实现数据传输，或者直接用sting类型的数据传输就行
+
+JsonTran.hpp目前的能力可以实现struct -> json ; json -> struct
+
+下面是一个例子 
+```c++
+struct Mydata{
+	 int a;
+	 double b;
+}
+
+int main(){
+	struct Mydata data = {1 , 1.2};
+
+	//struct -> json
+	SendMessageImpl<int , double> sm;
+	nlohmann::json _json;
+
+	sm.TranTojson(sm.Getnumbers() , _json , data.a , data.b);
+
+	//json -> struct
+	struct Mydata data_copy;
+	sm.TranTostruct(sm.Getnumbers() , _json , copy.a , copy.b);
+
+	return 0;
+}
+`````
+
+<++>
