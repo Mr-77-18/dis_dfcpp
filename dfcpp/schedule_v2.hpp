@@ -1,3 +1,4 @@
+//在schedule的基础上改进成模板类，支持任意版本数据的传输
 #include <iostream>
 #include <memory>
 #include <string>
@@ -61,10 +62,14 @@ namespace DFCPP{
     client_status.at(_response.executor_number()) = 0;
   }
 
+  template <typename T>
   class Sendclient{
     public:
       Sendclient(std::shared_ptr<Channel> channel)
         :stub_(Commu::NewStub(channel)){}
+
+      void send_index_client_v2(int _executor_number , int _partition_number , std::vector<int>& _dfv_index , std::vector<int>& _value , std::vector<int>& _task_index , std::vector<int> _dfv_index_backward){
+      }
 
       void send_index_client(int _executor_number , int _partition_number , std::vector<int>& _dfv_index , std::vector<int>& _value , std::vector<int>& _task_index , std::vector<int> _dfv_index_backward){
 
@@ -116,6 +121,60 @@ namespace DFCPP{
       std::unique_ptr<Commu::Stub> stub_;
   };
 
+  template <typename T>
+    void Sendclient<T>::send_index_client_v2(int _executor_number , int _partition_number , std::vector<int>& _dfv_index , std::vector<T>& _value , std::vector<int>& _task_index , std::vector<int> _dfv_index_backward){
+
+        //commu::index indexs_send;
+
+        commu::threemess indexs_send;
+
+        //repeated int32 dfv_index = 1;
+        for(auto i : _dfv_index){
+          indexs_send.add_dfv_index(i);
+        }
+        
+        //repeated int32 value = 2;
+        for(auto i : _value){
+          //这里把_value转换成json再放进indexs_send的string里面
+          nlohmann::json json;
+
+          //这个函数要能够data i 的；每一个字段放进这个json里面
+          //那么这个sm一定是能够理解这个i的数据类型的，也就是T，能够知道各个成员的数据类型?
+          sm.function(json , i);
+
+          indexs_send.add_value_json(json.dump());
+        }
+
+        //repeated int32 task_index = 3;
+        for(auto i : _task_index){
+          indexs_send.add_task_index(i);
+        }
+
+        //repeated int32 dfv_index_backward = 4;
+        for(auto i : _dfv_index_backward){
+          indexs_send.add_dfv_index_backward(i);
+        }
+
+        //int32 partition = 5;
+        indexs_send.set_partition(_partition_number);
+        
+        //int32 executor_number = 6;
+        indexs_send.set_executor_number(_executor_number);
+
+        reply response;
+        ClientContext context;
+
+        Status status = stub_->send_index(&context  , indexs_send , &response);
+
+        if (status.ok()) {
+          //根据的response中的信息更新gloabl的状态信息;
+          update_global_data(response);
+
+          return;
+        }else{//任务没有执行成功
+          std::cout << status.error_code() << ":" << status.error_message() << std::endl;
+        }
+    }
 
   //使用的最简单的方法：
   //获取图信息
@@ -136,6 +195,7 @@ namespace DFCPP{
   //end
   //
   //结束
+  template <typename T>//T表示传输数据的类型
   class Schedule{
     public:
       Schedule(std::string _filename , std::vector<std::string>& _executor_address , int _nParts)
@@ -158,9 +218,11 @@ namespace DFCPP{
 
       //调度策略相关
       int which = 0;
+      std::vector<T> dfv_values_v2;
   };
 
-  void Schedule::run(){
+  template <typename T>
+  void Schedule<T>::run(){
     //根据executor_address创造服务接口
     for (auto address : executor_address) {
       sendclients.push_back(Sendclient(grpc::CreateChannel(address , grpc::InsecureChannelCredentials())))  ;
@@ -172,6 +234,10 @@ namespace DFCPP{
     std::vector<DfcppPartitionResult*> result = dfcpp_graph_partition_by_dagP(const_cast<char*>(filename.data()), nParts , &dfv_value_size);
 
     //更行全局的dfv_value
+    for (int i = 0; i < ; i++) {
+      dfv_values_v2.push_back(new T());
+    }
+
     for (int i = 0; i < dfv_value_size; i++) {
       dfv_value.push_back(0); 
     }
@@ -205,7 +271,8 @@ namespace DFCPP{
     free_dfcpp_partition_result(result);
   }
 
-  bool Schedule::get_free_partition(DfcppPartitionResult& _partition , int& _partition_number){
+  template <typename T>
+  bool Schedule<T>::get_free_partition(DfcppPartitionResult& _partition , int& _partition_number){
     int i = 0; 
 
     //获取入度为0的分区
@@ -221,7 +288,8 @@ namespace DFCPP{
     return true;
   }
 
-  int Schedule::publish_task(DfcppPartitionResult& _partition , int _partition_number){
+  template <typename T>
+  int Schedule<T>::publish_task(DfcppPartitionResult& _partition , int _partition_number){
     //得到要发布的executor
     int _executor_number;
     Sendclient* sendclient = get_free_client(_executor_number);//这里的free表示可以发布任务给这个executor
@@ -232,7 +300,9 @@ namespace DFCPP{
     //发布任务
     //获取最新的value值
     std::vector<int> values;
+    std::vector<T> values_v2;
     for (auto i : _partition.inDfvs) {
+      values_v2.push_back(dfv_values_v2.at(i));
       values.push_back(dfv_value.at(i));
     }
 
@@ -242,7 +312,8 @@ namespace DFCPP{
     return 1;
   }
 
-  Sendclient* Schedule::get_free_client(int& _executor_number){//涉及到Executor的管理
+  template <typename T>
+  Sendclient* Schedule<T>::get_free_client(int& _executor_number){//涉及到Executor的管理
 
     //    调度策略1：轮询1
     //    //这个其实就是调度策略了,之后可以更改

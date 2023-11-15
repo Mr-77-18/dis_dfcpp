@@ -242,4 +242,21 @@ int main(){
 }
 `````
 
-<++>
+又遇到问题：怎么记住一个结构体的类型呢？因为需要进行转化
+
+我想到这样一个方案，就是使用typeid()先记住这个Struct的类型，然后进行转化，那么就需要一个针对所有基础数据类型的全局转化函数，为什么是全局的，因为不管是哪一个类用到这个功能都是一样的，类似下面这样(先不管返回值什么的):
+```c++
+void function(const std::type_info& type , addr){//data_type使用
+switch(type.name()){
+		case i:
+			(int*)addr
+		case d:
+			(double*)addr
+		case x:
+			(long long*)addr
+			...
+	}
+}
+`````
+明天继续修改/tmp/JsonTran.cc | dfcpp/JsonTran_back.cc
+

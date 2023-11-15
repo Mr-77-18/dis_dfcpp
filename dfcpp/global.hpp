@@ -17,6 +17,9 @@ namespace DFCPP {
   //存储后向dfv的索引
   std::vector<int> backward_index;
 
+  //新增_11-15 传过来的数据是任意类型的(json格式)
+  std::vector<string> value_any;
+
   class Node;
   class DFVComm;
   template<typename T>
@@ -38,18 +41,7 @@ namespace DFCPP {
 
       //_indexs表示需要写的DFV的下标，_value为对应的值
       template <class T>
-        void set_dfv_write(std::vector<int> _indexs , std::vector<T> _value){
-          int j = 0;
-          for (auto i : _indexs) {
-            T* data = new T(_value.at(j));
-            (_dfvs.at(i))->set_data(data);
-
-            for(auto n : _dfvs.at(i)->_nodes){
-              n->setnodeready();
-            }
-            j++;
-          }
-        }
+        void set_dfv_write(std::vector<int> _indexs , std::vector<T> _value);
 
       template <class T>
         void get_dfv_value(std::vector<int> _dfv_index , std::vector<T>& _value);
@@ -73,6 +65,20 @@ namespace DFCPP {
       std::vector<DFVComm*> _dfvs;
 
   };
+
+  template <class T>
+    void Global::set_dfv_write(std::vector<int> _indexs , std::vector<T> _value){
+      int j = 0;
+      for (auto i : _indexs) {
+        T* data = new T(_value.at(j));
+        (_dfvs.at(i))->set_data(data);
+
+        for(auto n : _dfvs.at(i)->_nodes){
+          n->setnodeready();
+        }
+        j++;
+      }
+    }
 
   template <class T>//新增10-16
     void Global::get_dfv_value(std::vector<int> _dfv_index , std::vector<T>& _value){

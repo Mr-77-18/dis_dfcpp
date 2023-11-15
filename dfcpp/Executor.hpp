@@ -241,6 +241,7 @@ namespace DFCPP{
     }
 
     void ExecutorNuma::_invokeStaticTask(Node *node) {
+        //注意，在这里就执行了任务哦
         std::get_if<Node::STATIC>(&node->_handle)->work();
         _resetNodeAndScheduleTask(node);
     }

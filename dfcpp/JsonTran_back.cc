@@ -20,8 +20,26 @@
 //#define DFCPP_JSONTRAN_HPP
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <vector>
+#include <string>
 
 using namespace std;
+
+std::vector<std::string> type_name;
+//i代表第几个结构体成员
+//template <typename T>
+auto typefunction(void* _addr , std::string _type_name){
+//	switch (_type_name) {
+//		case "i":
+//			return *(int*)_addr;
+//		case "d":
+//			return *(double*)_addr;
+//		default:
+//			break;
+	//}
+	return 1;
+}
+
 
 template <typename... Args>
 struct Countmember;
@@ -33,6 +51,7 @@ struct Countmember<>{
 
 template <typename T , typename... Args>
 struct Countmember<T , Args...> {
+	//type_name.push_back(typeid(T).name());
 	static const int value = Countmember<Args...>::value + 1;
 };
 
@@ -69,7 +88,8 @@ class SendMessageImpl{
 		void TranTostruct(int _member , nlohmann::json& _json , T& _next , Members_addr&... _members_addr);
 
 		//hold struct -> json
-		//template <typename T>
+		template <typename T>
+			void Tranhstruct(nlohmann::json& _json , T _struct);
 
 	private:
 		//我需要知道这个类有多少个成员吧；
@@ -118,20 +138,37 @@ void SendMessageImpl<Args...>::TranTostruct(int _member , nlohmann::json& _json 
 
 template <typename... Args>
 template <typename T , typename MemberType , typename... Rest>
-void SendMessageImpl<Args...>::init(MemberType T::*member, Rest...){
+void SendMessageImpl<Args...>::init(MemberType T::*member, Rest... _rest){
 	//先获取偏移地址
-	std::size_t off = offsetof(T , *member);
+	std::size_t off = reinterpret_cast<std::size_t>(&(((T*)nullptr)->*member));
+	//std::size_t off = offsetof(T , member);
+	cout << "off :" <<  off << endl;
 	offset_of_struct.push_back(off);
 
-	init(Rest...);
+	init(_rest...);
 }
 
-//最后一个便宜地址
+//最后一个偏移地址
 template <typename... Args>
 template <typename T , typename MemberType>
 void SendMessageImpl<Args...>::init(MemberType T::*member){
-	std::size_t off = offsetof(T , *member);
+	std::size_t off = reinterpret_cast<std::size_t>(&(((T*)nullptr)->*member));
+	//std::size_t off = offsetof(T , member);
+	cout << "off: " << off << endl;
 	offset_of_struct.push_back(off);
+}
+
+//hold struct -> json
+template <typename... Args>
+template <typename T>
+void SendMessageImpl<Args...>::Tranhstruct(nlohmann::json& _json , T _struct){
+	int i = 0;
+	for (auto& off : offset_of_struct){
+		//cout << &_struct + off << endl;
+		void* member_addr = reinterpret_cast<void*>(reinterpret_cast<char*>(&_struct) + off);
+		auto _member = typefunction(member_addr , type_name.at(i));
+		_json[std::to_string(i)] = _member;
+	}
 }
 
 //#endif
@@ -146,20 +183,29 @@ int main(int argc, char *argv[])
 {
 	struct Mydata data = {1 , 1.2};
 
-	SendMessageImpl<int , double , string> sm;
-	sm.init(&Mydata::a , &Mydata::b):
-	cout << sm.Getnumbers() << endl;
+	SendMessageImpl<int , double , string> sm;//成员个数
+	sm.init(&Mydata::a , &Mydata::b);//偏移地址
+//	cout << sm.Getnumbers() << endl;
+//
+//	nlohmann::json _json;
+//	sm.TranTojson(sm.Getnumbers() , _json , data.a , data.b);
+//
+//	cout << _json["0"]  << " " << _json["1"] << endl;
+//
+//	struct Mydata copy;
+//
+//	sm.TranTostruct(sm.Getnumbers() , _json , copy.a , copy.b);
+//
+//	cout << copy.a << " " << copy.b << endl;
+//
+//	cout << "lst" << endl;
+//	sm.Tranhstruct(data);
+//
+	type_name.push_back(typeid(int).name());
+	type_name.push_back(typeid(double).name());
 
 	nlohmann::json _json;
-	sm.TranTojson(sm.Getnumbers() , _json , data.a , data.b);
-
-	cout << _json["0"]  << " " << _json["1"] << endl;
-
-	struct Mydata copy;
-
-	sm.TranTostruct(sm.Getnumbers() , _json , copy.a , copy.b);
-
-	cout << copy.a << " " << copy.b << endl;
+	sm.Tranhstruct(_json , data);
 
 	return 0;
 }
