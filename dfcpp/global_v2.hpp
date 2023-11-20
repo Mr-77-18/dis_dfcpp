@@ -18,7 +18,7 @@ namespace DFCPP {
   std::vector<int> backward_index;
 
   //新增_11-15 传过来的数据是任意类型的(json格式)
-  std::vector<string> value_any;
+  //std::vector<string> value_any;
 
   class Node;
   class DFVComm;

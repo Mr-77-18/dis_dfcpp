@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "dfcpp/dfcpp.hpp"
-#include "dfcpp/global.hpp"
+#include "dfcpp/global_v2.hpp"
 
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
@@ -14,7 +14,7 @@
 #include <grpcpp/health_check_service_interface.h>
 
 #include "grpc_dfcpp/commu.grpc.pb.h"
-#include "JsonTran,hpp"
+#include "JsonTran.hpp"
 
 using namespace std;
 using namespace DFCPP;
@@ -34,7 +34,7 @@ class SendserviceImpl final : public Commu::Service{
 
 
     template <typename U , typename MemberType , typename... Rest>
-        void init(MemberTyp U::*member , Test... _rest){
+        void init(MemberType U::*member , Rest... _rest){
             sm.init(member , _rest...);
         }
 
@@ -92,7 +92,7 @@ class SendserviceImpl final : public Commu::Service{
         }
 
 
-        gl.set_dfv_write(dfv_index , value);
+        gl.set_dfv_write(dfv_index , value_v2);
         graph->cre_new_graph(task_index);
 
 
@@ -118,11 +118,11 @@ class SendserviceImpl final : public Commu::Service{
         std::vector<T> backward_dfv_value;
         gl.get_dfv_value(backward_index , backward_dfv_value);
 
-        for (int i = 0; i < backward_index.size(); i++) {
-
-            reply->add_value_json()
-        }
-
+//        for (int i = 0; i < backward_index.size(); i++) {
+//
+//            reply->add_value_json();
+//        }
+//
         
         //int32 partition = 4;
         reply->set_partition(partition);
@@ -131,13 +131,14 @@ class SendserviceImpl final : public Commu::Service{
         reply->set_executor_number(executor_number);
 
         //repeat sting value_json = 6;
-        std::vector<T> backward_dfv_value;
-        gl.get_dfv_value(backward_index , backward_dfv_value);
+        //gl.get_dfv_value(backward_index , backward_dfv_value);
         nlohmann::json json_empty;
         for (auto& data : backward_dfv_value) {
             sm.Tranhstruct(json_empty , data);
 
-            reply->add_value_json(json_empty.dump());
+            std::string str = json_empty.dump();
+
+            reply->add_value_json(str);
         }
 
         
@@ -158,10 +159,11 @@ class SendserviceImpl final : public Commu::Service{
     SendMessageImpl<Args...> sm;
 };
 
-template <typename T , typename... Args>
-void RunServer(uint16_t port , DFGraph* _graph , Executor* _executor) {
+template <typename T , typename... Args , typename U , typename MemberType , typename... Rest>
+void RunServer(uint16_t port , DFGraph* _graph , Executor* _executor ,MemberType U::*member , Rest... _rest ) {
     std::string server_address = absl::StrFormat("0.0.0.0:%d", port);
     SendserviceImpl<T , Args...> service(_graph , _executor);
+    service.init(member , _rest...);
 
     grpc::EnableDefaultHealthCheckService(true);
     grpc::reflection::InitProtoReflectionServerBuilderPlugin();
