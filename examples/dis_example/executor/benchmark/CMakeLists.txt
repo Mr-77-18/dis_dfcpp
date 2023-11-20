@@ -1,7 +1,13 @@
 list(APPEND EXAMPLES
     create_linear
     create_binary_tree
+    linear
+    binary_tree
+    wavefront
+    linear_json
 )
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
 find_package(Threads REQUIRED)
 foreach(example IN LISTS EXAMPLES)

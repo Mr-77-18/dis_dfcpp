@@ -1,6 +1,8 @@
 list(APPEND EXAMPLES
     master
     master_test_empty_parti
+    valjson
+    linear_master
 )
 
 find_package(Threads REQUIRED)

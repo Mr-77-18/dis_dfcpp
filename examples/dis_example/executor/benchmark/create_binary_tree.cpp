@@ -24,12 +24,13 @@ int main(int argc, char* argv[]) {
     int n = stoi(argv[2]);
 
     int total = (1 << n) - 1;//3
-    int non_leaves = (1 << (n - 1)) - 1;//1
+    int non_leaves = (1 << (n - 1)) - 1;
+        //1
 
-    cout << total << " " << non_leaves << endl;//3 , 1
+    std::cout << total << " " << non_leaves << std::endl;//3 , 1
      
 
-    buf = new vector<string>(non_leaves + 1);
+    buf = new vector<string>(total);
 
     FILE* file = fopen(argv[1] , "w+");
 
@@ -38,22 +39,21 @@ int main(int argc, char* argv[]) {
 
     writeright(-1 , node);//-1代表不用写
     writeleft(1, node);
+    writeleft(2, node);
 
 
     for (int i = 2; i <= non_leaves; i++) {//non.. = 1
         node++;
-        writeright(i/2 , node);
-        writeleft(i , node);
+        writeright(i - 1 , node);
+        writeleft((i * 2) - 1 , node);
+        writeleft((i * 2) , node);
     }
 
     //2 3
-    for (int i = non_leaves + 1; i <= total ; i++) {
+    for (int i = non_leaves + 1; i <=total ; i++) {
         node++;
-        if ((i % 2) == 0) {
-            
-        }
-        writeright(i/2 , node);
-        writeleft(-1 , node);
+        
+        writeright(i - 1 , node);
     }
 
     fprintf(file , "%s\n" , "digraph G{");

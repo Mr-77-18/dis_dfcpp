@@ -14,7 +14,7 @@
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h" 
 #include "absl/strings/str_format.h" 
-#include "executor.hpp" 
+#include "executor_v2.hpp" 
 
 
 //#include <iostream>
@@ -25,17 +25,20 @@
 using namespace std;
 using namespace DFCPP;
 
-//constexpr int BLOCKSIZE = 512;
-//struct Block{
-//    long long data[BLOCKSIZE];
-//};
+constexpr int BLOCKSIZE = 512;
 
 DFGraph dfGraph;
 Executor executor(16);
 
+struct Block{
+    vector<int> data;
+
+    Block() : data(BLOCKSIZE) {}
+};
+
 double measure(int n) {
 
-    auto dfvs = dfGraph.createDFVs<int>(n-1);
+    auto dfvs = dfGraph.createDFVs<struct Block>(n-1);
 
     //create a file with n-1 line(mean the edge)
     //只需要考虑三个元素：
@@ -43,9 +46,12 @@ double measure(int n) {
     //2. make_tuple()左/make_tuple()右可以确定这个node填写的位置
 
     auto task = dfGraph.emplace(
-            [](DFV<int> out){
-            int b;
-            b = random() % 100;
+            [](DFV<struct Block> out){
+            struct Block b;
+            for (int i = 0 ; i < BLOCKSIZE ; i++) {
+            b.data[i] = 3;
+            }
+            //b = random() % 100;
             out = b;
             std::cout << "0" << std::endl;
             },
@@ -54,9 +60,12 @@ double measure(int n) {
 
     for(int i = 0; i < n - 2; i++) {
         auto task1 = dfGraph.emplace(
-                [i](const int& b, DFV<int> out){
-                int a;
-                a = b + random() % 100;
+                [i](const struct Block& b, DFV<struct Block> out){
+                struct Block a;
+                for (int j = 0; j < BLOCKSIZE; j++) {
+                    a.data[j] = b.data[j] + 7;
+                }
+                //a = b + random() % 100;
                 out = b;
                 std::cout << i << std::endl;
             },
@@ -64,10 +73,13 @@ double measure(int n) {
         task1.name(std::to_string(i));
     }
     auto task2 = dfGraph.emplace(
-            [](const int& input){
-            int total;
-            total += input;
-            std::cout << "999" << std::endl;
+            [](const struct Block& input){
+            struct Block total;
+            for (int i = 0; i < BLOCKSIZE; i++) {
+            total.data[i] += input.data[i];
+            }
+            //total += input;
+            //std::cout << "999" << std::endl;
             },
         make_tuple(dfvs.back()) , make_tuple());
 
@@ -90,11 +102,13 @@ int main(int argc, char* argv[]) {
 
     int n = 1000;
 
+    type_name.push_back(typeid(vector<int>).name());
+
      measure(n);
     //measure(n);
 
     absl::ParseCommandLine(argc , argv);
-    RunServer(port , &dfGraph, &executor);
+    RunServer<struct Block , vector<int>>(port , &dfGraph, &executor , &Block::data);
 
     return 0;
 }

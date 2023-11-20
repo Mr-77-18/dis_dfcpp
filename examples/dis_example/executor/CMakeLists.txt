@@ -4,6 +4,7 @@ list(APPEND EXAMPLES
     exe1
     exe2
     test_empty
+    valjson_executor
 )
 
 find_package(Threads REQUIRED)
