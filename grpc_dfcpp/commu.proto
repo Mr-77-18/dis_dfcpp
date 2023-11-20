@@ -26,6 +26,8 @@ message threemess{
   int32 partition = 5;//表示哪一个分区
 
   int32 executor_number = 6;//表示哪一个client(executor),用于client知道自己是几号，在reply中返回给master
+
+  repeated string value_json = 7;
 }
 
 message reply{
@@ -39,5 +41,7 @@ message reply{
 
   //表示哪一个client(executor);
   int32 executor_number = 5;
+
+  repeated string value_json = 6;
 }
 
