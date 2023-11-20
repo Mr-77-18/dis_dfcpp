@@ -16,7 +16,7 @@
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
 #include "absl/strings/str_format.h"
-#include "executor.hpp"
+#include "executor_v2.hpp"
 
 
 using namespace DFCPP;
@@ -25,7 +25,8 @@ using namespace std;
 constexpr int BLOCKSIZE = 512;
 // 矩阵块
 struct Block{
-    long long data[BLOCKSIZE];
+    vector<int> data;
+    Block() : data(BLOCKSIZE){}
 };
 
 Executor executor(16);
@@ -37,7 +38,7 @@ double measure(int n) {//n是矩阵边长
     //边的数量有:2 * n * (n - 1)
 
     //vector<int> dfvs(2 * n * (n - 1));
-    auto dfvs = dfGraph.createDFVs<int>(2 * n * (n - 1));
+    auto dfvs = dfGraph.createDFVs<struct Block>(2 * n * (n - 1));
 
     int name = -1;
 
@@ -46,9 +47,11 @@ double measure(int n) {//n是矩阵边长
             if(i == 0 && j == 0) {
                 name++;
                 auto task = dfGraph.emplace(
-                        [n](DFV<int> output1 , DFV<int> output2){
-                        int block;
-                        block = random() % 100;
+                        [n](DFV<struct Block> output1 , DFV<struct Block> output2){
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 22;
+                        }
                         output1 = block;
                         output2 = block;
                         }, 
@@ -59,9 +62,11 @@ double measure(int n) {//n是矩阵边长
             }
             else if(i == 0 && j == n - 1){
                 auto task =  dfGraph.emplace(
-                        [n , j](const int& input, DFV<int> output){ 
-                        int block;
-                        block = input + random() % 100;
+                        [n , j](const struct Block& input, DFV<struct Block> output){ 
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 33;
+                        }
                         output = block;
                         }, 
                         make_tuple(dfvs[n -2]), make_tuple(dfvs[j + n - 1])
@@ -70,9 +75,11 @@ double measure(int n) {//n是矩阵边长
             }
             else if(i == n - 1 && j == 0){
                 auto task = dfGraph.emplace(
-                        [n](const int& input, DFV<int> output){ 
-                        int block;
-                        block = input + random() % 100;
+                        [n](const struct Block& input, DFV<struct Block> output){ 
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 989;
+                        }
                         output = block;
                         }, 
                         make_tuple(dfvs[2 * n * (n - 1) - n + 1 - n]), make_tuple(dfvs[2 * n * (n - 1) - n + 1])
@@ -81,9 +88,11 @@ double measure(int n) {//n是矩阵边长
             }
             else if(i == n - 1 && j == n -1){
                 auto task= dfGraph.emplace(
-                        [n](const int& input1, const int& input2){ 
-                        int block;
-                        block = input1 + random() % 100;
+                        [n](const struct Block& input1, const struct Block& input2){ 
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 11;
+                        }
                         }, 
                         make_tuple(dfvs[2 * n * (n - 1) - 1] , dfvs[2 * n * (n - 1) - n ]), make_tuple()
                         );
@@ -91,9 +100,11 @@ double measure(int n) {//n是矩阵边长
             }
             else if(i == 0) {
                 auto task = dfGraph.emplace(
-                        [n , j](const int& input, DFV<int> output1 , DFV<int> output2){ 
-                        int block;
-                        block = input + random() % 100;
+                        [n , j](const struct Block& input, DFV<struct Block> output1 , DFV<struct Block> output2){ 
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 55;
+                        }
                         output1 = block;
                         output2 = block;
                         }, 
@@ -103,9 +114,11 @@ double measure(int n) {//n是矩阵边长
             } 
             else if(j == 0) {
                 auto task = dfGraph.emplace(
-                        [i , n](const int& input, DFV<int> output1 , DFV<int> output2){ 
-                        int block;
-                        block = input + random() % 100;
+                        [i , n](const struct Block& input, DFV<struct Block> output1 , DFV<struct Block> output2){ 
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 11;
+                        }
                         output1 = block;
                         output2 = block;
                         }, 
@@ -115,9 +128,11 @@ double measure(int n) {//n是矩阵边长
             else if(i == n -1){
 
                 auto task = dfGraph.emplace(
-                        [i , n](const int& input1, const int& input2 , DFV<int> output){ 
-                        int block;
-                        block = input1 + random() % 100;
+                        [i , n](const struct Block& input1, const struct Block& input2 , DFV<struct Block> output){ 
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 77;
+                        }
                         output = block;
                         }, 
                         make_tuple(dfvs[i * (2 * n - 1)] , dfvs[i * (2 * n - 1) - n + 1]), make_tuple(dfvs[i * (2 * n - 1) + 1 ]));
@@ -126,18 +141,22 @@ double measure(int n) {//n是矩阵边长
             else if(j == n -1){
 
                 auto task= dfGraph.emplace(
-                        [i , n](const int& input1, const int& input2 , DFV<int> output){ 
-                        int block;
-                        block = input1 + random() % 100;
+                        [i , n](const struct Block& input1, const struct Block& input2 , DFV<struct Block> output){ 
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 32;
+                        }
                         output = block;
                         }, 
                         make_tuple(dfvs[i * (2 * n - 1) - 1] , dfvs[i * (2 * n - 1) - 1 + n - 1]), make_tuple(dfvs[i * (2 * n - 1) - 1 + n - 1 + n]));
                 task.name(std::to_string(name));
             }
             else {
-                auto task = dfGraph.emplace([i , n , j](const int& a, const int& b, DFV<int> output1 , DFV<int> output2){
-                        int block;
-                        block = a + b;
+                auto task = dfGraph.emplace([i , n , j](const struct Block& a, const struct Block& b, DFV<struct Block> output1 , DFV<struct Block> output2){
+                        struct Block block;
+                        for (int z = 0; z < BLOCKSIZE; z++) {
+                            block.data[z] = 99;
+                        }
                         output1 = block;
                         output2 = block;
                         },
@@ -165,13 +184,14 @@ int main(int argc, char* argv[] ) {
     //int n = atoi(argv[1]);
     int n = 3;
 
+    type_name.push_back(typeid(vector<int>).name());
 
     //double time = 0;
     measure(n);
 
     absl::ParseCommandLine(argc , argv);
-    RunServer(port , &dfGraph , &executor);
-//
+    RunServer<struct Block , vector<int>>(port , &dfGraph , &executor , &Block::data);
+
 //    cout << "wavefront " << n << " " << BLOCKSIZE << " : " << time / 10 << " ms" << endl;
 //    cout << "pid " << getpid() << endl;
 //    string cmd = "cat /proc/";

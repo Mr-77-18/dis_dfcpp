@@ -43,7 +43,11 @@ cout << "4" << endl;
 cout << "5" << endl;
   sc.init(&Block::data );
 
+  auto start = chrono::steady_clock::now();
   sc.run();
+  auto end = chrono::steady_clock::now();
+
+  cout << chrono::duration_cast<chrono::milliseconds>(end - start).count() << endl;
 
   return 0;
 }

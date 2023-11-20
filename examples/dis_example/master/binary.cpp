@@ -7,14 +7,14 @@
 
 #include "schedule_v2.hpp"
 
-struct Mydata{
-  int a;
-  double b;
+struct Block{
+  std::vector<int> data;
 };
 
 int main(int argc, char *argv[])
 {
-  type_name.push_back(typeid(int).name());
+  type_name.push_back(typeid(vector<int>).name());
+
   if (argc < 3) {
     std::cout << "argc error , the argc should be like that: [exe] [filename] [nParts] [executor_address]" << std::endl;
   }
@@ -38,12 +38,16 @@ cout << "3" << endl;
   }
 cout << "4" << endl;
 
-  DFCPP::Schedule<struct Mydata , int , double> sc(filename , executor_address , nParts);
+  DFCPP::Schedule<struct Block, vector<int>> sc(filename , executor_address , nParts);
 
 cout << "5" << endl;
-  sc.init(&Mydata::a);
+  sc.init(&Block::data );
 
+  auto start = chrono::steady_clock::now();
   sc.run();
+  auto end = chrono::steady_clock::now();
+
+  cout << chrono::duration_cast<chrono::milliseconds>(end - start).count() << endl;
 
   return 0;
 }

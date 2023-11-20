@@ -6,5 +6,6 @@ include(../common.cmake)
 
 add_subdirectory(master)
 add_subdirectory(executor)
+add_subdirectory(executor/benchmark)
 
 
