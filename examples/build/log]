@@ -1,0 +1,868 @@
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:296:28: error: no declaration matches ‘DFCPP::Sendclient<T, Args ...>* DFCPP::Schedule<T, Args>::get_free_client(int&)’
+  296 |   Sendclient<T , Args...>* Schedule<T , Args...>::get_free_client(int& _executor_number){//涉及到Executor的管理
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:183:32: note: candidate is: ‘DFCPP::Sendclient<T, Args ...>& DFCPP::Schedule<T, Args>::get_free_client(int&)’
+  183 |       Sendclient<T , Args...>& get_free_client(int& _executor_number);
+      |                                ^~~~~~~~~~~~~~~
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:168:9: note: ‘class DFCPP::Schedule<T, Args>’ defined here
+  168 |   class Schedule{
+      |         ^~~~~~~~
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp: In instantiation of ‘int DFCPP::Schedule<T, Args>::publish_task(DfcppPartitionResult&, int) [with T = Mydata; Args = {int, double}]’:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:241:17:   required from ‘void DFCPP::Schedule<T, Args>::run() [with T = Mydata; Args = {int, double}]’
+/home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:38:10:   required from here
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: error: no match for ‘operator==’ (operand types are ‘DFCPP::Sendclient<Mydata, int, double>’ and ‘std::nullptr_t’)
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/iosfwd:40,
+                 from /usr/include/c++/9/ios:38,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/postypes.h:222:5: note: candidate: ‘template<class _StateT> bool std::operator==(const std::fpos<_StateT>&, const std::fpos<_StateT>&)’
+  222 |     operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/postypes.h:222:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::fpos<_StateT>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/stl_algobase.h:64,
+                 from /usr/include/c++/9/bits/char_traits.h:39,
+                 from /usr/include/c++/9/ios:40,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/stl_pair.h:448:5: note: candidate: ‘template<class _T1, class _T2> constexpr bool std::operator==(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  448 |     operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_pair.h:448:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::pair<_T1, _T2>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/stl_algobase.h:67,
+                 from /usr/include/c++/9/bits/char_traits.h:39,
+                 from /usr/include/c++/9/ios:40,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/stl_iterator.h:325:5: note: candidate: ‘template<class _Iterator> constexpr bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  325 |     operator==(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_iterator.h:325:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/stl_algobase.h:67,
+                 from /usr/include/c++/9/bits/char_traits.h:39,
+                 from /usr/include/c++/9/ios:40,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/stl_iterator.h:363:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> constexpr bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  363 |     operator==(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_iterator.h:363:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/stl_algobase.h:67,
+                 from /usr/include/c++/9/bits/char_traits.h:39,
+                 from /usr/include/c++/9/ios:40,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/stl_iterator.h:1136:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> constexpr bool std::operator==(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)’
+ 1136 |     operator==(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_iterator.h:1136:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::move_iterator<_IteratorL>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/stl_algobase.h:67,
+                 from /usr/include/c++/9/bits/char_traits.h:39,
+                 from /usr/include/c++/9/ios:40,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/stl_iterator.h:1142:5: note: candidate: ‘template<class _Iterator> constexpr bool std::operator==(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)’
+ 1142 |     operator==(const move_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_iterator.h:1142:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::move_iterator<_IteratorL>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/string:41,
+                 from /usr/include/c++/9/bits/locale_classes.h:40,
+                 from /usr/include/c++/9/bits/ios_base.h:41,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/allocator.h:167:5: note: candidate: ‘template<class _T1, class _T2> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_T2>&)’
+  167 |     operator==(const allocator<_T1>&, const allocator<_T2>&)
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/allocator.h:167:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::allocator<_CharT>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/basic_string.h:48,
+                 from /usr/include/c++/9/string:55,
+                 from /usr/include/c++/9/bits/locale_classes.h:40,
+                 from /usr/include/c++/9/bits/ios_base.h:41,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/string_view:471:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator==(std::basic_string_view<_CharT, _Traits>, std::basic_string_view<_CharT, _Traits>)’
+  471 |     operator==(basic_string_view<_CharT, _Traits> __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/string_view:471:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/basic_string.h:48,
+                 from /usr/include/c++/9/string:55,
+                 from /usr/include/c++/9/bits/locale_classes.h:40,
+                 from /usr/include/c++/9/bits/ios_base.h:41,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/string_view:477:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator==(std::basic_string_view<_CharT, _Traits>, std::__detail::__idt<std::basic_string_view<_CharT, _Traits> >)’
+  477 |     operator==(basic_string_view<_CharT, _Traits> __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/string_view:477:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/basic_string.h:48,
+                 from /usr/include/c++/9/string:55,
+                 from /usr/include/c++/9/bits/locale_classes.h:40,
+                 from /usr/include/c++/9/bits/ios_base.h:41,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/string_view:483:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator==(std::__detail::__idt<std::basic_string_view<_CharT, _Traits> >, std::basic_string_view<_CharT, _Traits>)’
+  483 |     operator==(__detail::__idt<basic_string_view<_CharT, _Traits>> __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/string_view:483:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘std::basic_string_view<_CharT, _Traits>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/string:55,
+                 from /usr/include/c++/9/bits/locale_classes.h:40,
+                 from /usr/include/c++/9/bits/ios_base.h:41,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/basic_string.h:6144:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 6144 |     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/basic_string.h:6144:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/string:55,
+                 from /usr/include/c++/9/bits/locale_classes.h:40,
+                 from /usr/include/c++/9/bits/ios_base.h:41,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/basic_string.h:6152:5: note: candidate: ‘template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, bool>::__type std::operator==(const std::__cxx11::basic_string<_CharT>&, const std::__cxx11::basic_string<_CharT>&)’
+ 6152 |     operator==(const basic_string<_CharT>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/basic_string.h:6152:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::__cxx11::basic_string<_CharT>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/string:55,
+                 from /usr/include/c++/9/bits/locale_classes.h:40,
+                 from /usr/include/c++/9/bits/ios_base.h:41,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/basic_string.h:6166:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 6166 |     operator==(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/basic_string.h:6166:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const _CharT*’ and ‘DFCPP::Sendclient<Mydata, int, double>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/string:55,
+                 from /usr/include/c++/9/bits/locale_classes.h:40,
+                 from /usr/include/c++/9/bits/ios_base.h:41,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/basic_string.h:6178:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const _CharT*)’
+ 6178 |     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/basic_string.h:6178:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/ios_base.h:46,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/system_error:292:3: note: candidate: ‘bool std::operator==(const std::error_code&, const std::error_code&)’
+  292 |   operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/9/system_error:292:32: note:   no known conversion for argument 1 from ‘DFCPP::Sendclient<Mydata, int, double>’ to ‘const std::error_code&’
+  292 |   operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+      |              ~~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/9/system_error:297:3: note: candidate: ‘bool std::operator==(const std::error_code&, const std::error_condition&)’
+  297 |   operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/9/system_error:297:32: note:   no known conversion for argument 1 from ‘DFCPP::Sendclient<Mydata, int, double>’ to ‘const std::error_code&’
+  297 |   operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+      |              ~~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/9/system_error:304:3: note: candidate: ‘bool std::operator==(const std::error_condition&, const std::error_code&)’
+  304 |   operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/9/system_error:304:37: note:   no known conversion for argument 1 from ‘DFCPP::Sendclient<Mydata, int, double>’ to ‘const std::error_condition&’
+  304 |   operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+      |              ~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/9/system_error:311:3: note: candidate: ‘bool std::operator==(const std::error_condition&, const std::error_condition&)’
+  311 |   operator==(const error_condition& __lhs,
+      |   ^~~~~~~~
+/usr/include/c++/9/system_error:311:37: note:   no known conversion for argument 1 from ‘DFCPP::Sendclient<Mydata, int, double>’ to ‘const std::error_condition&’
+  311 |   operator==(const error_condition& __lhs,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+In file included from /usr/include/c++/9/bits/locale_facets.h:48,
+                 from /usr/include/c++/9/bits/basic_ios.h:37,
+                 from /usr/include/c++/9/ios:44,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:1:
+/usr/include/c++/9/bits/streambuf_iterator.h:208:5: note: candidate: ‘template<class _CharT, class _Traits> bool std::operator==(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)’
+  208 |     operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/streambuf_iterator.h:208:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/tuple:39,
+                 from /usr/include/c++/9/bits/unique_ptr.h:37,
+                 from /usr/include/c++/9/memory:80,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/array:252:5: note: candidate: ‘template<class _Tp, long unsigned int _Nm> bool std::operator==(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)’
+  252 |     operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+      |     ^~~~~~~~
+/usr/include/c++/9/array:252:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::array<_Tp, _Nm>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/unique_ptr.h:37,
+                 from /usr/include/c++/9/memory:80,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/tuple:1419:5: note: candidate: ‘template<class ... _TElements, class ... _UElements> constexpr bool std::operator==(const std::tuple<_Tps ...>&, const std::tuple<_Elements ...>&)’
+ 1419 |     operator==(const tuple<_TElements...>& __t,
+      |     ^~~~~~~~
+/usr/include/c++/9/tuple:1419:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::tuple<_Tps ...>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/memory:80,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/unique_ptr.h:715:5: note: candidate: ‘template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)’
+  715 |     operator==(const unique_ptr<_Tp, _Dp>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/unique_ptr.h:715:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/memory:80,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/unique_ptr.h:721:5: note: candidate: ‘template<class _Tp, class _Dp> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)’
+  721 |     operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/unique_ptr.h:721:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/memory:80,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/unique_ptr.h:726:5: note: candidate: ‘template<class _Tp, class _Dp> bool std::operator==(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)’
+  726 |     operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/unique_ptr.h:726:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::unique_ptr<_Tp, _Dp>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/shared_ptr.h:52,
+                 from /usr/include/c++/9/memory:81,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/shared_ptr_base.h:1412:5: note: candidate: ‘template<class _Tp1, class _Tp2, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)’
+ 1412 |     operator==(const __shared_ptr<_Tp1, _Lp>& __a,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/shared_ptr_base.h:1412:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/shared_ptr.h:52,
+                 from /usr/include/c++/9/memory:81,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/shared_ptr_base.h:1418:5: note: candidate: ‘template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)’
+ 1418 |     operator==(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/shared_ptr_base.h:1418:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/shared_ptr.h:52,
+                 from /usr/include/c++/9/memory:81,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/shared_ptr_base.h:1423:5: note: candidate: ‘template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)’
+ 1423 |     operator==(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/shared_ptr_base.h:1423:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::__shared_ptr<_Tp, _Lp>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/memory:81,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/shared_ptr.h:383:5: note: candidate: ‘template<class _Tp, class _Up> bool std::operator==(const std::shared_ptr<_Tp>&, const std::shared_ptr<_Tp>&)’
+  383 |     operator==(const shared_ptr<_Tp>& __a, const shared_ptr<_Up>& __b) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/shared_ptr.h:383:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::shared_ptr<_Tp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/memory:81,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/shared_ptr.h:388:5: note: candidate: ‘template<class _Tp> bool std::operator==(const std::shared_ptr<_Tp>&, std::nullptr_t)’
+  388 |     operator==(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/shared_ptr.h:388:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::shared_ptr<_Tp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/memory:81,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:2:
+/usr/include/c++/9/bits/shared_ptr.h:393:5: note: candidate: ‘template<class _Tp> bool std::operator==(std::nullptr_t, const std::shared_ptr<_Tp>&)’
+  393 |     operator==(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/shared_ptr.h:393:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::shared_ptr<_Tp>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/functional:59,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/bits/std_function.h:746:5: note: candidate: ‘template<class _Res, class ... _Args> bool std::operator==(const std::function<_Res(_ArgTypes ...)>&, std::nullptr_t)’
+  746 |     operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:746:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::function<_Res(_ArgTypes ...)>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/functional:59,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/bits/std_function.h:752:5: note: candidate: ‘template<class _Res, class ... _Args> bool std::operator==(std::nullptr_t, const std::function<_Res(_ArgTypes ...)>&)’
+  752 |     operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/std_function.h:752:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::function<_Res(_ArgTypes ...)>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/node_handle.h:39,
+                 from /usr/include/c++/9/bits/hashtable.h:37,
+                 from /usr/include/c++/9/unordered_map:46,
+                 from /usr/include/c++/9/functional:61,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/optional:983:5: note: candidate: ‘template<class _Tp, class _Up> constexpr std::__optional_relop_t<decltype ((declval<_Tp>() == declval<_Up>()))> std::operator==(const std::optional<_Tp>&, const std::optional<_Up>&)’
+  983 |     operator==(const optional<_Tp>& __lhs, const optional<_Up>& __rhs)
+      |     ^~~~~~~~
+/usr/include/c++/9/optional:983:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::optional<_Tp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/node_handle.h:39,
+                 from /usr/include/c++/9/bits/hashtable.h:37,
+                 from /usr/include/c++/9/unordered_map:46,
+                 from /usr/include/c++/9/functional:61,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/optional:1034:5: note: candidate: ‘template<class _Tp> constexpr bool std::operator==(const std::optional<_Tp>&, std::nullopt_t)’
+ 1034 |     operator==(const optional<_Tp>& __lhs, nullopt_t) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/optional:1034:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::optional<_Tp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/node_handle.h:39,
+                 from /usr/include/c++/9/bits/hashtable.h:37,
+                 from /usr/include/c++/9/unordered_map:46,
+                 from /usr/include/c++/9/functional:61,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/optional:1039:5: note: candidate: ‘template<class _Tp> constexpr bool std::operator==(std::nullopt_t, const std::optional<_Tp>&)’
+ 1039 |     operator==(nullopt_t, const optional<_Tp>& __rhs) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/9/optional:1039:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::optional<_Tp>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/node_handle.h:39,
+                 from /usr/include/c++/9/bits/hashtable.h:37,
+                 from /usr/include/c++/9/unordered_map:46,
+                 from /usr/include/c++/9/functional:61,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/optional:1095:5: note: candidate: ‘template<class _Tp, class _Up> constexpr std::__optional_relop_t<decltype ((declval<_Tp>() == declval<_Up>()))> std::operator==(const std::optional<_Tp>&, const _Up&)’
+ 1095 |     operator==(const optional<_Tp>& __lhs, const _Up& __rhs)
+      |     ^~~~~~~~
+/usr/include/c++/9/optional:1095:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::optional<_Tp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/bits/node_handle.h:39,
+                 from /usr/include/c++/9/bits/hashtable.h:37,
+                 from /usr/include/c++/9/unordered_map:46,
+                 from /usr/include/c++/9/functional:61,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/optional:1101:5: note: candidate: ‘template<class _Tp, class _Up> constexpr std::__optional_relop_t<decltype ((declval<_Up>() == declval<_Tp>()))> std::operator==(const _Up&, const std::optional<_Tp>&)’
+ 1101 |     operator==(const _Up& __lhs, const optional<_Tp>& __rhs)
+      |     ^~~~~~~~
+/usr/include/c++/9/optional:1101:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::optional<_Tp>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/unordered_map:47,
+                 from /usr/include/c++/9/functional:61,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/bits/unordered_map.h:2093:5: note: candidate: ‘template<class _Key1, class _Tp1, class _Hash1, class _Pred1, class _Alloc1> bool std::operator==(const std::unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&, const std::unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&)’
+ 2093 |     operator==(const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/unordered_map.h:2093:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/unordered_map:47,
+                 from /usr/include/c++/9/functional:61,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/bits/unordered_map.h:2105:5: note: candidate: ‘template<class _Key1, class _Tp1, class _Hash1, class _Pred1, class _Alloc1> bool std::operator==(const std::unordered_multimap<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&, const std::unordered_multimap<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&)’
+ 2105 |     operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/unordered_map.h:2105:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::unordered_multimap<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/vector:67,
+                 from /usr/include/c++/9/functional:62,
+                 from /usr/include/c++/9/pstl/glue_algorithm_defs.h:13,
+                 from /usr/include/c++/9/algorithm:71,
+                 from /home/lsh/.local/include/absl/base/call_once.h:28,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:31,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/bits/stl_vector.h:1888:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator==(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)’
+ 1888 |     operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_vector.h:1888:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/iterator:66,
+                 from /home/lsh/.local/include/absl/strings/string_view.h:35,
+                 from /home/lsh/.local/include/absl/flags/commandlineflag.h:35,
+                 from /home/lsh/.local/include/absl/flags/internal/flag.h:36,
+                 from /home/lsh/.local/include/absl/flags/flag.h:39,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:5:
+/usr/include/c++/9/bits/stream_iterator.h:134:5: note: candidate: ‘template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator==(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)’
+  134 |     operator==(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stream_iterator.h:134:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/list:63,
+                 from /home/lsh/.local/include/grpcpp/completion_queue.h:35,
+                 from /home/lsh/.local/include/grpcpp/channel.h:25,
+                 from /home/lsh/.local/include/grpcpp/grpcpp.h:52,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:9,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/stl_list.h:1991:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator==(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)’
+ 1991 |     operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_list.h:1991:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::__cxx11::list<_Tp, _Alloc>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/map:61,
+                 from /home/lsh/.local/include/grpcpp/impl/rpc_service_method.h:24,
+                 from /home/lsh/.local/include/grpcpp/impl/codegen/rpc_service_method.h:25,
+                 from /home/lsh/.local/include/grpcpp/completion_queue.h:41,
+                 from /home/lsh/.local/include/grpcpp/channel.h:25,
+                 from /home/lsh/.local/include/grpcpp/grpcpp.h:52,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:9,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/stl_map.h:1455:5: note: candidate: ‘template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::map<_Key, _Tp, _Compare, _Allocator>&, const std::map<_Key, _Tp, _Compare, _Allocator>&)’
+ 1455 |     operator==(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_map.h:1455:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Allocator>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/map:62,
+                 from /home/lsh/.local/include/grpcpp/impl/rpc_service_method.h:24,
+                 from /home/lsh/.local/include/grpcpp/impl/codegen/rpc_service_method.h:25,
+                 from /home/lsh/.local/include/grpcpp/completion_queue.h:41,
+                 from /home/lsh/.local/include/grpcpp/channel.h:25,
+                 from /home/lsh/.local/include/grpcpp/grpcpp.h:52,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:9,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/stl_multimap.h:1119:5: note: candidate: ‘template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::multimap<_Key, _Tp, _Compare, _Allocator>&, const std::multimap<_Key, _Tp, _Compare, _Allocator>&)’
+ 1119 |     operator==(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_multimap.h:1119:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Allocator>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/deque:67,
+                 from /home/lsh/.local/include/absl/crc/internal/crc_cord_state.h:20,
+                 from /home/lsh/.local/include/absl/strings/cord.h:79,
+                 from /home/lsh/.local/include/google/protobuf/io/coded_stream.h:134,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.pb.h:24,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc:5,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:10,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/stl_deque.h:286:5: note: candidate: ‘template<class _Tp, class _Ref, class _Ptr> bool std::operator==(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)’
+  286 |     operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_deque.h:286:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/deque:67,
+                 from /home/lsh/.local/include/absl/crc/internal/crc_cord_state.h:20,
+                 from /home/lsh/.local/include/absl/strings/cord.h:79,
+                 from /home/lsh/.local/include/google/protobuf/io/coded_stream.h:134,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.pb.h:24,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc:5,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:10,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/stl_deque.h:293:5: note: candidate: ‘template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> bool std::operator==(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)’
+  293 |     operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_deque.h:293:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/deque:67,
+                 from /home/lsh/.local/include/absl/crc/internal/crc_cord_state.h:20,
+                 from /home/lsh/.local/include/absl/strings/cord.h:79,
+                 from /home/lsh/.local/include/google/protobuf/io/coded_stream.h:134,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.pb.h:24,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc:5,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:10,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/stl_deque.h:2312:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator==(const std::deque<_Tp, _Alloc>&, const std::deque<_Tp, _Alloc>&)’
+ 2312 |     operator==(const deque<_Tp, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_deque.h:2312:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::deque<_Tp, _Alloc>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/unordered_set:47,
+                 from /home/lsh/.local/include/absl/algorithm/container.h:49,
+                 from /home/lsh/.local/include/absl/container/flat_hash_map.h:38,
+                 from /home/lsh/.local/include/google/protobuf/descriptor.h:69,
+                 from /home/lsh/.local/include/google/protobuf/generated_message_reflection.h:47,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.pb.h:29,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc:5,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:10,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/unordered_set.h:1705:5: note: candidate: ‘template<class _Value1, class _Hash1, class _Pred1, class _Alloc1> bool std::operator==(const std::unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>&, const std::unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>&)’
+ 1705 |     operator==(const unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/unordered_set.h:1705:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::unordered_set<_Value1, _Hash1, _Pred1, _Alloc1>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/unordered_set:47,
+                 from /home/lsh/.local/include/absl/algorithm/container.h:49,
+                 from /home/lsh/.local/include/absl/container/flat_hash_map.h:38,
+                 from /home/lsh/.local/include/google/protobuf/descriptor.h:69,
+                 from /home/lsh/.local/include/google/protobuf/generated_message_reflection.h:47,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.pb.h:29,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc:5,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:10,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/unordered_set.h:1717:5: note: candidate: ‘template<class _Value1, class _Hash1, class _Pred1, class _Alloc1> bool std::operator==(const std::unordered_multiset<_Value1, _Hash1, _Pred1, _Alloc1>&, const std::unordered_multiset<_Value1, _Hash1, _Pred1, _Alloc1>&)’
+ 1717 |     operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/unordered_set.h:1717:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::unordered_multiset<_Value1, _Hash1, _Pred1, _Alloc1>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/forward_list:40,
+                 from /home/lsh/.local/include/absl/hash/internal/hash.h:29,
+                 from /home/lsh/.local/include/absl/hash/hash.h:85,
+                 from /home/lsh/.local/include/absl/container/internal/hash_function_defaults.h:55,
+                 from /home/lsh/.local/include/absl/container/flat_hash_map.h:41,
+                 from /home/lsh/.local/include/google/protobuf/descriptor.h:69,
+                 from /home/lsh/.local/include/google/protobuf/generated_message_reflection.h:47,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.pb.h:29,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc:5,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:10,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/forward_list.tcc:393:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator==(const std::forward_list<_Tp, _Alloc>&, const std::forward_list<_Tp, _Alloc>&)’
+  393 |     operator==(const forward_list<_Tp, _Alloc>& __lx,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/forward_list.tcc:393:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::forward_list<_Tp, _Alloc>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/set:61,
+                 from /home/lsh/.local/include/absl/hash/internal/hash.h:36,
+                 from /home/lsh/.local/include/absl/hash/hash.h:85,
+                 from /home/lsh/.local/include/absl/container/internal/hash_function_defaults.h:55,
+                 from /home/lsh/.local/include/absl/container/flat_hash_map.h:41,
+                 from /home/lsh/.local/include/google/protobuf/descriptor.h:69,
+                 from /home/lsh/.local/include/google/protobuf/generated_message_reflection.h:47,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.pb.h:29,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc:5,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:10,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/stl_set.h:979:5: note: candidate: ‘template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::set<_Key, _Compare, _Allocator>&, const std::set<_Key, _Compare, _Allocator>&)’
+  979 |     operator==(const set<_Key, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_set.h:979:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::set<_Key, _Compare, _Allocator>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/set:62,
+                 from /home/lsh/.local/include/absl/hash/internal/hash.h:36,
+                 from /home/lsh/.local/include/absl/hash/hash.h:85,
+                 from /home/lsh/.local/include/absl/container/internal/hash_function_defaults.h:55,
+                 from /home/lsh/.local/include/absl/container/flat_hash_map.h:41,
+                 from /home/lsh/.local/include/google/protobuf/descriptor.h:69,
+                 from /home/lsh/.local/include/google/protobuf/generated_message_reflection.h:47,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.pb.h:29,
+                 from /home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc:5,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:10,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/stl_multiset.h:964:5: note: candidate: ‘template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::multiset<_Key, _Compare, _Allocator>&, const std::multiset<_Key, _Compare, _Allocator>&)’
+  964 |     operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/9/bits/stl_multiset.h:964:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::multiset<_Key, _Compare, _Allocator>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/nlohmann/detail/conversions/from_json.hpp:14,
+                 from /usr/include/nlohmann/adl_serializer.hpp:5,
+                 from /usr/include/nlohmann/json.hpp:51,
+                 from /home/lsh/dfcpp/dfcpp/JsonTran.hpp:4,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:12,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom1, class _Dom2> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::_Expr<_Dom2, typename _Dom2::value_type>&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/nlohmann/detail/conversions/from_json.hpp:14,
+                 from /usr/include/nlohmann/adl_serializer.hpp:5,
+                 from /usr/include/nlohmann/json.hpp:51,
+                 from /home/lsh/dfcpp/dfcpp/JsonTran.hpp:4,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:12,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/nlohmann/detail/conversions/from_json.hpp:14,
+                 from /usr/include/nlohmann/adl_serializer.hpp:5,
+                 from /usr/include/nlohmann/json.hpp:51,
+                 from /home/lsh/dfcpp/dfcpp/JsonTran.hpp:4,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:12,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const typename _Dom::value_type&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/nlohmann/detail/conversions/from_json.hpp:14,
+                 from /usr/include/nlohmann/adl_serializer.hpp:5,
+                 from /usr/include/nlohmann/json.hpp:51,
+                 from /home/lsh/dfcpp/dfcpp/JsonTran.hpp:4,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:12,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::valarray<typename _Dom::value_type>&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/c++/9/valarray:603,
+                 from /usr/include/nlohmann/detail/conversions/from_json.hpp:14,
+                 from /usr/include/nlohmann/adl_serializer.hpp:5,
+                 from /usr/include/nlohmann/json.hpp:51,
+                 from /home/lsh/dfcpp/dfcpp/JsonTran.hpp:4,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:12,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/bits/valarray_after.h:417:5: note: candidate: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::valarray<typename _Dom::value_type>&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)’
+  417 |     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/bits/valarray_after.h:417:5: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/nlohmann/detail/conversions/from_json.hpp:14,
+                 from /usr/include/nlohmann/adl_serializer.hpp:5,
+                 from /usr/include/nlohmann/json.hpp:51,
+                 from /home/lsh/dfcpp/dfcpp/JsonTran.hpp:4,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:12,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/valarray:1197:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const std::valarray<_Tp>&, const std::valarray<_Tp>&)’
+ 1197 | _DEFINE_BINARY_OPERATOR(==, __equal_to)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/valarray:1197:1: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::valarray<_Tp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/nlohmann/detail/conversions/from_json.hpp:14,
+                 from /usr/include/nlohmann/adl_serializer.hpp:5,
+                 from /usr/include/nlohmann/json.hpp:51,
+                 from /home/lsh/dfcpp/dfcpp/JsonTran.hpp:4,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:12,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/valarray:1197:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const std::valarray<_Tp>&, const typename std::valarray<_Tp>::value_type&)’
+ 1197 | _DEFINE_BINARY_OPERATOR(==, __equal_to)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/valarray:1197:1: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   ‘DFCPP::Sendclient<Mydata, int, double>’ is not derived from ‘const std::valarray<_Tp>’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+In file included from /usr/include/nlohmann/detail/conversions/from_json.hpp:14,
+                 from /usr/include/nlohmann/adl_serializer.hpp:5,
+                 from /usr/include/nlohmann/json.hpp:51,
+                 from /home/lsh/dfcpp/dfcpp/JsonTran.hpp:4,
+                 from /home/lsh/dfcpp/dfcpp/schedule_v2.hpp:12,
+                 from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/usr/include/c++/9/valarray:1197:1: note: candidate: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__equal_to, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const typename std::valarray<_Tp>::value_type&, const std::valarray<_Tp>&)’
+ 1197 | _DEFINE_BINARY_OPERATOR(==, __equal_to)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/9/valarray:1197:1: note:   template argument deduction/substitution failed:
+In file included from /home/lsh/dfcpp/examples/dis_example/master/valjson.cpp:8:
+/home/lsh/dfcpp/dfcpp/schedule_v2.hpp:276:20: note:   mismatched types ‘const std::valarray<_Tp>’ and ‘std::nullptr_t’
+  276 |     if (sendclient == nullptr) {//表示所有的executor都在忙，不能发送任务，等待下一轮任务发布
+      |         ~~~~~~~~~~~^~~~~~~~~~
+make[2]: *** [dis_example/master/CMakeFiles/valjson.dir/build.make:63: dis_example/master/CMakeFiles/valjson.dir/valjson.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:224: dis_example/master/CMakeFiles/valjson.dir/all] Error 2
+make: *** [Makefile:84: all] Error 2

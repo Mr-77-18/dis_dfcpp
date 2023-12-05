@@ -2,6 +2,7 @@ list(APPEND EXAMPLES
     create_linear
     create_binary_tree
     linear
+    linear1
     binary_tree
     wavefront
     linear_json

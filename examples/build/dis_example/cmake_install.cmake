@@ -47,3 +47,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/lsh/dfcpp/examples/build/dis_example/executor/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/lsh/dfcpp/examples/build/dis_example/executor/benchmark/cmake_install.cmake")
+endif()
+

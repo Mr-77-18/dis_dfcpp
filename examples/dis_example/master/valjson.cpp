@@ -38,11 +38,9 @@ cout << "3" << endl;
   for (int i = 3; i < argc; i++) {
     executor_address.push_back(std::string(argv[i]));
   }
-cout << "4" << endl;
 
   DFCPP::Schedule<struct Mydata , int , double> sc(filename , executor_address , nParts);
 
-cout << "5" << endl;
   sc.init(&Mydata::a , &Mydata::b);
 
   sc.run();

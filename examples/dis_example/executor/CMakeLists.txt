@@ -4,6 +4,7 @@ list(APPEND EXAMPLES
     exe1
     exe2
     test_empty
+    test_empty1
     valjson_executor
 )
 

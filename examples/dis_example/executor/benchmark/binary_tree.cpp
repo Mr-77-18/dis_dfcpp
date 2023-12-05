@@ -22,7 +22,7 @@ using namespace DFCPP;
 using namespace std;
 
 
-constexpr int BLOCKSIZE = 512;
+constexpr int BLOCKSIZE = 2048 * 2048;
 // 矩阵块
 struct Block{
     long long data[BLOCKSIZE];
@@ -42,8 +42,10 @@ double measure(int n) {
 
     dfGraph.emplace(
             [](DFV<int> output1 , DFV<int> output2){
-            int block;
-            block = random() % 100;
+            int block = 0;
+            for (int i = 0; i < BLOCKSIZE; i++) {
+                block += 1;
+            }
             output1 = block;
             output2 = block;
             },
@@ -53,8 +55,10 @@ double measure(int n) {
     for(int i = 2; i <= non_leaves; i++) {
         dfGraph.emplace(
                 [](const int& input, DFV<int> output1 , DFV<int> output2){
-                int block;
-                block = input + random() % 100;
+                int block = 0;
+                for (int i = 0; i < BLOCKSIZE; i++) {
+                    block += 1;
+                }
                 output1 = block;
                 output2 = block;
                 },

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/create_linear.cpp
+iostream
+-
+chrono
+-
+unistd.h
+-
+vector
+-
+

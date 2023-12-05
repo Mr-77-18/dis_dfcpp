@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/lsh/dfcpp/examples/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -109,6 +109,51 @@ preinstall/fast:
 depend:
 	cd /home/lsh/dfcpp/examples/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+dis_example/executor/CMakeFiles/valjson_executor.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/valjson_executor.dir/rule
+.PHONY : dis_example/executor/CMakeFiles/valjson_executor.dir/rule
+
+# Convenience name for target.
+valjson_executor: dis_example/executor/CMakeFiles/valjson_executor.dir/rule
+
+.PHONY : valjson_executor
+
+# fast build rule for target.
+valjson_executor/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/valjson_executor.dir/build.make dis_example/executor/CMakeFiles/valjson_executor.dir/build
+.PHONY : valjson_executor/fast
+
+# Convenience name for target.
+dis_example/executor/CMakeFiles/test_empty1.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/test_empty1.dir/rule
+.PHONY : dis_example/executor/CMakeFiles/test_empty1.dir/rule
+
+# Convenience name for target.
+test_empty1: dis_example/executor/CMakeFiles/test_empty1.dir/rule
+
+.PHONY : test_empty1
+
+# fast build rule for target.
+test_empty1/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/test_empty1.dir/build.make dis_example/executor/CMakeFiles/test_empty1.dir/build
+.PHONY : test_empty1/fast
+
+# Convenience name for target.
+dis_example/executor/CMakeFiles/test_empty.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/test_empty.dir/rule
+.PHONY : dis_example/executor/CMakeFiles/test_empty.dir/rule
+
+# Convenience name for target.
+test_empty: dis_example/executor/CMakeFiles/test_empty.dir/rule
+
+.PHONY : test_empty
+
+# fast build rule for target.
+test_empty/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/test_empty.dir/build.make dis_example/executor/CMakeFiles/test_empty.dir/build
+.PHONY : test_empty/fast
 
 # Convenience name for target.
 dis_example/executor/CMakeFiles/exe2.dir/rule:
@@ -278,14 +323,98 @@ main_grpc_threemess2.cpp.s:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/main_grpc_threemess2.cpp.s
 .PHONY : main_grpc_threemess2.cpp.s
 
+test_empty.o: test_empty.cpp.o
+
+.PHONY : test_empty.o
+
+# target to build an object file
+test_empty.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/test_empty.dir/build.make dis_example/executor/CMakeFiles/test_empty.dir/test_empty.cpp.o
+.PHONY : test_empty.cpp.o
+
+test_empty.i: test_empty.cpp.i
+
+.PHONY : test_empty.i
+
+# target to preprocess a source file
+test_empty.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/test_empty.dir/build.make dis_example/executor/CMakeFiles/test_empty.dir/test_empty.cpp.i
+.PHONY : test_empty.cpp.i
+
+test_empty.s: test_empty.cpp.s
+
+.PHONY : test_empty.s
+
+# target to generate assembly for a file
+test_empty.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/test_empty.dir/build.make dis_example/executor/CMakeFiles/test_empty.dir/test_empty.cpp.s
+.PHONY : test_empty.cpp.s
+
+test_empty1.o: test_empty1.cpp.o
+
+.PHONY : test_empty1.o
+
+# target to build an object file
+test_empty1.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/test_empty1.dir/build.make dis_example/executor/CMakeFiles/test_empty1.dir/test_empty1.cpp.o
+.PHONY : test_empty1.cpp.o
+
+test_empty1.i: test_empty1.cpp.i
+
+.PHONY : test_empty1.i
+
+# target to preprocess a source file
+test_empty1.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/test_empty1.dir/build.make dis_example/executor/CMakeFiles/test_empty1.dir/test_empty1.cpp.i
+.PHONY : test_empty1.cpp.i
+
+test_empty1.s: test_empty1.cpp.s
+
+.PHONY : test_empty1.s
+
+# target to generate assembly for a file
+test_empty1.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/test_empty1.dir/build.make dis_example/executor/CMakeFiles/test_empty1.dir/test_empty1.cpp.s
+.PHONY : test_empty1.cpp.s
+
+valjson_executor.o: valjson_executor.cpp.o
+
+.PHONY : valjson_executor.o
+
+# target to build an object file
+valjson_executor.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/valjson_executor.dir/build.make dis_example/executor/CMakeFiles/valjson_executor.dir/valjson_executor.cpp.o
+.PHONY : valjson_executor.cpp.o
+
+valjson_executor.i: valjson_executor.cpp.i
+
+.PHONY : valjson_executor.i
+
+# target to preprocess a source file
+valjson_executor.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/valjson_executor.dir/build.make dis_example/executor/CMakeFiles/valjson_executor.dir/valjson_executor.cpp.i
+.PHONY : valjson_executor.cpp.i
+
+valjson_executor.s: valjson_executor.cpp.s
+
+.PHONY : valjson_executor.s
+
+# target to generate assembly for a file
+valjson_executor.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/executor/CMakeFiles/valjson_executor.dir/build.make dis_example/executor/CMakeFiles/valjson_executor.dir/valjson_executor.cpp.s
+.PHONY : valjson_executor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... valjson_executor"
+	@echo "... rebuild_cache"
+	@echo "... test_empty1"
+	@echo "... test_empty"
 	@echo "... exe2"
 	@echo "... exe1"
 	@echo "... exe"
@@ -302,6 +431,15 @@ help:
 	@echo "... main_grpc_threemess2.o"
 	@echo "... main_grpc_threemess2.i"
 	@echo "... main_grpc_threemess2.s"
+	@echo "... test_empty.o"
+	@echo "... test_empty.i"
+	@echo "... test_empty.s"
+	@echo "... test_empty1.o"
+	@echo "... test_empty1.i"
+	@echo "... test_empty1.s"
+	@echo "... valjson_executor.o"
+	@echo "... valjson_executor.i"
+	@echo "... valjson_executor.s"
 .PHONY : help
 
 

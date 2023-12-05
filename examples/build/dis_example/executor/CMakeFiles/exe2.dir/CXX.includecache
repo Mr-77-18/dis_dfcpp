@@ -5200,6 +5200,16 @@ grpcpp/health_check_service_interface.h
 grpc_dfcpp/commu.grpc.pb.h
 /home/lsh/dfcpp/dfcpp/grpc_dfcpp/commu.grpc.pb.h
 
+/home/lsh/dfcpp/dfcpp/global.hpp
+vector
+-
+memory
+-
+vector
+-
+map
+-
+
 /home/lsh/dfcpp/dfcpp/types.hpp
 DFV.hpp
 /home/lsh/dfcpp/dfcpp/DFV.hpp

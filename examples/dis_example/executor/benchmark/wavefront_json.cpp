@@ -22,7 +22,7 @@
 using namespace DFCPP;
 using namespace std;
 
-constexpr int BLOCKSIZE = 512;
+constexpr int BLOCKSIZE = 256 * 256;
 // 矩阵块
 struct Block{
     vector<int> data;

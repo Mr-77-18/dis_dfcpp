@@ -1,0 +1,62 @@
+In file included from /home/lsh/dfcpp/dfcpp/DFV.hpp:13,
+                 from /home/lsh/dfcpp/dfcpp/Graph.hpp:8,
+                 from /home/lsh/dfcpp/dfcpp/DFGraph.hpp:8,
+                 from /home/lsh/dfcpp/dfcpp/Executor.hpp:8,
+                 from /home/lsh/dfcpp/dfcpp/dfcpp.hpp:8,
+                 from /home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:12:
+/home/lsh/dfcpp/dfcpp/global.hpp: In member function ‘void DFCPP::Global::set_dfv_write(std::vector<int>, std::vector<CharType>)’:
+/home/lsh/dfcpp/dfcpp/global.hpp:74:22: warning: invalid use of incomplete type ‘class DFCPP::DFVComm’
+   74 |         (_dfvs.at(i))->set_data(data);
+      |                      ^~
+/home/lsh/dfcpp/dfcpp/global.hpp:24:9: note: forward declaration of ‘class DFCPP::DFVComm’
+   24 |   class DFVComm;
+      |         ^~~~~~~
+/home/lsh/dfcpp/dfcpp/global.hpp:76:33: warning: invalid use of incomplete type ‘class DFCPP::DFVComm’
+   76 |         for(auto n : _dfvs.at(i)->_nodes){
+      |                                 ^~
+/home/lsh/dfcpp/dfcpp/global.hpp:24:9: note: forward declaration of ‘class DFCPP::DFVComm’
+   24 |   class DFVComm;
+      |         ^~~~~~~
+/home/lsh/dfcpp/dfcpp/global.hpp: In member function ‘void DFCPP::Global::get_dfv_value(std::vector<int>, std::vector<CharType>&)’:
+/home/lsh/dfcpp/dfcpp/global.hpp:88:34: warning: invalid use of incomplete type ‘class DFCPP::DFVComm’
+   88 |           void* ptr = _dfvs.at(i)->get_data();
+      |                                  ^~
+/home/lsh/dfcpp/dfcpp/global.hpp:24:9: note: forward declaration of ‘class DFCPP::DFVComm’
+   24 |   class DFVComm;
+      |         ^~~~~~~
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp: In function ‘double measure(int)’:
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:74:14: error: expected ‘)’ before ‘std’
+   74 |             }
+      |              ^
+      |              )
+   75 |                 std::cout << i << std::endl;
+      |                 ~~~
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:63:37: note: to match this ‘(’
+   63 |         auto task1 = dfGraph.emplace(
+      |                                     ^
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:76:14: error: expected primary-expression before ‘,’ token
+   76 |             },
+      |              ^
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:77:29: error: ‘i’ was not declared in this scope
+   77 |             make_tuple(dfvs[i]), make_tuple(dfvs[i+1]));
+      |                             ^
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:78:9: error: ‘task1’ was not declared in this scope; did you mean ‘task’?
+   78 |         task1.name(std::to_string(i));
+      |         ^~~~~
+      |         task
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:79:5: warning: no return statement in function returning non-void [-Wreturn-type]
+   79 |     }
+      |     ^
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp: At global scope:
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:86:20: error: ‘dfvs’ was not declared in this scope
+   86 |         make_tuple(dfvs.back()) , make_tuple());
+      |                    ^~~~
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:88:5: error: ‘task2’ does not name a type
+   88 |     task2.name("9998");
+      |     ^~~~~
+/home/lsh/dfcpp/examples/dis_example/executor/benchmark/linear1.cpp:94:1: error: expected declaration before ‘}’ token
+   94 | }
+      | ^
+make[2]: *** [dis_example/executor/benchmark/CMakeFiles/linear1.dir/build.make:63: dis_example/executor/benchmark/CMakeFiles/linear1.dir/linear1.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:672: dis_example/executor/benchmark/CMakeFiles/linear1.dir/all] Error 2
+make: *** [Makefile:84: all] Error 2

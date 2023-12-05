@@ -17,15 +17,10 @@
 #include "executor_v2.hpp" 
 
 
-//#include <iostream>
-//#include <chrono>
-//#include <unistd.h>
-
-
 using namespace std;
 using namespace DFCPP;
 
-constexpr int BLOCKSIZE = 512;
+constexpr int BLOCKSIZE = 256*256;
 
 DFGraph dfGraph;
 Executor executor(16);
@@ -100,12 +95,11 @@ int main(int argc, char* argv[]) {
 
     uint16_t port = std::stoi(argv[1]);
 
-    int n = 1000;
+    int n = 10000;
 
     type_name.push_back(typeid(vector<int>).name());
 
-     measure(n);
-    //measure(n);
+    measure(n);
 
     absl::ParseCommandLine(argc , argv);
     RunServer<struct Block , vector<int>>(port , &dfGraph, &executor , &Block::data);

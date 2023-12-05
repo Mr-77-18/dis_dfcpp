@@ -3,6 +3,7 @@ list(APPEND EXAMPLES
     master_test_empty_parti
     valjson
     linear_master
+    master_nojson
 )
 
 find_package(Threads REQUIRED)

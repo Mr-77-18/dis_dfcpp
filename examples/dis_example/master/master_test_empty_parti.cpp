@@ -4,6 +4,7 @@
 
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
+#include <chrono>
 
 #include "schedule.hpp"
 
@@ -27,6 +28,7 @@
 //end
 //
 //结束
+using namespace std;
 int main(int argc, char *argv[])
 {
 
@@ -48,9 +50,15 @@ int main(int argc, char *argv[])
     executor_address.push_back(std::string(argv[i]));
   }
 
-  DFCPP::Schedule sc(filename , executor_address , nParts);
+  auto start = chrono::steady_clock::now();
+  DFCPP::Schedule sc(filename , executor_address , nParts);  
 
   sc.run();
+
+  auto end = chrono::steady_clock::now();
+
+  std::cout << chrono::duration_cast<chrono::milliseconds>(end - start).count() << std::endl;
+
 
   return 0;
 }

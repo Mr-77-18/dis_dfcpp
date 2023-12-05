@@ -124,6 +124,45 @@ need_utils/fast:
 .PHONY : need_utils/fast
 
 #=============================================================================
+# Target rules for targets named master_nojson
+
+# Build rule for target.
+master_nojson: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 master_nojson
+.PHONY : master_nojson
+
+# fast build rule for target.
+master_nojson/fast:
+	$(MAKE) -f dis_example/master/CMakeFiles/master_nojson.dir/build.make dis_example/master/CMakeFiles/master_nojson.dir/build
+.PHONY : master_nojson/fast
+
+#=============================================================================
+# Target rules for targets named linear_master
+
+# Build rule for target.
+linear_master: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 linear_master
+.PHONY : linear_master
+
+# fast build rule for target.
+linear_master/fast:
+	$(MAKE) -f dis_example/master/CMakeFiles/linear_master.dir/build.make dis_example/master/CMakeFiles/linear_master.dir/build
+.PHONY : linear_master/fast
+
+#=============================================================================
+# Target rules for targets named valjson
+
+# Build rule for target.
+valjson: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 valjson
+.PHONY : valjson
+
+# fast build rule for target.
+valjson/fast:
+	$(MAKE) -f dis_example/master/CMakeFiles/valjson.dir/build.make dis_example/master/CMakeFiles/valjson.dir/build
+.PHONY : valjson/fast
+
+#=============================================================================
 # Target rules for targets named master_test_empty_parti
 
 # Build rule for target.
@@ -148,6 +187,45 @@ master: cmake_check_build_system
 master/fast:
 	$(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/build
 .PHONY : master/fast
+
+#=============================================================================
+# Target rules for targets named valjson_executor
+
+# Build rule for target.
+valjson_executor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 valjson_executor
+.PHONY : valjson_executor
+
+# fast build rule for target.
+valjson_executor/fast:
+	$(MAKE) -f dis_example/executor/CMakeFiles/valjson_executor.dir/build.make dis_example/executor/CMakeFiles/valjson_executor.dir/build
+.PHONY : valjson_executor/fast
+
+#=============================================================================
+# Target rules for targets named test_empty1
+
+# Build rule for target.
+test_empty1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_empty1
+.PHONY : test_empty1
+
+# fast build rule for target.
+test_empty1/fast:
+	$(MAKE) -f dis_example/executor/CMakeFiles/test_empty1.dir/build.make dis_example/executor/CMakeFiles/test_empty1.dir/build
+.PHONY : test_empty1/fast
+
+#=============================================================================
+# Target rules for targets named test_empty
+
+# Build rule for target.
+test_empty: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_empty
+.PHONY : test_empty
+
+# fast build rule for target.
+test_empty/fast:
+	$(MAKE) -f dis_example/executor/CMakeFiles/test_empty.dir/build.make dis_example/executor/CMakeFiles/test_empty.dir/build
+.PHONY : test_empty/fast
 
 #=============================================================================
 # Target rules for targets named exe2
@@ -200,6 +278,123 @@ main_grpc_threemess2: cmake_check_build_system
 main_grpc_threemess2/fast:
 	$(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build
 .PHONY : main_grpc_threemess2/fast
+
+#=============================================================================
+# Target rules for targets named binary_tree_json
+
+# Build rule for target.
+binary_tree_json: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 binary_tree_json
+.PHONY : binary_tree_json
+
+# fast build rule for target.
+binary_tree_json/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/build
+.PHONY : binary_tree_json/fast
+
+#=============================================================================
+# Target rules for targets named linear_json
+
+# Build rule for target.
+linear_json: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 linear_json
+.PHONY : linear_json
+
+# fast build rule for target.
+linear_json/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear_json.dir/build
+.PHONY : linear_json/fast
+
+#=============================================================================
+# Target rules for targets named wavefront
+
+# Build rule for target.
+wavefront: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 wavefront
+.PHONY : wavefront
+
+# fast build rule for target.
+wavefront/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/wavefront.dir/build.make dis_example/executor/benchmark/CMakeFiles/wavefront.dir/build
+.PHONY : wavefront/fast
+
+#=============================================================================
+# Target rules for targets named binary_tree
+
+# Build rule for target.
+binary_tree: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 binary_tree
+.PHONY : binary_tree
+
+# fast build rule for target.
+binary_tree/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/build.make dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/build
+.PHONY : binary_tree/fast
+
+#=============================================================================
+# Target rules for targets named linear1
+
+# Build rule for target.
+linear1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 linear1
+.PHONY : linear1
+
+# fast build rule for target.
+linear1/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear1.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear1.dir/build
+.PHONY : linear1/fast
+
+#=============================================================================
+# Target rules for targets named linear
+
+# Build rule for target.
+linear: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 linear
+.PHONY : linear
+
+# fast build rule for target.
+linear/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear.dir/build
+.PHONY : linear/fast
+
+#=============================================================================
+# Target rules for targets named wavefront_json
+
+# Build rule for target.
+wavefront_json: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 wavefront_json
+.PHONY : wavefront_json
+
+# fast build rule for target.
+wavefront_json/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/build
+.PHONY : wavefront_json/fast
+
+#=============================================================================
+# Target rules for targets named create_binary_tree
+
+# Build rule for target.
+create_binary_tree: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 create_binary_tree
+.PHONY : create_binary_tree
+
+# fast build rule for target.
+create_binary_tree/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/build.make dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/build
+.PHONY : create_binary_tree/fast
+
+#=============================================================================
+# Target rules for targets named create_linear
+
+# Build rule for target.
+create_linear: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 create_linear
+.PHONY : create_linear
+
+# fast build rule for target.
+create_linear/fast:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/create_linear.dir/build.make dis_example/executor/benchmark/CMakeFiles/create_linear.dir/build
+.PHONY : create_linear/fast
 
 home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.o: home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.cc.o
 
@@ -264,12 +459,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... need_utils"
+	@echo "... master_nojson"
+	@echo "... linear_master"
+	@echo "... valjson"
 	@echo "... master_test_empty_parti"
 	@echo "... master"
+	@echo "... valjson_executor"
+	@echo "... test_empty1"
+	@echo "... test_empty"
 	@echo "... exe2"
 	@echo "... exe1"
 	@echo "... exe"
 	@echo "... main_grpc_threemess2"
+	@echo "... binary_tree_json"
+	@echo "... linear_json"
+	@echo "... wavefront"
+	@echo "... binary_tree"
+	@echo "... linear1"
+	@echo "... linear"
+	@echo "... wavefront_json"
+	@echo "... create_binary_tree"
+	@echo "... create_linear"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.o"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.i"
 	@echo "... home/lsh/dfcpp/grpc_dfcpp/commu.grpc.pb.s"

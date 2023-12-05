@@ -78,18 +78,21 @@ clean: origin_example/clean
 # Recursive "all" directory target.
 dis_example/all: dis_example/master/all
 dis_example/all: dis_example/executor/all
+dis_example/all: dis_example/executor/benchmark/all
 
 .PHONY : dis_example/all
 
 # Recursive "preinstall" directory target.
 dis_example/preinstall: dis_example/master/preinstall
 dis_example/preinstall: dis_example/executor/preinstall
+dis_example/preinstall: dis_example/executor/benchmark/preinstall
 
 .PHONY : dis_example/preinstall
 
 # Recursive "clean" directory target.
 dis_example/clean: dis_example/master/clean
 dis_example/clean: dis_example/executor/clean
+dis_example/clean: dis_example/executor/benchmark/clean
 
 .PHONY : dis_example/clean
 
@@ -97,6 +100,9 @@ dis_example/clean: dis_example/executor/clean
 # Directory level rules for directory dis_example/executor
 
 # Recursive "all" directory target.
+dis_example/executor/all: dis_example/executor/CMakeFiles/valjson_executor.dir/all
+dis_example/executor/all: dis_example/executor/CMakeFiles/test_empty1.dir/all
+dis_example/executor/all: dis_example/executor/CMakeFiles/test_empty.dir/all
 dis_example/executor/all: dis_example/executor/CMakeFiles/exe2.dir/all
 dis_example/executor/all: dis_example/executor/CMakeFiles/exe1.dir/all
 dis_example/executor/all: dis_example/executor/CMakeFiles/exe.dir/all
@@ -110,6 +116,9 @@ dis_example/executor/preinstall:
 .PHONY : dis_example/executor/preinstall
 
 # Recursive "clean" directory target.
+dis_example/executor/clean: dis_example/executor/CMakeFiles/valjson_executor.dir/clean
+dis_example/executor/clean: dis_example/executor/CMakeFiles/test_empty1.dir/clean
+dis_example/executor/clean: dis_example/executor/CMakeFiles/test_empty.dir/clean
 dis_example/executor/clean: dis_example/executor/CMakeFiles/exe2.dir/clean
 dis_example/executor/clean: dis_example/executor/CMakeFiles/exe1.dir/clean
 dis_example/executor/clean: dis_example/executor/CMakeFiles/exe.dir/clean
@@ -118,9 +127,46 @@ dis_example/executor/clean: dis_example/executor/CMakeFiles/main_grpc_threemess2
 .PHONY : dis_example/executor/clean
 
 #=============================================================================
+# Directory level rules for directory dis_example/executor/benchmark
+
+# Recursive "all" directory target.
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/all
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/linear_json.dir/all
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/wavefront.dir/all
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/all
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/linear1.dir/all
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/linear.dir/all
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/all
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/all
+dis_example/executor/benchmark/all: dis_example/executor/benchmark/CMakeFiles/create_linear.dir/all
+
+.PHONY : dis_example/executor/benchmark/all
+
+# Recursive "preinstall" directory target.
+dis_example/executor/benchmark/preinstall:
+
+.PHONY : dis_example/executor/benchmark/preinstall
+
+# Recursive "clean" directory target.
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/clean
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/linear_json.dir/clean
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/wavefront.dir/clean
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/clean
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/linear1.dir/clean
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/linear.dir/clean
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/clean
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/clean
+dis_example/executor/benchmark/clean: dis_example/executor/benchmark/CMakeFiles/create_linear.dir/clean
+
+.PHONY : dis_example/executor/benchmark/clean
+
+#=============================================================================
 # Directory level rules for directory dis_example/master
 
 # Recursive "all" directory target.
+dis_example/master/all: dis_example/master/CMakeFiles/master_nojson.dir/all
+dis_example/master/all: dis_example/master/CMakeFiles/linear_master.dir/all
+dis_example/master/all: dis_example/master/CMakeFiles/valjson.dir/all
 dis_example/master/all: dis_example/master/CMakeFiles/master_test_empty_parti.dir/all
 dis_example/master/all: dis_example/master/CMakeFiles/master.dir/all
 
@@ -132,6 +178,9 @@ dis_example/master/preinstall:
 .PHONY : dis_example/master/preinstall
 
 # Recursive "clean" directory target.
+dis_example/master/clean: dis_example/master/CMakeFiles/master_nojson.dir/clean
+dis_example/master/clean: dis_example/master/CMakeFiles/linear_master.dir/clean
+dis_example/master/clean: dis_example/master/CMakeFiles/valjson.dir/clean
 dis_example/master/clean: dis_example/master/CMakeFiles/master_test_empty_parti.dir/clean
 dis_example/master/clean: dis_example/master/CMakeFiles/master.dir/clean
 
@@ -162,7 +211,7 @@ origin_example/clean:
 CMakeFiles/need_utils.dir/all:
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/depend
 	$(MAKE) -f CMakeFiles/need_utils.dir/build.make CMakeFiles/need_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=13,14,15 "Built target need_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=31,32,33 "Built target need_utils"
 .PHONY : CMakeFiles/need_utils.dir/all
 
 # Build rule for subdir invocation for target.
@@ -183,13 +232,94 @@ CMakeFiles/need_utils.dir/clean:
 .PHONY : CMakeFiles/need_utils.dir/clean
 
 #=============================================================================
+# Target rules for target dis_example/master/CMakeFiles/master_nojson.dir
+
+# All Build rule for target.
+dis_example/master/CMakeFiles/master_nojson.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/master/CMakeFiles/master_nojson.dir/build.make dis_example/master/CMakeFiles/master_nojson.dir/depend
+	$(MAKE) -f dis_example/master/CMakeFiles/master_nojson.dir/build.make dis_example/master/CMakeFiles/master_nojson.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=27,28 "Built target master_nojson"
+.PHONY : dis_example/master/CMakeFiles/master_nojson.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/master/CMakeFiles/master_nojson.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/master_nojson.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/master/CMakeFiles/master_nojson.dir/rule
+
+# Convenience name for target.
+master_nojson: dis_example/master/CMakeFiles/master_nojson.dir/rule
+
+.PHONY : master_nojson
+
+# clean rule for target.
+dis_example/master/CMakeFiles/master_nojson.dir/clean:
+	$(MAKE) -f dis_example/master/CMakeFiles/master_nojson.dir/build.make dis_example/master/CMakeFiles/master_nojson.dir/clean
+.PHONY : dis_example/master/CMakeFiles/master_nojson.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/master/CMakeFiles/linear_master.dir
+
+# All Build rule for target.
+dis_example/master/CMakeFiles/linear_master.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/master/CMakeFiles/linear_master.dir/build.make dis_example/master/CMakeFiles/linear_master.dir/depend
+	$(MAKE) -f dis_example/master/CMakeFiles/linear_master.dir/build.make dis_example/master/CMakeFiles/linear_master.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=21,22 "Built target linear_master"
+.PHONY : dis_example/master/CMakeFiles/linear_master.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/master/CMakeFiles/linear_master.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/linear_master.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/master/CMakeFiles/linear_master.dir/rule
+
+# Convenience name for target.
+linear_master: dis_example/master/CMakeFiles/linear_master.dir/rule
+
+.PHONY : linear_master
+
+# clean rule for target.
+dis_example/master/CMakeFiles/linear_master.dir/clean:
+	$(MAKE) -f dis_example/master/CMakeFiles/linear_master.dir/build.make dis_example/master/CMakeFiles/linear_master.dir/clean
+.PHONY : dis_example/master/CMakeFiles/linear_master.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/master/CMakeFiles/valjson.dir
+
+# All Build rule for target.
+dis_example/master/CMakeFiles/valjson.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/master/CMakeFiles/valjson.dir/build.make dis_example/master/CMakeFiles/valjson.dir/depend
+	$(MAKE) -f dis_example/master/CMakeFiles/valjson.dir/build.make dis_example/master/CMakeFiles/valjson.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=38,39 "Built target valjson"
+.PHONY : dis_example/master/CMakeFiles/valjson.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/master/CMakeFiles/valjson.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/valjson.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/master/CMakeFiles/valjson.dir/rule
+
+# Convenience name for target.
+valjson: dis_example/master/CMakeFiles/valjson.dir/rule
+
+.PHONY : valjson
+
+# clean rule for target.
+dis_example/master/CMakeFiles/valjson.dir/clean:
+	$(MAKE) -f dis_example/master/CMakeFiles/valjson.dir/build.make dis_example/master/CMakeFiles/valjson.dir/clean
+.PHONY : dis_example/master/CMakeFiles/valjson.dir/clean
+
+#=============================================================================
 # Target rules for target dis_example/master/CMakeFiles/master_test_empty_parti.dir
 
 # All Build rule for target.
 dis_example/master/CMakeFiles/master_test_empty_parti.dir/all: CMakeFiles/need_utils.dir/all
 	$(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/depend
 	$(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=11,12 "Built target master_test_empty_parti"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=29,30 "Built target master_test_empty_parti"
 .PHONY : dis_example/master/CMakeFiles/master_test_empty_parti.dir/all
 
 # Build rule for subdir invocation for target.
@@ -216,7 +346,7 @@ dis_example/master/CMakeFiles/master_test_empty_parti.dir/clean:
 dis_example/master/CMakeFiles/master.dir/all: CMakeFiles/need_utils.dir/all
 	$(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/depend
 	$(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=9,10 "Built target master"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=25,26 "Built target master"
 .PHONY : dis_example/master/CMakeFiles/master.dir/all
 
 # Build rule for subdir invocation for target.
@@ -237,13 +367,94 @@ dis_example/master/CMakeFiles/master.dir/clean:
 .PHONY : dis_example/master/CMakeFiles/master.dir/clean
 
 #=============================================================================
+# Target rules for target dis_example/executor/CMakeFiles/valjson_executor.dir
+
+# All Build rule for target.
+dis_example/executor/CMakeFiles/valjson_executor.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/CMakeFiles/valjson_executor.dir/build.make dis_example/executor/CMakeFiles/valjson_executor.dir/depend
+	$(MAKE) -f dis_example/executor/CMakeFiles/valjson_executor.dir/build.make dis_example/executor/CMakeFiles/valjson_executor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=40,41 "Built target valjson_executor"
+.PHONY : dis_example/executor/CMakeFiles/valjson_executor.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/CMakeFiles/valjson_executor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/valjson_executor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/CMakeFiles/valjson_executor.dir/rule
+
+# Convenience name for target.
+valjson_executor: dis_example/executor/CMakeFiles/valjson_executor.dir/rule
+
+.PHONY : valjson_executor
+
+# clean rule for target.
+dis_example/executor/CMakeFiles/valjson_executor.dir/clean:
+	$(MAKE) -f dis_example/executor/CMakeFiles/valjson_executor.dir/build.make dis_example/executor/CMakeFiles/valjson_executor.dir/clean
+.PHONY : dis_example/executor/CMakeFiles/valjson_executor.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/CMakeFiles/test_empty1.dir
+
+# All Build rule for target.
+dis_example/executor/CMakeFiles/test_empty1.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/CMakeFiles/test_empty1.dir/build.make dis_example/executor/CMakeFiles/test_empty1.dir/depend
+	$(MAKE) -f dis_example/executor/CMakeFiles/test_empty1.dir/build.make dis_example/executor/CMakeFiles/test_empty1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=36,37 "Built target test_empty1"
+.PHONY : dis_example/executor/CMakeFiles/test_empty1.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/CMakeFiles/test_empty1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/test_empty1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/CMakeFiles/test_empty1.dir/rule
+
+# Convenience name for target.
+test_empty1: dis_example/executor/CMakeFiles/test_empty1.dir/rule
+
+.PHONY : test_empty1
+
+# clean rule for target.
+dis_example/executor/CMakeFiles/test_empty1.dir/clean:
+	$(MAKE) -f dis_example/executor/CMakeFiles/test_empty1.dir/build.make dis_example/executor/CMakeFiles/test_empty1.dir/clean
+.PHONY : dis_example/executor/CMakeFiles/test_empty1.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/CMakeFiles/test_empty.dir
+
+# All Build rule for target.
+dis_example/executor/CMakeFiles/test_empty.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/CMakeFiles/test_empty.dir/build.make dis_example/executor/CMakeFiles/test_empty.dir/depend
+	$(MAKE) -f dis_example/executor/CMakeFiles/test_empty.dir/build.make dis_example/executor/CMakeFiles/test_empty.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=34,35 "Built target test_empty"
+.PHONY : dis_example/executor/CMakeFiles/test_empty.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/CMakeFiles/test_empty.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/CMakeFiles/test_empty.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/CMakeFiles/test_empty.dir/rule
+
+# Convenience name for target.
+test_empty: dis_example/executor/CMakeFiles/test_empty.dir/rule
+
+.PHONY : test_empty
+
+# clean rule for target.
+dis_example/executor/CMakeFiles/test_empty.dir/clean:
+	$(MAKE) -f dis_example/executor/CMakeFiles/test_empty.dir/build.make dis_example/executor/CMakeFiles/test_empty.dir/clean
+.PHONY : dis_example/executor/CMakeFiles/test_empty.dir/clean
+
+#=============================================================================
 # Target rules for target dis_example/executor/CMakeFiles/exe2.dir
 
 # All Build rule for target.
 dis_example/executor/CMakeFiles/exe2.dir/all: CMakeFiles/need_utils.dir/all
 	$(MAKE) -f dis_example/executor/CMakeFiles/exe2.dir/build.make dis_example/executor/CMakeFiles/exe2.dir/depend
 	$(MAKE) -f dis_example/executor/CMakeFiles/exe2.dir/build.make dis_example/executor/CMakeFiles/exe2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=5,6 "Built target exe2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=13,14 "Built target exe2"
 .PHONY : dis_example/executor/CMakeFiles/exe2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -270,7 +481,7 @@ dis_example/executor/CMakeFiles/exe2.dir/clean:
 dis_example/executor/CMakeFiles/exe1.dir/all: CMakeFiles/need_utils.dir/all
 	$(MAKE) -f dis_example/executor/CMakeFiles/exe1.dir/build.make dis_example/executor/CMakeFiles/exe1.dir/depend
 	$(MAKE) -f dis_example/executor/CMakeFiles/exe1.dir/build.make dis_example/executor/CMakeFiles/exe1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=3,4 "Built target exe1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=11,12 "Built target exe1"
 .PHONY : dis_example/executor/CMakeFiles/exe1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -297,7 +508,7 @@ dis_example/executor/CMakeFiles/exe1.dir/clean:
 dis_example/executor/CMakeFiles/exe.dir/all: CMakeFiles/need_utils.dir/all
 	$(MAKE) -f dis_example/executor/CMakeFiles/exe.dir/build.make dis_example/executor/CMakeFiles/exe.dir/depend
 	$(MAKE) -f dis_example/executor/CMakeFiles/exe.dir/build.make dis_example/executor/CMakeFiles/exe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=1,2 "Built target exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=9,10 "Built target exe"
 .PHONY : dis_example/executor/CMakeFiles/exe.dir/all
 
 # Build rule for subdir invocation for target.
@@ -324,7 +535,7 @@ dis_example/executor/CMakeFiles/exe.dir/clean:
 dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/all: CMakeFiles/need_utils.dir/all
 	$(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/depend
 	$(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=7,8 "Built target main_grpc_threemess2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=23,24 "Built target main_grpc_threemess2"
 .PHONY : dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -343,6 +554,249 @@ main_grpc_threemess2: dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/r
 dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/clean:
 	$(MAKE) -f dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/build.make dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/clean
 .PHONY : dis_example/executor/CMakeFiles/main_grpc_threemess2.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=3,4 "Built target binary_tree_json"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/rule
+
+# Convenience name for target.
+binary_tree_json: dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/rule
+
+.PHONY : binary_tree_json
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/binary_tree_json.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/linear_json.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/linear_json.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear_json.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear_json.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=19,20 "Built target linear_json"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear_json.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/linear_json.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/linear_json.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear_json.dir/rule
+
+# Convenience name for target.
+linear_json: dis_example/executor/benchmark/CMakeFiles/linear_json.dir/rule
+
+.PHONY : linear_json
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/linear_json.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear_json.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear_json.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/wavefront.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/wavefront.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/wavefront.dir/build.make dis_example/executor/benchmark/CMakeFiles/wavefront.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/wavefront.dir/build.make dis_example/executor/benchmark/CMakeFiles/wavefront.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=42,43 "Built target wavefront"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/wavefront.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/wavefront.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/wavefront.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/wavefront.dir/rule
+
+# Convenience name for target.
+wavefront: dis_example/executor/benchmark/CMakeFiles/wavefront.dir/rule
+
+.PHONY : wavefront
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/wavefront.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/wavefront.dir/build.make dis_example/executor/benchmark/CMakeFiles/wavefront.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/wavefront.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/binary_tree.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/build.make dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/build.make dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=1,2 "Built target binary_tree"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/rule
+
+# Convenience name for target.
+binary_tree: dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/rule
+
+.PHONY : binary_tree
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/build.make dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/binary_tree.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/linear1.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/linear1.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear1.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear1.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear1.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=17,18 "Built target linear1"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear1.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/linear1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/linear1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear1.dir/rule
+
+# Convenience name for target.
+linear1: dis_example/executor/benchmark/CMakeFiles/linear1.dir/rule
+
+.PHONY : linear1
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/linear1.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear1.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear1.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear1.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/linear.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/linear.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=15,16 "Built target linear"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/linear.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/linear.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear.dir/rule
+
+# Convenience name for target.
+linear: dis_example/executor/benchmark/CMakeFiles/linear.dir/rule
+
+.PHONY : linear
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/linear.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/linear.dir/build.make dis_example/executor/benchmark/CMakeFiles/linear.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/linear.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=44,45 "Built target wavefront_json"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/rule
+
+# Convenience name for target.
+wavefront_json: dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/rule
+
+.PHONY : wavefront_json
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/build.make dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/wavefront_json.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/build.make dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/build.make dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=5,6 "Built target create_binary_tree"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/rule
+
+# Convenience name for target.
+create_binary_tree: dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/rule
+
+.PHONY : create_binary_tree
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/build.make dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/create_binary_tree.dir/clean
+
+#=============================================================================
+# Target rules for target dis_example/executor/benchmark/CMakeFiles/create_linear.dir
+
+# All Build rule for target.
+dis_example/executor/benchmark/CMakeFiles/create_linear.dir/all: CMakeFiles/need_utils.dir/all
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/create_linear.dir/build.make dis_example/executor/benchmark/CMakeFiles/create_linear.dir/depend
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/create_linear.dir/build.make dis_example/executor/benchmark/CMakeFiles/create_linear.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lsh/dfcpp/examples/build/CMakeFiles --progress-num=7,8 "Built target create_linear"
+.PHONY : dis_example/executor/benchmark/CMakeFiles/create_linear.dir/all
+
+# Build rule for subdir invocation for target.
+dis_example/executor/benchmark/CMakeFiles/create_linear.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 dis_example/executor/benchmark/CMakeFiles/create_linear.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lsh/dfcpp/examples/build/CMakeFiles 0
+.PHONY : dis_example/executor/benchmark/CMakeFiles/create_linear.dir/rule
+
+# Convenience name for target.
+create_linear: dis_example/executor/benchmark/CMakeFiles/create_linear.dir/rule
+
+.PHONY : create_linear
+
+# clean rule for target.
+dis_example/executor/benchmark/CMakeFiles/create_linear.dir/clean:
+	$(MAKE) -f dis_example/executor/benchmark/CMakeFiles/create_linear.dir/build.make dis_example/executor/benchmark/CMakeFiles/create_linear.dir/clean
+.PHONY : dis_example/executor/benchmark/CMakeFiles/create_linear.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

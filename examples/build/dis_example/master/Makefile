@@ -111,6 +111,51 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+dis_example/master/CMakeFiles/master_nojson.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/master_nojson.dir/rule
+.PHONY : dis_example/master/CMakeFiles/master_nojson.dir/rule
+
+# Convenience name for target.
+master_nojson: dis_example/master/CMakeFiles/master_nojson.dir/rule
+
+.PHONY : master_nojson
+
+# fast build rule for target.
+master_nojson/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_nojson.dir/build.make dis_example/master/CMakeFiles/master_nojson.dir/build
+.PHONY : master_nojson/fast
+
+# Convenience name for target.
+dis_example/master/CMakeFiles/linear_master.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/linear_master.dir/rule
+.PHONY : dis_example/master/CMakeFiles/linear_master.dir/rule
+
+# Convenience name for target.
+linear_master: dis_example/master/CMakeFiles/linear_master.dir/rule
+
+.PHONY : linear_master
+
+# fast build rule for target.
+linear_master/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/linear_master.dir/build.make dis_example/master/CMakeFiles/linear_master.dir/build
+.PHONY : linear_master/fast
+
+# Convenience name for target.
+dis_example/master/CMakeFiles/valjson.dir/rule:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/valjson.dir/rule
+.PHONY : dis_example/master/CMakeFiles/valjson.dir/rule
+
+# Convenience name for target.
+valjson: dis_example/master/CMakeFiles/valjson.dir/rule
+
+.PHONY : valjson
+
+# fast build rule for target.
+valjson/fast:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/valjson.dir/build.make dis_example/master/CMakeFiles/valjson.dir/build
+.PHONY : valjson/fast
+
+# Convenience name for target.
 dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f CMakeFiles/Makefile2 dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule
 .PHONY : dis_example/master/CMakeFiles/master_test_empty_parti.dir/rule
@@ -140,6 +185,33 @@ master/fast:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/build
 .PHONY : master/fast
 
+linear_master.o: linear_master.cpp.o
+
+.PHONY : linear_master.o
+
+# target to build an object file
+linear_master.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/linear_master.dir/build.make dis_example/master/CMakeFiles/linear_master.dir/linear_master.cpp.o
+.PHONY : linear_master.cpp.o
+
+linear_master.i: linear_master.cpp.i
+
+.PHONY : linear_master.i
+
+# target to preprocess a source file
+linear_master.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/linear_master.dir/build.make dis_example/master/CMakeFiles/linear_master.dir/linear_master.cpp.i
+.PHONY : linear_master.cpp.i
+
+linear_master.s: linear_master.cpp.s
+
+.PHONY : linear_master.s
+
+# target to generate assembly for a file
+linear_master.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/linear_master.dir/build.make dis_example/master/CMakeFiles/linear_master.dir/linear_master.cpp.s
+.PHONY : linear_master.cpp.s
+
 master.o: master.cpp.o
 
 .PHONY : master.o
@@ -166,6 +238,33 @@ master.s: master.cpp.s
 master.cpp.s:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master.dir/build.make dis_example/master/CMakeFiles/master.dir/master.cpp.s
 .PHONY : master.cpp.s
+
+master_nojson.o: master_nojson.cpp.o
+
+.PHONY : master_nojson.o
+
+# target to build an object file
+master_nojson.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_nojson.dir/build.make dis_example/master/CMakeFiles/master_nojson.dir/master_nojson.cpp.o
+.PHONY : master_nojson.cpp.o
+
+master_nojson.i: master_nojson.cpp.i
+
+.PHONY : master_nojson.i
+
+# target to preprocess a source file
+master_nojson.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_nojson.dir/build.make dis_example/master/CMakeFiles/master_nojson.dir/master_nojson.cpp.i
+.PHONY : master_nojson.cpp.i
+
+master_nojson.s: master_nojson.cpp.s
+
+.PHONY : master_nojson.s
+
+# target to generate assembly for a file
+master_nojson.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_nojson.dir/build.make dis_example/master/CMakeFiles/master_nojson.dir/master_nojson.cpp.s
+.PHONY : master_nojson.cpp.s
 
 master_test_empty_parti.o: master_test_empty_parti.cpp.o
 
@@ -194,6 +293,33 @@ master_test_empty_parti.cpp.s:
 	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/master_test_empty_parti.dir/build.make dis_example/master/CMakeFiles/master_test_empty_parti.dir/master_test_empty_parti.cpp.s
 .PHONY : master_test_empty_parti.cpp.s
 
+valjson.o: valjson.cpp.o
+
+.PHONY : valjson.o
+
+# target to build an object file
+valjson.cpp.o:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/valjson.dir/build.make dis_example/master/CMakeFiles/valjson.dir/valjson.cpp.o
+.PHONY : valjson.cpp.o
+
+valjson.i: valjson.cpp.i
+
+.PHONY : valjson.i
+
+# target to preprocess a source file
+valjson.cpp.i:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/valjson.dir/build.make dis_example/master/CMakeFiles/valjson.dir/valjson.cpp.i
+.PHONY : valjson.cpp.i
+
+valjson.s: valjson.cpp.s
+
+.PHONY : valjson.s
+
+# target to generate assembly for a file
+valjson.cpp.s:
+	cd /home/lsh/dfcpp/examples/build && $(MAKE) -f dis_example/master/CMakeFiles/valjson.dir/build.make dis_example/master/CMakeFiles/valjson.dir/valjson.cpp.s
+.PHONY : valjson.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -202,14 +328,26 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... master_nojson"
+	@echo "... linear_master"
+	@echo "... valjson"
 	@echo "... master_test_empty_parti"
 	@echo "... master"
+	@echo "... linear_master.o"
+	@echo "... linear_master.i"
+	@echo "... linear_master.s"
 	@echo "... master.o"
 	@echo "... master.i"
 	@echo "... master.s"
+	@echo "... master_nojson.o"
+	@echo "... master_nojson.i"
+	@echo "... master_nojson.s"
 	@echo "... master_test_empty_parti.o"
 	@echo "... master_test_empty_parti.i"
 	@echo "... master_test_empty_parti.s"
+	@echo "... valjson.o"
+	@echo "... valjson.i"
+	@echo "... valjson.s"
 .PHONY : help
 
 
